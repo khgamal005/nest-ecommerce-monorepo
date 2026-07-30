@@ -7,31 +7,34 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export type UserRole = 'customer' | 'admin' | 'staff';
+export type UserRole = 'user' | 'admin';
 
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({ nullable: true })
+  name: string | null;
+
   @Index({ unique: true })
-  @Column()
-  email: string;
+  @Column({ nullable: true })
+  email: string | null;
 
-  @Column()
-  passwordHash: string;
+  @Column({ nullable: true })
+  password: string | null;
 
-  @Column()
-  fullName: string;
+  @Column('simple-array', { nullable: true })
+  followings: string[];
 
-  @Column({ type: 'varchar', default: 'customer' })
+  @Column({ type: 'varchar', default: 'user' })
   role: UserRole;
 
-  @Column({ type: 'varchar', nullable: true })
-  resetToken: string | null;
+  @Column({ default: false })
+  isBanned: boolean;
 
   @Column({ type: 'timestamp', nullable: true })
-  resetTokenExpiry: Date | null;
+  bannedAt: Date | null;
 
   @CreateDateColumn()
   createdAt: Date;
