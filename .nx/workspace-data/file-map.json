@@ -1,0 +1,1407 @@
+{
+  "version": "6.0",
+  "nxVersion": "23.1.0",
+  "pathMappings": {
+    "@ecommerce/ui": [
+      "libs/shared/ui/src/index.ts"
+    ],
+    "@ecommerce/types": [
+      "libs/shared/types/src/index.ts"
+    ],
+    "@ecommerce/utils": [
+      "libs/shared/utils/src/index.ts"
+    ],
+    "@ecommerce/api-client": [
+      "libs/shared/api-client/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "README.md",
+        "hash": "14380800657486040219"
+      },
+      {
+        "file": "libs/shared/types/src/lib/product.types.ts",
+        "hash": "10709035629756380955"
+      },
+      {
+        "file": "package.json",
+        "hash": "14114591496276092805"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "2811845925925127796"
+      },
+      {
+        "file": "libs/shared/ui/src/lib/button.tsx",
+        "hash": "6139300812789419542"
+      },
+      {
+        "file": "nginx/nginx.conf",
+        "hash": "5675018670444983081"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4087260032564599213"
+      },
+      {
+        "file": "libs/shared/utils/src/index.ts",
+        "hash": "16429958627362454498"
+      },
+      {
+        "file": "libs/shared/types/src/lib/user.types.ts",
+        "hash": "6317061170784694507"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "13143806506090436179"
+      },
+      {
+        "file": "libs/shared/types/src/index.ts",
+        "hash": "5481669459384211778"
+      },
+      {
+        "file": "libs/shared/types/src/lib/order.types.ts",
+        "hash": "2928274707878303938"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "289273778159874079"
+      },
+      {
+        "file": "libs/shared/api-client/src/index.ts",
+        "hash": "6490946870680292444"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "5836583540949588181"
+      },
+      {
+        "file": "libs/shared/ui/src/index.ts",
+        "hash": "14903429450643252082"
+      },
+      {
+        "file": "libs/shared/types/src/lib/auth.types.ts",
+        "hash": "1976372579735190372"
+      }
+    ],
+    "projectFileMap": {
+      "backend": [
+        {
+          "file": "apps/backend/.env.example",
+          "hash": "11575151673286421668"
+        },
+        {
+          "file": "apps/backend/package.json",
+          "hash": "12130958889024732956",
+          "deps": [
+            "npm:@nestjs/cli",
+            "npm:@nestjs/testing",
+            "npm:@types/express",
+            "npm:@types/node@22.20.1",
+            "npm:@types/passport-jwt",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/core",
+            "npm:@nestjs/jwt",
+            "npm:@nestjs/passport",
+            "npm:@nestjs/platform-express",
+            "npm:@nestjs/typeorm",
+            "npm:bcrypt",
+            "npm:class-transformer",
+            "npm:class-validator",
+            "npm:cookie-parser",
+            "npm:passport",
+            "npm:passport-jwt",
+            "npm:pg",
+            "npm:reflect-metadata",
+            "npm:rxjs@7.8.2",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app.module.ts",
+          "hash": "1199784195156033507",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/common/decorators/current-user.decorator.ts",
+          "hash": "17976950869644737243",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/common/decorators/roles.decorator.ts",
+          "hash": "1714498322848162653",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/common/filters/http-exception.filter.ts",
+          "hash": "3698598268309472025",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:express@5.2.1"
+          ]
+        },
+        {
+          "file": "apps/backend/src/common/guards/jwt-auth.guard.ts",
+          "hash": "490308030298999117",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/backend/src/common/guards/roles.guard.ts",
+          "hash": "12717805514881731717",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/backend/src/main.ts",
+          "hash": "16904077821098978563",
+          "deps": [
+            "npm:@nestjs/core",
+            "npm:@nestjs/common",
+            "npm:cookie-parser"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/analytics/analytics.controller.ts",
+          "hash": "3929892133984397350",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/analytics/analytics.module.ts",
+          "hash": "16567090634274708094",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/analytics/analytics.service.ts",
+          "hash": "15529221566351432352",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/auth.controller.ts",
+          "hash": "12823604427402379972",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:express@5.2.1"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/auth.module.ts",
+          "hash": "9342174210979610463",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/auth.service.ts",
+          "hash": "2760595959124598324",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/dto/forgot-password.dto.ts",
+          "hash": "8100690343931906803",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/dto/login.dto.ts",
+          "hash": "7688166151648712543",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/dto/register.dto.ts",
+          "hash": "5276856821051168193",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/dto/reset-password.dto.ts",
+          "hash": "2105098975181823053",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/providers/auth.provider.ts",
+          "hash": "15470271501003793223",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/auth/strategies/jwt.strategy.ts",
+          "hash": "14875395372558239053",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "npm:passport-jwt",
+            "npm:express@5.2.1"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/cart/cart.controller.ts",
+          "hash": "16306550227451288959",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/cart/cart.module.ts",
+          "hash": "9602618238444910487",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/cart/cart.service.ts",
+          "hash": "11597407759586844687",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/categories/categories.controller.ts",
+          "hash": "14149785936165285497",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/categories/categories.module.ts",
+          "hash": "7791547207386060383",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/categories/categories.service.ts",
+          "hash": "7737835091507790878",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/inventory/inventory.controller.ts",
+          "hash": "17769977962437025563",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/inventory/inventory.module.ts",
+          "hash": "17563919858496408690",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/inventory/inventory.service.ts",
+          "hash": "13565234424669155648",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/notifications/notifications.controller.ts",
+          "hash": "14734112825218580968",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/notifications/notifications.module.ts",
+          "hash": "918799618754505772",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/notifications/notifications.service.ts",
+          "hash": "336081585368029472",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/orders/orders.controller.ts",
+          "hash": "10198919345146444364",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/orders/orders.module.ts",
+          "hash": "3295671084686117289",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/orders/orders.service.ts",
+          "hash": "15932465135654906963",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/payments/payments.controller.ts",
+          "hash": "12792436039666240572",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/payments/payments.module.ts",
+          "hash": "11413079325634161734",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/payments/payments.service.ts",
+          "hash": "14815759390041397196",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/products/dto/create-product.dto.ts",
+          "hash": "16992158520227349519",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/products/products.controller.ts",
+          "hash": "16812722730220867708",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/products/products.module.ts",
+          "hash": "17697090348364012043",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/products/products.service.ts",
+          "hash": "13949135460288879077",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/promotions/promotions.controller.ts",
+          "hash": "8469646438058182990",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/promotions/promotions.module.ts",
+          "hash": "16342526350473787565",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/promotions/promotions.service.ts",
+          "hash": "2242066593117717665",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/reviews/reviews.controller.ts",
+          "hash": "6479563764156754729",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/reviews/reviews.module.ts",
+          "hash": "8216396115985472532",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/reviews/reviews.service.ts",
+          "hash": "13409581119407263490",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/shipping/shipping.controller.ts",
+          "hash": "3581406571052312353",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/shipping/shipping.module.ts",
+          "hash": "17425364102964461870",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/shipping/shipping.service.ts",
+          "hash": "5208885025880060597",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/upload/upload.controller.ts",
+          "hash": "6382863549138742365",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/upload/upload.module.ts",
+          "hash": "4266921382282204912",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/upload/upload.service.ts",
+          "hash": "6620378002243634413",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/users/entities/user.entity.ts",
+          "hash": "15908132006267118565",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/users/users.controller.ts",
+          "hash": "984899328589846557",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/users/users.module.ts",
+          "hash": "10227662456210813563",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/users/users.service.ts",
+          "hash": "1878893396059487050",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        }
+      ],
+      "admin-dashboard": [
+        {
+          "file": "apps/admin-dashboard/next.config.js",
+          "hash": "11807065846210037576"
+        },
+        {
+          "file": "apps/admin-dashboard/package.json",
+          "hash": "899642310406937493",
+          "deps": [
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@types/node@22.20.1",
+            "npm:tailwindcss",
+            "npm:postcss@8.5.25",
+            "npm:autoprefixer",
+            "npm:next",
+            "npm:react",
+            "npm:react-dom",
+            "npm:@tanstack/react-query",
+            "npm:zustand",
+            "npm:recharts"
+          ]
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(auth)/login/page.tsx",
+          "hash": "13343358021362862327"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/categories/page.tsx",
+          "hash": "15520067735169188286"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/customers/page.tsx",
+          "hash": "7012351908929079235"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/inventory/page.tsx",
+          "hash": "10117743830688091420"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/orders/page.tsx",
+          "hash": "7904176577359665296"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/page.tsx",
+          "hash": "5241525777203653283"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/payments/page.tsx",
+          "hash": "5703164084196061729"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/products/page.tsx",
+          "hash": "17494471694774308272"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/promotions/page.tsx",
+          "hash": "7076538139196234750"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/reviews/page.tsx",
+          "hash": "7440418005403008921"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/roles-permissions/page.tsx",
+          "hash": "11420633499479951212"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/settings/page.tsx",
+          "hash": "9236910650983947102"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/(dashboard)/shipping/page.tsx",
+          "hash": "16505929733796216611"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/globals.css",
+          "hash": "2866083945719690482"
+        },
+        {
+          "file": "apps/admin-dashboard/src/app/layout.tsx",
+          "hash": "4092006450429583436"
+        },
+        {
+          "file": "apps/admin-dashboard/src/middleware.ts",
+          "hash": "12292012601104539000",
+          "deps": [
+            "npm:next"
+          ]
+        }
+      ],
+      "user-web": [
+        {
+          "file": "apps/user-web/.next/_events_18996.json",
+          "hash": "12377615126848695080"
+        },
+        {
+          "file": "apps/user-web/.next/_events_32840.json",
+          "hash": "18178009152376329481"
+        },
+        {
+          "file": "apps/user-web/.next/dev/build-manifest.json",
+          "hash": "11662534147176418140"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/.rscinfo",
+          "hash": "14040478042660900698"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/next-devtools-config.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000001.sst",
+          "hash": "10890557696381607139"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000002.sst",
+          "hash": "3168557584795420368"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000003.sst",
+          "hash": "8674372267318361529"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000004.sst",
+          "hash": "9571213044559035089"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000005.meta",
+          "hash": "11804814345867677429"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000006.meta",
+          "hash": "18291408942406353066"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000007.meta",
+          "hash": "759032797208594975"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000008.meta",
+          "hash": "7453811697748401185"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000009.sst",
+          "hash": "9752081869904031725"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000010.sst",
+          "hash": "2207041437491039264"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000011.sst",
+          "hash": "12597435392287684244"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000012.sst",
+          "hash": "10884545219268375134"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000013.meta",
+          "hash": "6605999244971392324"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000014.meta",
+          "hash": "9408440979826369713"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000015.meta",
+          "hash": "2531943881758194986"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000016.meta",
+          "hash": "15586102076210475568"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000017.sst",
+          "hash": "10117197278728385246"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000018.sst",
+          "hash": "13813609930913410504"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000019.sst",
+          "hash": "12597435392287684244"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000020.meta",
+          "hash": "336563153543972098"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000021.meta",
+          "hash": "18083588467051608889"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000022.meta",
+          "hash": "11896546653863975153"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000023.sst",
+          "hash": "7373004225004631809"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000024.sst",
+          "hash": "15958022766934118746"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000025.sst",
+          "hash": "12597435392287684244"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000026.meta",
+          "hash": "13912218907883604165"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000027.meta",
+          "hash": "6760195808886861215"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000028.meta",
+          "hash": "3852726672993756563"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000029.sst",
+          "hash": "14421329216640063668"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000030.sst",
+          "hash": "14307398165502037085"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000031.sst",
+          "hash": "12597435392287684244"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000032.meta",
+          "hash": "6593198227680784251"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000033.meta",
+          "hash": "613290788403311291"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000034.meta",
+          "hash": "6674296168741191"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000035.sst",
+          "hash": "15011420495720845480"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000036.sst",
+          "hash": "5060543703800813603"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000037.sst",
+          "hash": "11932616133636183750"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000038.sst",
+          "hash": "12771080699717804972"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000039.sst",
+          "hash": "10583082896386114667"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000040.sst",
+          "hash": "8122340537880919731"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000041.sst",
+          "hash": "5117438140167545689"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000042.meta",
+          "hash": "2645157473157886828"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000043.meta",
+          "hash": "5309686817065196862"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000044.meta",
+          "hash": "9314163961209032170"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000045.meta",
+          "hash": "12680965202228492185"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000046.sst",
+          "hash": "12391069378296017107"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000047.sst",
+          "hash": "551084794043619601"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000048.sst",
+          "hash": "8122340537880919731"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000049.meta",
+          "hash": "1676249367166462588"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000050.meta",
+          "hash": "13935683453342711105"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000051.meta",
+          "hash": "13251597349385839577"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000052.sst",
+          "hash": "13637188456171005781"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000053.sst",
+          "hash": "16907064832697291537"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000054.sst",
+          "hash": "8122340537880919731"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000055.meta",
+          "hash": "15939173445421769935"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000056.meta",
+          "hash": "10018719997627913838"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000057.meta",
+          "hash": "12004398434893691463"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000058.sst",
+          "hash": "2807595680056749415"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000059.sst",
+          "hash": "15503607902831868415"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000060.sst",
+          "hash": "8122340537880919731"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000061.meta",
+          "hash": "7634141789038605299"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000062.meta",
+          "hash": "12227033427473107512"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/00000063.meta",
+          "hash": "7024075170576731854"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/CURRENT",
+          "hash": "14523501787813379483"
+        },
+        {
+          "file": "apps/user-web/.next/dev/cache/turbopack/v16.2.12/LOG",
+          "hash": "7240772819344912046"
+        },
+        {
+          "file": "apps/user-web/.next/dev/fallback-build-manifest.json",
+          "hash": "7924224162052973225"
+        },
+        {
+          "file": "apps/user-web/.next/dev/lock",
+          "hash": "13907903668957706006"
+        },
+        {
+          "file": "apps/user-web/.next/dev/logs/next-development.log",
+          "hash": "6764208418307573263"
+        },
+        {
+          "file": "apps/user-web/.next/dev/package.json",
+          "hash": "12658071209785610769"
+        },
+        {
+          "file": "apps/user-web/.next/dev/prerender-manifest.json",
+          "hash": "11688852367165736530"
+        },
+        {
+          "file": "apps/user-web/.next/dev/routes-manifest.json",
+          "hash": "8631896564026539507"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app-paths-manifest.json",
+          "hash": "3051139700607830068"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page.js",
+          "hash": "2436233809944004883"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page.js.map",
+          "hash": "9770666782172617948"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page/app-paths-manifest.json",
+          "hash": "3051139700607830068"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page/build-manifest.json",
+          "hash": "11194754403138136281"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page/next-font-manifest.json",
+          "hash": "8927915864298715861"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page/react-loadable-manifest.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page/server-reference-manifest.json",
+          "hash": "8204496101908613432"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/app/(shop)/page_client-reference-manifest.js",
+          "hash": "4211302140187503125"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_0nswb9f._.js",
+          "hash": "13840951357752681471"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_0nswb9f._.js.map",
+          "hash": "16371284890067064124"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_0b0jf80._.js",
+          "hash": "8389509697075323707"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_0b0jf80._.js.map",
+          "hash": "6577446004498495418"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_builtin_forbidden_08jx7xw.js",
+          "hash": "13815717485425567721"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_builtin_forbidden_08jx7xw.js.map",
+          "hash": "16576267021147738402"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_builtin_global-error_1mr2lf_.js",
+          "hash": "628486479260524952"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_builtin_global-error_1mr2lf_.js.map",
+          "hash": "8277588929110769927"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_builtin_unauthorized_0cpivzn.js",
+          "hash": "12673538102285035229"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_client_components_builtin_unauthorized_0cpivzn.js.map",
+          "hash": "16220728333597755102"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_compiled_03b9p92._.js",
+          "hash": "5381631552629164421"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_compiled_03b9p92._.js.map",
+          "hash": "12859206837647045522"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_esm_18fq15_._.js",
+          "hash": "13763352880006590440"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_esm_18fq15_._.js.map",
+          "hash": "10009897451494833681"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_esm_1fa7x7y._.js",
+          "hash": "16032205908902045784"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_esm_1fa7x7y._.js.map",
+          "hash": "8885459015213251378"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_server_route-modules_app-page_0w3n3e_._.js",
+          "hash": "10265015502397206638"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/0y0b_next_dist_server_route-modules_app-page_0w3n3e_._.js.map",
+          "hash": "12047016804172397500"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[externals]__12if52y._.js",
+          "hash": "7112543735959688700",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[externals]__12if52y._.js.map",
+          "hash": "9770666782172617948"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[externals]_next_dist_1mg6puk._.js",
+          "hash": "16835462902864695305",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[externals]_next_dist_1mg6puk._.js.map",
+          "hash": "9770666782172617948"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[root-of-the-server]__16f45dd._.js",
+          "hash": "13825321245806697014",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[root-of-the-server]__16f45dd._.js.map",
+          "hash": "438311525585236933"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[turbopack]_runtime.js",
+          "hash": "12570455430834231345"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/[turbopack]_runtime.js.map",
+          "hash": "6558505726179853316"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/_1wpsej3._.js",
+          "hash": "10148886377719144946"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/_1wpsej3._.js.map",
+          "hash": "10782984066233553840"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/apps_user-web__next-internal_server_app_(shop)_page_actions_1sold1s.js",
+          "hash": "4171394666853797126"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/apps_user-web__next-internal_server_app_(shop)_page_actions_1sold1s.js.map",
+          "hash": "17703319750160141747"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/node_modules__pnpm_0r06i-w._.js",
+          "hash": "11780200889654889280"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/chunks/ssr/node_modules__pnpm_0r06i-w._.js.map",
+          "hash": "9048422644559263171"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/edge/chunks/0-ju_next_dist_esm_build_templates_edge-wrapper_1chkjb_.js",
+          "hash": "15302642537684794143"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/edge/chunks/0y0b_next_dist_06pxhah._.js",
+          "hash": "16330544644093408111"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/edge/chunks/0y0b_next_dist_06pxhah._.js.map",
+          "hash": "3286847295006604920"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/edge/chunks/0y0b_next_dist_esm_build_templates_edge-wrapper_1chkjb_.js.map",
+          "hash": "337906274124171444"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/edge/chunks/[root-of-the-server]__0h9q7xy._.js",
+          "hash": "2187109576778320106"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/edge/chunks/[root-of-the-server]__0h9q7xy._.js.map",
+          "hash": "10405012247274989306"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/interception-route-rewrite-manifest.js",
+          "hash": "10135913824388381780"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/middleware-build-manifest.js",
+          "hash": "5419822700269562321"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/middleware-manifest.json",
+          "hash": "10552456678209202458"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/middleware/middleware-manifest.json",
+          "hash": "1963120170063502461"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/next-font-manifest.js",
+          "hash": "548113336174728129"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/next-font-manifest.json",
+          "hash": "4081916677034603907"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/pages-manifest.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/server-reference-manifest.js",
+          "hash": "12114955729351047560"
+        },
+        {
+          "file": "apps/user-web/.next/dev/server/server-reference-manifest.json",
+          "hash": "8399216463839829952"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0vvp_@swc_helpers_cjs_0vb02wp._.js",
+          "hash": "9376279660689795533"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0vvp_@swc_helpers_cjs_0vb02wp._.js.map",
+          "hash": "18082571943684718534"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_0zj1mqt._.js",
+          "hash": "14953102169082429709"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_0zj1mqt._.js.map",
+          "hash": "10697579546665676546"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_1jlt_w0._.js",
+          "hash": "5325427780327023151"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_1jlt_w0._.js.map",
+          "hash": "9728243966781380042"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_build_polyfills_polyfill-nomodule.js",
+          "hash": "8152964857117933876"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_build_polyfills_polyfill-nomodule.js.map",
+          "hash": "6253409940963839998"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_client_048d34z._.js",
+          "hash": "17824896792794934647"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_client_048d34z._.js.map",
+          "hash": "950798597183559166"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_client_components_builtin_global-error_1ips9pd.js",
+          "hash": "4506918261190444355"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_1u6b93-._.js",
+          "hash": "8772287701233411369"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_1u6b93-._.js.map",
+          "hash": "17734600578852973946"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_next-devtools_index_0gbaq2_.js",
+          "hash": "17445668985103160608"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_next-devtools_index_0gbaq2_.js.map",
+          "hash": "14810508934498674138"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_react-dom_1zxwhzg._.js",
+          "hash": "123193032927052441"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_react-dom_1zxwhzg._.js.map",
+          "hash": "4891243018550068243"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_react-server-dom-turbopack_0viy8t9._.js",
+          "hash": "6291332994984519859"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/0y0b_next_dist_compiled_react-server-dom-turbopack_0viy8t9._.js.map",
+          "hash": "12395835992471543637"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_05gwxuk._.js",
+          "hash": "10751272213022601655"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1mojsay._.js",
+          "hash": "1967429310292387953"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1mojsay._.js.map",
+          "hash": "12906783027268134109"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1vpkim3._.js",
+          "hash": "4768775917835335606"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1vpkim3._.js.map",
+          "hash": "9770666782172617948"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/apps_user-web_1anvha4._.js",
+          "hash": "17845707983544160154"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/apps_user-web_1hju25a._.js.map",
+          "hash": "11464028907585404364"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/apps_user-web_src_app_globals_0_-gcz0.css",
+          "hash": "17570232433501481310"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/apps_user-web_src_app_globals_0_-gcz0.css.map",
+          "hash": "15759337140074314960"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/apps_user-web_src_app_layout_tsx_11mzsbh._.js",
+          "hash": "17772649376372129330"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/chunks/turbopack-apps_user-web_1hju25a._.js",
+          "hash": "810510164890794155"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/development/_buildManifest.js",
+          "hash": "1978154124490132800"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/development/_clientMiddlewareManifest.js",
+          "hash": "10120700124723762496"
+        },
+        {
+          "file": "apps/user-web/.next/dev/static/development/_ssgManifest.js",
+          "hash": "17018243955171961484"
+        },
+        {
+          "file": "apps/user-web/.next/dev/trace",
+          "hash": "1927084623833383303"
+        },
+        {
+          "file": "apps/user-web/.next/dev/types/cache-life.d.ts",
+          "hash": "9184345898968772493",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-web/.next/dev/types/routes.d.ts",
+          "hash": "13772378966381837343"
+        },
+        {
+          "file": "apps/user-web/.next/dev/types/validator.ts",
+          "hash": "14085090102445061898",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-web/next-env.d.ts",
+          "hash": "10934712840805312151"
+        },
+        {
+          "file": "apps/user-web/next.config.js",
+          "hash": "5406013234632913020"
+        },
+        {
+          "file": "apps/user-web/package.json",
+          "hash": "16489540035198835369",
+          "deps": [
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@types/node@22.20.1",
+            "npm:tailwindcss",
+            "npm:postcss@8.5.25",
+            "npm:autoprefixer",
+            "npm:next",
+            "npm:react",
+            "npm:react-dom",
+            "npm:@tanstack/react-query",
+            "npm:zustand"
+          ]
+        },
+        {
+          "file": "apps/user-web/src/app/(auth)/login/page.tsx",
+          "hash": "14767828991442863173"
+        },
+        {
+          "file": "apps/user-web/src/app/(auth)/register/page.tsx",
+          "hash": "11552876138652242312"
+        },
+        {
+          "file": "apps/user-web/src/app/(shop)/cart/page.tsx",
+          "hash": "11609457190676301930"
+        },
+        {
+          "file": "apps/user-web/src/app/(shop)/category/[slug]/page.tsx",
+          "hash": "11007843339647532398"
+        },
+        {
+          "file": "apps/user-web/src/app/(shop)/checkout/page.tsx",
+          "hash": "15017048279552864704"
+        },
+        {
+          "file": "apps/user-web/src/app/(shop)/orders/page.tsx",
+          "hash": "15714500576601420532"
+        },
+        {
+          "file": "apps/user-web/src/app/(shop)/page.tsx",
+          "hash": "13080958139965232300"
+        },
+        {
+          "file": "apps/user-web/src/app/(shop)/products/[slug]/page.tsx",
+          "hash": "15935540749945596133"
+        },
+        {
+          "file": "apps/user-web/src/app/globals.css",
+          "hash": "2866083945719690482"
+        },
+        {
+          "file": "apps/user-web/src/app/layout.tsx",
+          "hash": "14553220816731655966"
+        },
+        {
+          "file": "apps/user-web/src/middleware.ts",
+          "hash": "16657259245177451496",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-web/tsconfig.json",
+          "hash": "16590556687944186989"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "7125925920779359989"
+}
