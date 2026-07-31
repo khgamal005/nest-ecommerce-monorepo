@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   Entity,
   Index,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Address } from './address.entity';
 
 export type UserRole = 'user' | 'admin';
 
@@ -26,6 +28,9 @@ export class User {
 
   @Column('simple-array', { nullable: true })
   followings: string[];
+
+  @OneToMany(() => Address, (address) => address.user, { cascade: true })
+  addresses: Address[];
 
   @Column({ type: 'varchar', default: 'user' })
   role: UserRole;

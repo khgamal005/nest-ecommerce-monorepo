@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+﻿import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -16,12 +16,9 @@ import { ShippingModule } from './modules/shipping/shipping.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { UploadModule } from './modules/upload/upload.module';
 import { AnalyticsModule } from './modules/analytics/analytics.module';
+import { RedisModule } from './modules/redis/redis.module';
+import { MailModule } from './modules/mail/mail.module';
 
-// This module wires every domain feature into ONE deployable NestJS
-// application -- this is what makes the backend a monolith rather than
-// a set of microservices. Each imported module is self-contained
-// (its own controller/service/dto/entities) so it CAN be extracted into
-// its own service later if needed.
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -49,6 +46,8 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
     NotificationsModule,
     UploadModule,
     AnalyticsModule,
+    RedisModule,
+    MailModule,
   ],
 })
 export class AppModule {}

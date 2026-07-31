@@ -26,6 +26,10 @@ export class AuthProvider {
     return this.jwtService.sign(payload);
   }
 
+  signAccessToken(payload: JwtPayload): string {
+    return this.jwtService.sign(payload, { expiresIn: '1h' });
+  }
+
   verifyToken(token: string): JwtPayload {
     return this.jwtService.verify<JwtPayload>(token);
   }
