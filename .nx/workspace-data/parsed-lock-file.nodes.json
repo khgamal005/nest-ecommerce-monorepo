@@ -1746,6 +1746,15 @@
         "hash": "sha512-BvziSRxfz5Ov8ch0z/n3oijRSEcEsHnhggm4xFZe93DHcUCTlutlq9Ox4SVENAfcRD22UQq7T/atg9Wr3k09eA=="
       }
     },
+    "npm:@ioredis/commands": {
+      "type": "npm",
+      "name": "npm:@ioredis/commands",
+      "data": {
+        "version": "1.10.0",
+        "packageName": "@ioredis/commands",
+        "hash": "sha512-UmeW7z4LfctwoQ5wkhVzgq8tXkreED2xZGpX+Bg+zA+WJFZCT6c062AfCK/Dfk81xZnnwdhJCUMkitihRaoC2Q=="
+      }
+    },
     "npm:@isaacs/cliui": {
       "type": "npm",
       "name": "npm:@isaacs/cliui",
@@ -3222,6 +3231,15 @@
         "hash": "sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q=="
       }
     },
+    "npm:@types/bcrypt": {
+      "type": "npm",
+      "name": "npm:@types/bcrypt",
+      "data": {
+        "version": "6.0.0",
+        "packageName": "@types/bcrypt",
+        "hash": "sha512-/oJGukuH3D2+D+3H4JWLaAsJ/ji86dhRidzZ/Od7H/i8g+aCmvkeCc6Ni/f9uxGLSQVCRZkX2/lqEFG2BvWtlQ=="
+      }
+    },
     "npm:@types/body-parser": {
       "type": "npm",
       "name": "npm:@types/body-parser",
@@ -3238,6 +3256,15 @@
         "version": "3.4.38",
         "packageName": "@types/connect",
         "hash": "sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug=="
+      }
+    },
+    "npm:@types/cookie-parser": {
+      "type": "npm",
+      "name": "npm:@types/cookie-parser",
+      "data": {
+        "version": "1.4.10",
+        "packageName": "@types/cookie-parser",
+        "hash": "sha512-B4xqkqfZ8Wek+rCOeRxsjMS9OgvzebEzzLYw7NHYuvzb7IdxOkI0ZHGgeEBX4PUM7QGVvNSK60T3OvWj3YfBRg=="
       }
     },
     "npm:@types/d3-array": {
@@ -3321,6 +3348,15 @@
         "hash": "sha512-Ps3T8E8dZDam6fUyNiMkekK3XUsaUEik+idO9/YjPtfj2qruF8tFBXS7XhtE4iIXBLxhmLjP3SXpLhVf21I9Lw=="
       }
     },
+    "npm:@types/ejs": {
+      "type": "npm",
+      "name": "npm:@types/ejs",
+      "data": {
+        "version": "3.1.5",
+        "packageName": "@types/ejs",
+        "hash": "sha512-nv+GSx77ZtXiJzwKdsASqi+YQ5Z7vwHsTP0JY2SiQgjGckkBRKZnk8nIM+7oUZ1VCtuTz0+By4qVR7fqzp/Dfg=="
+      }
+    },
     "npm:@types/eslint-scope": {
       "type": "npm",
       "name": "npm:@types/eslint-scope",
@@ -3402,6 +3438,15 @@
         "hash": "sha512-ED6LB+Z1AVylNTu7hdzuBqOgMnvG/ld6wGCG8wFnAzKX5uyW2K3WD52v0gnLCTK/VLpXtKckgWuyScYK6cSPaw=="
       }
     },
+    "npm:@types/ioredis": {
+      "type": "npm",
+      "name": "npm:@types/ioredis",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "@types/ioredis",
+        "hash": "sha512-zJbJ3FVE17CNl5KXzdeSPtdltc4tMT3TzC6fxQS0sQngkbFZ6h+0uTafsRqu+eSLIugf6Yb0Ea0SUuRr42Nk9g=="
+      }
+    },
     "npm:@types/istanbul-lib-coverage": {
       "type": "npm",
       "name": "npm:@types/istanbul-lib-coverage",
@@ -3481,6 +3526,15 @@
         "version": "26.1.2",
         "packageName": "@types/node",
         "hash": "sha512-Vu4a5UFA9rIIFJ7rB/Vaafh9lrCQszopTCx6KjFboXTGQbPNasehVR5TEiithSDGyd1DEiUByggTZsg8jukeIg=="
+      }
+    },
+    "npm:@types/nodemailer": {
+      "type": "npm",
+      "name": "npm:@types/nodemailer",
+      "data": {
+        "version": "8.0.1",
+        "packageName": "@types/nodemailer",
+        "hash": "sha512-PxpaInm8V1JQDd4j0ds5HfvWQk8JupS1C0Picb96QJsrrRDjBH+DlK7L4ZdNSqNULhiZRQHc40nLVShaGxXAMw=="
       }
     },
     "npm:@types/parse-json": {
@@ -3616,186 +3670,6 @@
         "version": "17.0.35",
         "packageName": "@types/yargs",
         "hash": "sha512-qUHkeCyQFxMXg79wQfTtfndEC+N9ZZg76HJftDJp+qH2tV7Gj4OJi7l+PiWwJ+pWtW8GwSmqsDj/oymhrTWXjg=="
-      }
-    },
-    "npm:@typescript/typescript-aix-ppc64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-aix-ppc64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-aix-ppc64",
-        "hash": "sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ=="
-      }
-    },
-    "npm:@typescript/typescript-darwin-arm64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-darwin-arm64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-darwin-arm64",
-        "hash": "sha512-gowzar9MwS/aRWp6f3a4KUqzRjAZjOsmGNCM6LcTgXum+dBfgsBVMN+AgvOCCbguXyick6LJhpBszxMebJ8syA=="
-      }
-    },
-    "npm:@typescript/typescript-darwin-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-darwin-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-darwin-x64",
-        "hash": "sha512-SZ9xZInqApNlNGc9s0W1VSsktYSOe9cFqNOIqmN1Gs8SmkjKZYFt017G4VwPxASInODuAdbTW7sXiFUf893RgA=="
-      }
-    },
-    "npm:@typescript/typescript-freebsd-arm64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-freebsd-arm64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-freebsd-arm64",
-        "hash": "sha512-W5NH4y/J0plIIS5b2xvTEkU7JFxyqdMAOgf+Ilhl0vHQXKO5dZoxd+C/jEtq56c4F3wk71RB4BMRQ2XdI+bwYQ=="
-      }
-    },
-    "npm:@typescript/typescript-freebsd-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-freebsd-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-freebsd-x64",
-        "hash": "sha512-UMGDx5sTpzNw3WiPebH7l90IWfJggEd+egHt/q6p7/Cm3zqoV7VxkGXt+3DxPIw8CcmvAB0j3sVVfbhX+M4Tpw=="
-      }
-    },
-    "npm:@typescript/typescript-linux-arm64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-arm64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-arm64",
-        "hash": "sha512-Qh4eU4/y3yDjnfjjyPYihMj5/ODIlmt+Bzu17OI+fiSRDW57QmU5SiN63exPRNJPKUzcc1INa1NXdrJ+MqHjUQ=="
-      }
-    },
-    "npm:@typescript/typescript-linux-arm": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-arm",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-arm",
-        "hash": "sha512-gffT3xPz9sR7j/YJExkyPntrI0P2EP9XbOyWzth2/Gs0RstK+90RBcO0ncXoXy/beYll1SXw846Nf2zdnEz0QQ=="
-      }
-    },
-    "npm:@typescript/typescript-linux-loong64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-loong64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-loong64",
-        "hash": "sha512-uEHck9i8hoAzXPiYRib1O7miOnz23SxIeVl6F4LXox+qov1K35jHcEW6VHKvZI+pyvl7fZEP4MCU5LYvIq1GuQ=="
-      }
-    },
-    "npm:@typescript/typescript-linux-mips64el": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-mips64el",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-mips64el",
-        "hash": "sha512-R4KvAMnE43W5Qeqb0Ly56O3mWMWIAgsMyz36DCaycd5nbg/9kzm0liw3JocfRqyJY0KPmzFjbswozXyW0DnIYA=="
-      }
-    },
-    "npm:@typescript/typescript-linux-ppc64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-ppc64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-ppc64",
-        "hash": "sha512-DORx5b3sd/4S7eayxm4FQv+A7CrkUIGRaHiwI8oiHTAI1fAPWhF4J0vAlkC8biAlHSVVwxMQ3tjZ2/DVbnQiiA=="
-      }
-    },
-    "npm:@typescript/typescript-linux-riscv64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-riscv64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-riscv64",
-        "hash": "sha512-wf0jqEDOjrPRnKwYRyyJDRo11KMbvMFrU+q4zqKyChODBzvlkbhNQfKvLxQCcwTpdDaXSHZTVuh0JoCrKCUMHQ=="
-      }
-    },
-    "npm:@typescript/typescript-linux-s390x": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-s390x",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-s390x",
-        "hash": "sha512-IkwJc3L7yhytWd/ewjyxNDfOmswCm9GWMJT/ue/dU4aZNbwZeYAetq42VyLmsmSjvoX7z74X6ZaYCtzAr0EuGw=="
-      }
-    },
-    "npm:@typescript/typescript-linux-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-linux-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-linux-x64",
-        "hash": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A=="
-      }
-    },
-    "npm:@typescript/typescript-netbsd-arm64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-netbsd-arm64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-netbsd-arm64",
-        "hash": "sha512-+polYF4MF04aPpO5FTkHran9yUQDSXqy5GiSDKpsll5jy3l3+g9QLhpf39T+ePtefhXLOGrLl0QIjkQP6VnelA=="
-      }
-    },
-    "npm:@typescript/typescript-netbsd-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-netbsd-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-netbsd-x64",
-        "hash": "sha512-8YIT0EHM/3dq10ZOVF/A7pc/YSMtbcecct4rWtexrnSCHOPcpC2KTLXfTCR6vDpnSiY12heNb1GiN/wu+T/FyA=="
-      }
-    },
-    "npm:@typescript/typescript-openbsd-arm64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-openbsd-arm64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-openbsd-arm64",
-        "hash": "sha512-APT8+ClYnuYm1u9+kgGXoMj2VzWzcymwh2gNSQVySHfkRDGOTVkoWLjCmOQSaO+PoqQ57B0flRp9SA+7GnnkzQ=="
-      }
-    },
-    "npm:@typescript/typescript-openbsd-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-openbsd-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-openbsd-x64",
-        "hash": "sha512-yX7s+Q0Dln0Dt9tEzZsAjXXR/+ytBM7AlglaqyeMPxQszJ1JhlJdZ6jLA+IzldHtflX81em7lDao1xXu+aRRkg=="
-      }
-    },
-    "npm:@typescript/typescript-sunos-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-sunos-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-sunos-x64",
-        "hash": "sha512-dLJDGaLZ1D4HPQn62u1n8mBDkJREwMsAkCdkwd4Ieqw+x3TUyTsqY0YiBCtE6H6OzzgGk3iuZ3vFWRS+E8/d1g=="
-      }
-    },
-    "npm:@typescript/typescript-win32-arm64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-win32-arm64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-win32-arm64",
-        "hash": "sha512-Gyl1Vy6OsWesLzmq+EP0Fb7b4Nid5232AvcA2SFcdYreldpNtYFFofPjnt62y9hQy7VTaZp65ICJjuAQRaVcIQ=="
-      }
-    },
-    "npm:@typescript/typescript-win32-x64": {
-      "type": "npm",
-      "name": "npm:@typescript/typescript-win32-x64",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "@typescript/typescript-win32-x64",
-        "hash": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g=="
       }
     },
     "npm:@ungap/structured-clone": {
@@ -5094,6 +4968,15 @@
         "hash": "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA=="
       }
     },
+    "npm:cluster-key-slot": {
+      "type": "npm",
+      "name": "npm:cluster-key-slot",
+      "data": {
+        "version": "1.1.1",
+        "packageName": "cluster-key-slot",
+        "hash": "sha512-rwHwUfXL40Chm1r08yrhU3qpUvdVlgkKNeyeGPOxnW8/SyVDvgRaed/Uz54AqWNaTCAThlj6QAs3TZcKI0xDEw=="
+      }
+    },
     "npm:co": {
       "type": "npm",
       "name": "npm:co",
@@ -5760,6 +5643,15 @@
         "hash": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
       }
     },
+    "npm:denque": {
+      "type": "npm",
+      "name": "npm:denque",
+      "data": {
+        "version": "2.1.0",
+        "packageName": "denque",
+        "hash": "sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw=="
+      }
+    },
     "npm:depd": {
       "type": "npm",
       "name": "npm:depd",
@@ -5940,13 +5832,22 @@
         "hash": "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="
       }
     },
-    "npm:ejs": {
+    "npm:ejs@5.0.1": {
       "type": "npm",
-      "name": "npm:ejs",
+      "name": "npm:ejs@5.0.1",
       "data": {
         "version": "5.0.1",
         "packageName": "ejs",
         "hash": "sha512-COqBPFMxuPTPspXl2DkVYaDS3HtrD1GpzOGkNTJ1IYkifq/r9h8SVEFrjA3D9/VJGOEoMQcrlhpntcSUrM8k6A=="
+      }
+    },
+    "npm:ejs@6.0.1": {
+      "type": "npm",
+      "name": "npm:ejs@6.0.1",
+      "data": {
+        "version": "6.0.1",
+        "packageName": "ejs",
+        "hash": "sha512-UaaM14yby8U3k02ihS1Bmj5Kz2d7CCQM1scxpgs4Mhkq8F1wR2gl3+Ts4h5Ne4Mnt7M9m4Dw7jsuMr3+xO4vZA=="
       }
     },
     "npm:electron-to-chromium": {
@@ -7063,6 +6964,15 @@
         "version": "2.0.3",
         "packageName": "internmap",
         "hash": "sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg=="
+      }
+    },
+    "npm:ioredis": {
+      "type": "npm",
+      "name": "npm:ioredis",
+      "data": {
+        "version": "5.11.1",
+        "packageName": "ioredis",
+        "hash": "sha512-ehuGcf94bQXhfagULNXrJdfnWO38v070jxSx/qE87Kjzmu2fU7ro5EFAb+OPituLqgfyuQaym5DlrNydW2sJ9A=="
       }
     },
     "npm:ip-regex": {
@@ -8631,6 +8541,15 @@
         "hash": "sha512-wRNIrw4DmVLKQlbgOMdkMx27Wrpzes2hh5Jtbi2bjPd+4wJstWIqP5A+lscnqbm0xxmT5Bpg8Lec5ItEBwx6BQ=="
       }
     },
+    "npm:nodemailer": {
+      "type": "npm",
+      "name": "npm:nodemailer",
+      "data": {
+        "version": "9.0.3",
+        "packageName": "nodemailer",
+        "hash": "sha512-n+YP+NKwR5zRWa60k3GiQ6Q3B4KXCoAw40dAKeCtYn020iNN74aWK2liXIC3ZEATeGql7we3tE3t8QwhY0eskw=="
+      }
+    },
     "npm:normalize-path": {
       "type": "npm",
       "name": "npm:normalize-path",
@@ -9783,6 +9702,24 @@
         "hash": "sha512-UT/q6fwS3c1dHbXv2uFgYJ9BMFHu3fwnd7AYZaEQhXuYQ4hgsxLvsUXzGdKeZrW5xopzDCvuA2N41WJ88I7zIw=="
       }
     },
+    "npm:redis-errors": {
+      "type": "npm",
+      "name": "npm:redis-errors",
+      "data": {
+        "version": "1.2.0",
+        "packageName": "redis-errors",
+        "hash": "sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w=="
+      }
+    },
+    "npm:redis-parser": {
+      "type": "npm",
+      "name": "npm:redis-parser",
+      "data": {
+        "version": "3.0.0",
+        "packageName": "redis-parser",
+        "hash": "sha512-DJnGAeenTdpMEH6uAJRK/uiyEIH9WVsUmoLwzudwGJUwZPp80PDBWPHXSAGNPwNvIXAbe7MSUB1zQFugFml66A=="
+      }
+    },
     "npm:reflect-metadata": {
       "type": "npm",
       "name": "npm:reflect-metadata",
@@ -10557,6 +10494,15 @@
         "hash": "sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ=="
       }
     },
+    "npm:standard-as-callback": {
+      "type": "npm",
+      "name": "npm:standard-as-callback",
+      "data": {
+        "version": "2.1.0",
+        "packageName": "standard-as-callback",
+        "hash": "sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A=="
+      }
+    },
     "npm:statuses": {
       "type": "npm",
       "name": "npm:statuses",
@@ -11070,9 +11016,9 @@
         "hash": "sha512-6u9EFtdLBgHjnPm78NStVeM+I/1MolTzKykDDcydzKUkh6E++YS6XViU/fePJbvDvEGU4Xq34KOM/CLeer9I2A=="
       }
     },
-    "npm:typescript@5.9.3": {
+    "npm:typescript": {
       "type": "npm",
-      "name": "npm:typescript@5.9.3",
+      "name": "npm:typescript",
       "data": {
         "version": "5.9.3",
         "packageName": "typescript",
@@ -11086,15 +11032,6 @@
         "version": "6.0.3",
         "packageName": "typescript",
         "hash": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
-      }
-    },
-    "npm:typescript": {
-      "type": "npm",
-      "name": "npm:typescript",
-      "data": {
-        "version": "7.0.2",
-        "packageName": "typescript",
-        "hash": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA=="
       }
     },
     "npm:uid": {
@@ -12221,6 +12158,9 @@
     "@inquirer/type@3.0.10(@types/node@22.20.1)": [
       "npm:@inquirer/type"
     ],
+    "@ioredis/commands@1.10.0": [
+      "npm:@ioredis/commands"
+    ],
     "@isaacs/cliui@8.0.2": [
       "npm:@isaacs/cliui"
     ],
@@ -12344,13 +12284,10 @@
     "@nestjs/schematics@11.1.0(chokidar@4.0.3)(typescript@5.9.3)": [
       "npm:@nestjs/schematics"
     ],
-    "@nestjs/schematics@11.1.0(chokidar@4.0.3)(typescript@7.0.2)": [
-      "npm:@nestjs/schematics"
-    ],
     "@nestjs/testing@11.1.28(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(@nestjs/platform-express@11.1.28)": [
       "npm:@nestjs/testing"
     ],
-    "@nestjs/typeorm@11.0.3(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(reflect-metadata@0.2.2)(rxjs@7.8.2)(typeorm@0.3.31(babel-plugin-macros@3.1.0)(pg@8.22.0)(ts-node@10.9.2(@types/node@22.20.1)(typescript@7.0.2)))": [
+    "@nestjs/typeorm@11.0.3(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(reflect-metadata@0.2.2)(rxjs@7.8.2)(typeorm@0.3.31(babel-plugin-macros@3.1.0)(ioredis@5.11.1)(pg@8.22.0)(ts-node@10.9.2(@types/node@22.20.1)(typescript@6.0.3)))": [
       "npm:@nestjs/typeorm"
     ],
     "@next/env@16.2.12": [
@@ -12386,25 +12323,25 @@
     "@nx/docker@23.1.0(nx@23.1.0)": [
       "npm:@nx/docker"
     ],
-    "@nx/eslint@23.1.0(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2))(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0)": [
+    "@nx/eslint@23.1.0(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3))(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0)": [
       "npm:@nx/eslint"
     ],
-    "@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2)": [
+    "@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3)": [
       "npm:@nx/jest"
     ],
     "@nx/js@23.1.0(@babel/traverse@7.29.7)(nx@23.1.0)": [
       "npm:@nx/js"
     ],
-    "@nx/module-federation@23.1.0(7c9bf3047a36ad3d6d76ab416b94d33e)": [
+    "@nx/module-federation@23.1.0(a3d49fa2bd34bb60ed9b6d88613e633c)": [
       "npm:@nx/module-federation"
     ],
-    "@nx/nest@23.1.0(@babel/traverse@7.29.7)(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2))(@types/node@26.1.2)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(chokidar@4.0.3)(eslint@10.8.0(jiti@2.7.0))(express@5.2.1)(nx@23.1.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2)": [
+    "@nx/nest@23.1.0(@babel/traverse@7.29.7)(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3))(@types/node@26.1.2)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(chokidar@4.0.3)(eslint@10.8.0(jiti@2.7.0))(express@5.2.1)(nx@23.1.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3)": [
       "npm:@nx/nest"
     ],
-    "@nx/next@23.1.0(b7510b5676ed5312fc3cc17f6e400e37)": [
+    "@nx/next@23.1.0(24068ee3c6d98888ca1f1b7042143818)": [
       "npm:@nx/next"
     ],
-    "@nx/node@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(eslint@10.8.0(jiti@2.7.0))(express@5.2.1)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2)": [
+    "@nx/node@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(eslint@10.8.0(jiti@2.7.0))(express@5.2.1)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3)": [
       "npm:@nx/node"
     ],
     "@nx/nx-darwin-arm64@23.1.0": [
@@ -12437,22 +12374,22 @@
     "@nx/nx-win32-x64-msvc@23.1.0": [
       "npm:@nx/nx-win32-x64-msvc"
     ],
-    "@nx/react@23.1.0(@babel/core@7.29.7)(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2))(@nx/webpack@23.1.0(@babel/traverse@7.29.7)(nx@23.1.0)(typescript@7.0.2)(webpack@5.106.2(postcss@8.5.25)))(@types/babel__core@7.20.5)(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0)(postcss@8.5.25)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.100.0)(sass@1.102.0)(terser@5.49.0)(yaml@2.9.0))": [
+    "@nx/react@23.1.0(@babel/core@7.29.7)(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3))(@nx/webpack@23.1.0(@babel/traverse@7.29.7)(nx@23.1.0)(typescript@5.9.3)(webpack@5.106.2(postcss@8.5.25)))(@types/babel__core@7.20.5)(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0)(postcss@8.5.25)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@5.9.3)(vite@8.1.5(@types/node@26.1.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.100.0)(sass@1.102.0)(terser@5.49.0)(yaml@2.9.0))": [
       "npm:@nx/react"
     ],
-    "@nx/rollup@23.1.0(@babel/core@7.29.7)(@babel/traverse@7.29.7)(@types/babel__core@7.20.5)(nx@23.1.0)(typescript@7.0.2)": [
+    "@nx/rollup@23.1.0(@babel/core@7.29.7)(@babel/traverse@7.29.7)(@types/babel__core@7.20.5)(nx@23.1.0)(typescript@5.9.3)": [
       "npm:@nx/rollup"
     ],
-    "@nx/vite@23.1.0(@babel/traverse@7.29.7)(@nx/eslint@23.1.0(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2))(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0))(nx@23.1.0)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.100.0)(sass@1.102.0)(terser@5.49.0)(yaml@2.9.0))": [
+    "@nx/vite@23.1.0(@babel/traverse@7.29.7)(@nx/eslint@23.1.0(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3))(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0))(nx@23.1.0)(typescript@5.9.3)(vite@8.1.5(@types/node@26.1.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.100.0)(sass@1.102.0)(terser@5.49.0)(yaml@2.9.0))": [
       "npm:@nx/vite"
     ],
-    "@nx/vitest@23.1.0(@babel/traverse@7.29.7)(@nx/eslint@23.1.0(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))(typescript@7.0.2))(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0))(nx@23.1.0)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.100.0)(sass@1.102.0)(terser@5.49.0)(yaml@2.9.0))": [
+    "@nx/vitest@23.1.0(@babel/traverse@7.29.7)(@nx/eslint@23.1.0(@babel/traverse@7.29.7)(@nx/jest@23.1.0(@babel/traverse@7.29.7)(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(nx@23.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))(typescript@5.9.3))(@zkochan/js-yaml@0.0.7)(eslint@10.8.0(jiti@2.7.0))(nx@23.1.0))(nx@23.1.0)(typescript@5.9.3)(vite@8.1.5(@types/node@26.1.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.100.0)(sass@1.102.0)(terser@5.49.0)(yaml@2.9.0))": [
       "npm:@nx/vitest"
     ],
-    "@nx/web@23.1.0(b1b8ec19818c3167abc1c99bac716c06)": [
+    "@nx/web@23.1.0(cd8190e7f424f7de6e2a2ec0d7ae9290)": [
       "npm:@nx/web"
     ],
-    "@nx/webpack@23.1.0(@babel/traverse@7.29.7)(nx@23.1.0)(typescript@7.0.2)(webpack@5.106.2(postcss@8.5.25))": [
+    "@nx/webpack@23.1.0(@babel/traverse@7.29.7)(nx@23.1.0)(typescript@5.9.3)(webpack@5.106.2(postcss@8.5.25))": [
       "npm:@nx/webpack"
     ],
     "@nx/workspace@23.1.0": [
@@ -12500,7 +12437,7 @@
     "@parcel/watcher@2.6.0": [
       "npm:@parcel/watcher"
     ],
-    "@phenomnomnominal/tsquery@6.2.0(typescript@7.0.2)": [
+    "@phenomnomnominal/tsquery@6.2.0(typescript@5.9.3)": [
       "npm:@phenomnomnominal/tsquery"
     ],
     "@pkgjs/parseargs@0.11.0": [
@@ -12572,7 +12509,7 @@
     "@rollup/plugin-node-resolve@15.3.1": [
       "npm:@rollup/plugin-node-resolve"
     ],
-    "@rollup/plugin-typescript@12.3.0(tslib@2.8.1)(typescript@7.0.2)": [
+    "@rollup/plugin-typescript@12.3.0(tslib@2.8.1)(typescript@5.9.3)": [
       "npm:@rollup/plugin-typescript"
     ],
     "@rollup/pluginutils@5.4.0": [
@@ -12659,19 +12596,19 @@
     "@svgr/babel-preset@8.1.0(@babel/core@7.29.7)": [
       "npm:@svgr/babel-preset"
     ],
-    "@svgr/core@8.1.0(typescript@7.0.2)": [
+    "@svgr/core@8.1.0(typescript@5.9.3)": [
       "npm:@svgr/core"
     ],
     "@svgr/hast-util-to-babel-ast@8.0.0": [
       "npm:@svgr/hast-util-to-babel-ast"
     ],
-    "@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(typescript@7.0.2))": [
+    "@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(typescript@5.9.3))": [
       "npm:@svgr/plugin-jsx"
     ],
-    "@svgr/plugin-svgo@8.1.0(@svgr/core@8.1.0(typescript@7.0.2))(typescript@7.0.2)": [
+    "@svgr/plugin-svgo@8.1.0(@svgr/core@8.1.0(typescript@5.9.3))(typescript@5.9.3)": [
       "npm:@svgr/plugin-svgo"
     ],
-    "@svgr/webpack@8.1.0(typescript@7.0.2)": [
+    "@svgr/webpack@8.1.0(typescript@5.9.3)": [
       "npm:@svgr/webpack"
     ],
     "@swc/helpers@0.5.15": [
@@ -12719,11 +12656,17 @@
     "@types/babel__traverse@7.28.0": [
       "npm:@types/babel__traverse"
     ],
+    "@types/bcrypt@6.0.0": [
+      "npm:@types/bcrypt"
+    ],
     "@types/body-parser@1.19.6": [
       "npm:@types/body-parser"
     ],
     "@types/connect@3.4.38": [
       "npm:@types/connect"
+    ],
+    "@types/cookie-parser@1.4.10(@types/express@5.0.6)": [
+      "npm:@types/cookie-parser"
     ],
     "@types/d3-array@3.2.2": [
       "npm:@types/d3-array"
@@ -12752,6 +12695,9 @@
     "@types/d3-timer@3.0.2": [
       "npm:@types/d3-timer"
     ],
+    "@types/ejs@3.1.5": [
+      "npm:@types/ejs"
+    ],
     "@types/eslint-scope@3.7.7": [
       "npm:@types/eslint-scope"
     ],
@@ -12779,6 +12725,9 @@
     "@types/http-proxy@1.17.17": [
       "npm:@types/http-proxy"
     ],
+    "@types/ioredis@5.0.0": [
+      "npm:@types/ioredis"
+    ],
     "@types/istanbul-lib-coverage@2.0.6": [
       "npm:@types/istanbul-lib-coverage"
     ],
@@ -12805,6 +12754,9 @@
     ],
     "@types/node@26.1.2": [
       "npm:@types/node@26.1.2"
+    ],
+    "@types/nodemailer@8.0.1": [
+      "npm:@types/nodemailer"
     ],
     "@types/parse-json@4.0.2": [
       "npm:@types/parse-json"
@@ -12850,66 +12802,6 @@
     ],
     "@types/yargs@17.0.35": [
       "npm:@types/yargs"
-    ],
-    "@typescript/typescript-aix-ppc64@7.0.2": [
-      "npm:@typescript/typescript-aix-ppc64"
-    ],
-    "@typescript/typescript-darwin-arm64@7.0.2": [
-      "npm:@typescript/typescript-darwin-arm64"
-    ],
-    "@typescript/typescript-darwin-x64@7.0.2": [
-      "npm:@typescript/typescript-darwin-x64"
-    ],
-    "@typescript/typescript-freebsd-arm64@7.0.2": [
-      "npm:@typescript/typescript-freebsd-arm64"
-    ],
-    "@typescript/typescript-freebsd-x64@7.0.2": [
-      "npm:@typescript/typescript-freebsd-x64"
-    ],
-    "@typescript/typescript-linux-arm64@7.0.2": [
-      "npm:@typescript/typescript-linux-arm64"
-    ],
-    "@typescript/typescript-linux-arm@7.0.2": [
-      "npm:@typescript/typescript-linux-arm"
-    ],
-    "@typescript/typescript-linux-loong64@7.0.2": [
-      "npm:@typescript/typescript-linux-loong64"
-    ],
-    "@typescript/typescript-linux-mips64el@7.0.2": [
-      "npm:@typescript/typescript-linux-mips64el"
-    ],
-    "@typescript/typescript-linux-ppc64@7.0.2": [
-      "npm:@typescript/typescript-linux-ppc64"
-    ],
-    "@typescript/typescript-linux-riscv64@7.0.2": [
-      "npm:@typescript/typescript-linux-riscv64"
-    ],
-    "@typescript/typescript-linux-s390x@7.0.2": [
-      "npm:@typescript/typescript-linux-s390x"
-    ],
-    "@typescript/typescript-linux-x64@7.0.2": [
-      "npm:@typescript/typescript-linux-x64"
-    ],
-    "@typescript/typescript-netbsd-arm64@7.0.2": [
-      "npm:@typescript/typescript-netbsd-arm64"
-    ],
-    "@typescript/typescript-netbsd-x64@7.0.2": [
-      "npm:@typescript/typescript-netbsd-x64"
-    ],
-    "@typescript/typescript-openbsd-arm64@7.0.2": [
-      "npm:@typescript/typescript-openbsd-arm64"
-    ],
-    "@typescript/typescript-openbsd-x64@7.0.2": [
-      "npm:@typescript/typescript-openbsd-x64"
-    ],
-    "@typescript/typescript-sunos-x64@7.0.2": [
-      "npm:@typescript/typescript-sunos-x64"
-    ],
-    "@typescript/typescript-win32-arm64@7.0.2": [
-      "npm:@typescript/typescript-win32-arm64"
-    ],
-    "@typescript/typescript-win32-x64@7.0.2": [
-      "npm:@typescript/typescript-win32-x64"
     ],
     "@ungap/structured-clone@1.3.3": [
       "npm:@ungap/structured-clone"
@@ -13343,6 +13235,9 @@
     "clsx@2.1.1": [
       "npm:clsx"
     ],
+    "cluster-key-slot@1.1.1": [
+      "npm:cluster-key-slot"
+    ],
     "co@4.6.0": [
       "npm:co"
     ],
@@ -13445,10 +13340,7 @@
     "cosmiconfig@8.3.6(typescript@5.9.3)": [
       "npm:cosmiconfig@8.3.6"
     ],
-    "cosmiconfig@8.3.6(typescript@7.0.2)": [
-      "npm:cosmiconfig@8.3.6"
-    ],
-    "cosmiconfig@9.0.2(typescript@7.0.2)": [
+    "cosmiconfig@9.0.2(typescript@5.9.3)": [
       "npm:cosmiconfig@9.0.2"
     ],
     "create-require@1.1.1": [
@@ -13568,6 +13460,9 @@
     "delayed-stream@1.0.0": [
       "npm:delayed-stream"
     ],
+    "denque@2.1.0": [
+      "npm:denque"
+    ],
     "depd@2.0.0": [
       "npm:depd"
     ],
@@ -13629,7 +13524,10 @@
       "npm:ee-first"
     ],
     "ejs@5.0.1": [
-      "npm:ejs"
+      "npm:ejs@5.0.1"
+    ],
+    "ejs@6.0.1": [
+      "npm:ejs@6.0.1"
     ],
     "electron-to-chromium@1.5.398": [
       "npm:electron-to-chromium"
@@ -13838,9 +13736,6 @@
     "fork-ts-checker-webpack-plugin@9.1.0(typescript@5.9.3)(webpack@5.106.2(postcss@8.5.25))": [
       "npm:fork-ts-checker-webpack-plugin"
     ],
-    "fork-ts-checker-webpack-plugin@9.1.0(typescript@7.0.2)(webpack@5.106.2(postcss@8.5.25))": [
-      "npm:fork-ts-checker-webpack-plugin"
-    ],
     "form-data@4.0.6": [
       "npm:form-data"
     ],
@@ -14009,6 +13904,9 @@
     "internmap@2.0.3": [
       "npm:internmap"
     ],
+    "ioredis@5.11.1": [
+      "npm:ioredis"
+    ],
     "ip-regex@2.1.0": [
       "npm:ip-regex"
     ],
@@ -14111,7 +14009,7 @@
     "jest-circus@30.4.2(babel-plugin-macros@3.1.0)": [
       "npm:jest-circus"
     ],
-    "jest-config@30.4.2(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2))": [
+    "jest-config@30.4.2(@types/node@26.1.2)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3))": [
       "npm:jest-config"
     ],
     "jest-diff@30.4.1": [
@@ -14531,6 +14429,9 @@
     "node-releases@2.0.51": [
       "npm:node-releases"
     ],
+    "nodemailer@9.0.3": [
+      "npm:nodemailer"
+    ],
     "normalize-path@3.0.0": [
       "npm:normalize-path"
     ],
@@ -14732,7 +14633,7 @@
     "postcss-import@14.1.0(postcss@8.5.25)": [
       "npm:postcss-import"
     ],
-    "postcss-loader@8.2.1(postcss@8.5.25)(typescript@7.0.2)(webpack@5.106.2(postcss@8.5.25))": [
+    "postcss-loader@8.2.1(postcss@8.5.25)(typescript@5.9.3)(webpack@5.106.2(postcss@8.5.25))": [
       "npm:postcss-loader"
     ],
     "postcss-merge-longhand@7.0.7(postcss@8.5.25)": [
@@ -14910,6 +14811,12 @@
     ],
     "recharts@2.15.4(react-dom@19.2.8(react@19.2.8))(react@19.2.8)": [
       "npm:recharts"
+    ],
+    "redis-errors@1.2.0": [
+      "npm:redis-errors"
+    ],
+    "redis-parser@3.0.0": [
+      "npm:redis-parser"
     ],
     "reflect-metadata@0.2.2": [
       "npm:reflect-metadata"
@@ -15169,6 +15076,9 @@
     "stack-utils@2.0.6": [
       "npm:stack-utils"
     ],
+    "standard-as-callback@2.1.0": [
+      "npm:standard-as-callback"
+    ],
     "statuses@2.0.2": [
       "npm:statuses"
     ],
@@ -15297,13 +15207,13 @@
     "token-types@6.1.2": [
       "npm:token-types"
     ],
-    "ts-loader@9.6.2(loader-utils@2.0.4)(typescript@7.0.2)(webpack@5.106.2(postcss@8.5.25))": [
+    "ts-loader@9.6.2(loader-utils@2.0.4)(typescript@5.9.3)(webpack@5.106.2(postcss@8.5.25))": [
       "npm:ts-loader"
     ],
-    "ts-node@10.9.2(@types/node@22.20.1)(typescript@7.0.2)": [
+    "ts-node@10.9.2(@types/node@22.20.1)(typescript@6.0.3)": [
       "npm:ts-node"
     ],
-    "ts-node@10.9.2(@types/node@26.1.2)(typescript@7.0.2)": [
+    "ts-node@10.9.2(@types/node@26.1.2)(typescript@5.9.3)": [
       "npm:ts-node"
     ],
     "tsconfig-paths-webpack-plugin@4.2.0": [
@@ -15339,17 +15249,14 @@
     "typedarray@0.0.6": [
       "npm:typedarray"
     ],
-    "typeorm@0.3.31(babel-plugin-macros@3.1.0)(pg@8.22.0)(ts-node@10.9.2(@types/node@22.20.1)(typescript@7.0.2))": [
+    "typeorm@0.3.31(babel-plugin-macros@3.1.0)(ioredis@5.11.1)(pg@8.22.0)(ts-node@10.9.2(@types/node@22.20.1)(typescript@6.0.3))": [
       "npm:typeorm"
     ],
     "typescript@5.9.3": [
-      "npm:typescript@5.9.3"
+      "npm:typescript"
     ],
     "typescript@6.0.3": [
       "npm:typescript@6.0.3"
-    ],
-    "typescript@7.0.2": [
-      "npm:typescript"
     ],
     "uid@2.0.2": [
       "npm:uid"

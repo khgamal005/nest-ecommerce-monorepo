@@ -99,7 +99,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Get('me')
   me(@CurrentUser() user: any) {
-    return user;
+    return this.authService.getProfile(user?.id);
   }
 
   @UseGuards(JwtAuthGuard)

@@ -1,4 +1,10 @@
-﻿import { Injectable, UnauthorizedException, ConflictException, BadRequestException } from '@nestjs/common';
+﻿import {
+  Injectable,
+  UnauthorizedException,
+  ConflictException,
+  BadRequestException,
+  NotFoundException,
+} from '@nestjs/common';
 import * as crypto from 'crypto';
 import { UsersService } from '../users/users.service';
 import { AuthHelper } from './utils/auth.helper';
@@ -139,6 +145,17 @@ export class AuthService {
     await this.usersService.updatePassword(user.id, hashedPassword);
 
     return { status: 'success', message: 'Password has been reset successfully' };
+  }
+
+  async getProfile(userId: string) {
+    const user = await this.usersService.findById(userId);
+    if (!user) throw new NotFoundException('User not found');
+
+    return {
+      message: 'User profile fetched successfully',
+      success: true,
+      user: this.sanitize(user),
+    };
   }
 
   async sendChangePasswordOtp(userId: string) {

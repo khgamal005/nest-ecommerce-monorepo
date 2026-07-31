@@ -3431,7 +3431,7 @@
   },
   {
     "source": "npm:@nestjs/cli",
-    "target": "npm:typescript@5.9.3",
+    "target": "npm:typescript",
     "type": "static"
   },
   {
@@ -3646,36 +3646,6 @@
   },
   {
     "source": "npm:@nestjs/schematics",
-    "target": "npm:typescript@5.9.3",
-    "type": "static"
-  },
-  {
-    "source": "npm:@nestjs/schematics",
-    "target": "npm:@angular-devkit/core@19.2.24",
-    "type": "static"
-  },
-  {
-    "source": "npm:@nestjs/schematics",
-    "target": "npm:@angular-devkit/schematics@19.2.24",
-    "type": "static"
-  },
-  {
-    "source": "npm:@nestjs/schematics",
-    "target": "npm:comment-json",
-    "type": "static"
-  },
-  {
-    "source": "npm:@nestjs/schematics",
-    "target": "npm:jsonc-parser",
-    "type": "static"
-  },
-  {
-    "source": "npm:@nestjs/schematics",
-    "target": "npm:pluralize",
-    "type": "static"
-  },
-  {
-    "source": "npm:@nestjs/schematics",
     "target": "npm:typescript",
     "type": "static"
   },
@@ -3731,7 +3701,7 @@
   },
   {
     "source": "npm:@nx/devkit",
-    "target": "npm:ejs",
+    "target": "npm:ejs@5.0.1",
     "type": "static"
   },
   {
@@ -5390,6 +5360,11 @@
     "type": "static"
   },
   {
+    "source": "npm:@types/bcrypt",
+    "target": "npm:@types/node@22.20.1",
+    "type": "static"
+  },
+  {
     "source": "npm:@types/body-parser",
     "target": "npm:@types/connect",
     "type": "static"
@@ -5402,6 +5377,11 @@
   {
     "source": "npm:@types/connect",
     "target": "npm:@types/node@22.20.1",
+    "type": "static"
+  },
+  {
+    "source": "npm:@types/cookie-parser",
+    "target": "npm:@types/express",
     "type": "static"
   },
   {
@@ -5485,6 +5465,11 @@
     "type": "static"
   },
   {
+    "source": "npm:@types/ioredis",
+    "target": "npm:ioredis",
+    "type": "static"
+  },
+  {
     "source": "npm:@types/istanbul-lib-report",
     "target": "npm:@types/istanbul-lib-coverage",
     "type": "static"
@@ -5517,6 +5502,11 @@
   {
     "source": "npm:@types/node@26.1.2",
     "target": "npm:undici-types@8.3.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:@types/nodemailer",
+    "target": "npm:@types/node@22.20.1",
     "type": "static"
   },
   {
@@ -6777,31 +6767,6 @@
   {
     "source": "npm:cosmiconfig@7.1.0",
     "target": "npm:yaml@1.10.3",
-    "type": "static"
-  },
-  {
-    "source": "npm:cosmiconfig@8.3.6",
-    "target": "npm:import-fresh",
-    "type": "static"
-  },
-  {
-    "source": "npm:cosmiconfig@8.3.6",
-    "target": "npm:js-yaml@4.3.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:cosmiconfig@8.3.6",
-    "target": "npm:parse-json",
-    "type": "static"
-  },
-  {
-    "source": "npm:cosmiconfig@8.3.6",
-    "target": "npm:path-type",
-    "type": "static"
-  },
-  {
-    "source": "npm:cosmiconfig@8.3.6",
-    "target": "npm:typescript@5.9.3",
     "type": "static"
   },
   {
@@ -8206,76 +8171,6 @@
   },
   {
     "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:typescript@5.9.3",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:webpack@5.106.2",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:@babel/code-frame",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:chalk",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:chokidar@4.0.3",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:cosmiconfig@8.3.6",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:deepmerge",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:fs-extra",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:memfs",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:minimatch@3.1.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:node-abort-controller",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:schema-utils@3.3.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:semver@7.8.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:tapable",
-    "type": "static"
-  },
-  {
-    "source": "npm:fork-ts-checker-webpack-plugin",
     "target": "npm:typescript",
     "type": "static"
   },
@@ -8702,6 +8597,41 @@
   {
     "source": "npm:inflight",
     "target": "npm:wrappy",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:@ioredis/commands",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:cluster-key-slot",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:debug@4.4.3",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:denque",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:redis-errors",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:redis-parser",
+    "type": "static"
+  },
+  {
+    "source": "npm:ioredis",
+    "target": "npm:standard-as-callback",
     "type": "static"
   },
   {
@@ -10521,7 +10451,7 @@
   },
   {
     "source": "npm:nx",
-    "target": "npm:ejs",
+    "target": "npm:ejs@5.0.1",
     "type": "static"
   },
   {
@@ -12015,6 +11945,11 @@
     "type": "static"
   },
   {
+    "source": "npm:redis-parser",
+    "target": "npm:redis-errors",
+    "type": "static"
+  },
+  {
     "source": "npm:regenerate-unicode-properties",
     "target": "npm:regenerate",
     "type": "static"
@@ -13401,7 +13336,7 @@
   },
   {
     "source": "npm:ts-node",
-    "target": "npm:typescript",
+    "target": "npm:typescript@6.0.3",
     "type": "static"
   },
   {
@@ -13646,112 +13581,17 @@
   },
   {
     "source": "npm:typeorm",
+    "target": "npm:ioredis",
+    "type": "static"
+  },
+  {
+    "source": "npm:typeorm",
     "target": "npm:pg",
     "type": "static"
   },
   {
     "source": "npm:typeorm",
     "target": "npm:ts-node",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-aix-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-freebsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-loong64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-mips64el",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-s390x",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-linux-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-netbsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-netbsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-openbsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-openbsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-sunos-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-win32-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:typescript",
-    "target": "npm:@typescript/typescript-win32-x64",
     "type": "static"
   },
   {
