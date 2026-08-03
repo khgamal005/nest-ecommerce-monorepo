@@ -39,32 +39,42 @@ export class AuthService {
   }
 
     async verifyUserRegistration(dto: VerifyRegistrationDto) {
-    const existingUser = await this.usersService.findByEmail(dto.email);
+    const pending = await this.authHelper.getPendingRegistration(dto.otp);
+    if (!pending) {
+      throw new BadRequestException(
+        'Invalid or expired registration OTP. Please register again.',
+      );
+    }
+
+    const existingUser = await this.usersService.findByEmail(pending.email);
     if (existingUser) {
       throw new ConflictException('User with this email already exists.');
     }
 
-    await this.authHelper.verifyOtp(dto.email, dto.otp);
+    await this.authHelper.verifyOtp(pending.email, dto.otp);
 
-    const hashedPassword = await this.authProvider.hashPassword(dto.password);
+    const hashedPassword = await this.authProvider.hashPassword(pending.password);
 
     const user = await this.usersService.create({
-      email: dto.email,
+      email: pending.email,
       password: hashedPassword,
-      name: dto.name,
-      addresses: dto.address
+      name: pending.name,
+      addresses: pending.address
         ? [
             {
               label: AddressType.HOME,
-              country: dto.address.country,
-              city: dto.address.city,
-              street: dto.address.street,
-              phone: dto.address.phone || null,
+              country: pending.address.country ?? '',
+              city: pending.address.city,
+              street: pending.address.street,
+              zipCode: pending.address.zipCode || null,
+              phone: pending.address.phone || null,
               isDefault: true,
             },
           ]
         : [],
     });
+
+    await this.authHelper.deletePendingRegistration(dto.otp);
 
     const token = this.issueAccessToken(user);
     return {

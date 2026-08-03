@@ -33,6 +33,7 @@ const keys = {
   resetToken: (email: string) => `reset_token:${email}`,
   loginFailed: (email: string) => `login_failed:${email}`,
   loginLock: (email: string) => `login_lock:${email}`,
+  pendingRegistration: (otp: string) => `pending_registration:${otp}`,
 };
 
 @Injectable()
@@ -92,13 +93,10 @@ export class AuthHelper {
       throw new BadRequestException('Too many requests. Try again after 1 hour.');
     }
 
-    await this.redisService.set(countKey, count + 1, 'KEEPTTL');
-    if (count === 0) {
-      await this.redisService.expire(countKey, OTP_REQUEST_WINDOW);
-    }
+    await this.redisService.set(countKey, count + 1, 'EX', OTP_REQUEST_WINDOW);
   }
 
-  async sendOtp(name: string, email: string, template: string): Promise<void> {
+  async sendOtp(name: string, email: string, template: string): Promise<string> {
     const otp = crypto.randomInt(1000, 9999).toString();
 
     try {
@@ -111,6 +109,8 @@ export class AuthHelper {
       this.redisService.set(keys.otp(email), otp, 'EX', OTP_TTL),
       this.redisService.set(keys.otpCooldown(email), 'true', 'EX', OTP_COOLDOWN_TTL),
     ]);
+
+    return otp;
   }
 
   async verifyOtp(email: string, otp: string): Promise<string> {
@@ -207,9 +207,32 @@ export class AuthHelper {
 
     await this.checkOtpRegistration(email);
     await this.trackOtpRequests(email);
-    await this.sendOtp(name, email, 'user-activation-mail');
+    const otp = await this.sendOtp(name, email, 'user-activation-mail');
+
+    const pending = JSON.stringify({
+      email: dto.email,
+      password: dto.password,
+      name: dto.name,
+      address: dto.address ?? null,
+    });
+    await this.redisService.set(keys.pendingRegistration(otp), pending, 'EX', OTP_TTL);
 
     return { message: 'OTP sent to your email, please check your inbox.' };
+  }
+
+  async getPendingRegistration(otp: string): Promise<{
+    email: string;
+    password: string;
+    name: string;
+    address: RegisterDto['address'] | null;
+  } | null> {
+    const raw = await this.redisService.get(keys.pendingRegistration(otp));
+    if (!raw) return null;
+    return JSON.parse(raw);
+  }
+
+  async deletePendingRegistration(otp: string): Promise<void> {
+    await this.redisService.del(keys.pendingRegistration(otp));
   }
 
   async recordFailedLogin(email: string): Promise<void> {

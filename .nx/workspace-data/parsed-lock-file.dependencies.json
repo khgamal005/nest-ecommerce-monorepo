@@ -3575,6 +3575,26 @@
     "type": "static"
   },
   {
+    "source": "npm:@nestjs/mapped-types",
+    "target": "npm:@nestjs/common",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/mapped-types",
+    "target": "npm:reflect-metadata",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/mapped-types",
+    "target": "npm:class-transformer",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/mapped-types",
+    "target": "npm:class-validator",
+    "type": "static"
+  },
+  {
     "source": "npm:@nestjs/passport",
     "target": "npm:@nestjs/common",
     "type": "static"
@@ -3647,6 +3667,61 @@
   {
     "source": "npm:@nestjs/schematics",
     "target": "npm:typescript",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:@microsoft/tsdoc",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:@nestjs/common",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:@nestjs/core",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:@nestjs/mapped-types",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:js-yaml@5.2.1",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:lodash",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:path-to-regexp@8.4.2",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:reflect-metadata",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:swagger-ui-dist@5.32.8",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:class-transformer",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/swagger",
+    "target": "npm:class-validator",
     "type": "static"
   },
   {
@@ -9740,6 +9815,11 @@
     "type": "static"
   },
   {
+    "source": "npm:js-yaml@5.2.1",
+    "target": "npm:argparse@2.0.1",
+    "type": "static"
+  },
+  {
     "source": "npm:jsonfile",
     "target": "npm:universalify",
     "type": "static"
@@ -13057,6 +13137,26 @@
   {
     "source": "npm:svgo@4.0.2",
     "target": "npm:sax",
+    "type": "static"
+  },
+  {
+    "source": "npm:swagger-ui-dist@5.32.11",
+    "target": "npm:@scarf/scarf",
+    "type": "static"
+  },
+  {
+    "source": "npm:swagger-ui-dist@5.32.8",
+    "target": "npm:@scarf/scarf",
+    "type": "static"
+  },
+  {
+    "source": "npm:swagger-ui-express",
+    "target": "npm:express@5.2.1",
+    "type": "static"
+  },
+  {
+    "source": "npm:swagger-ui-express",
+    "target": "npm:swagger-ui-dist@5.32.11",
     "type": "static"
   },
   {

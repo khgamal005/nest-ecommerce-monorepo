@@ -1,4 +1,5 @@
 ﻿import { Body, Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
+import { ApiOperation, ApiSecurity, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { AuthService } from './auth.service';
 import { AuthHelper } from './utils/auth.helper';
@@ -30,6 +31,7 @@ function clearAuthCookie(res: Response) {
   res.clearCookie(COOKIE_NAME, { path: '/' });
 }
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(
@@ -37,11 +39,13 @@ export class AuthController {
     private readonly authHelper: AuthHelper,
   ) {}
 
+  @ApiOperation({ summary: 'Send registration OTP to email' })
   @Post('register')
   async register(@Body() dto: RegisterDto) {
     return this.authHelper.initiateRegistration(dto, 'user');
   }
 
+  @ApiOperation({ summary: 'Verify registration OTP and create account' })
   @Post('verify-registration-otp')
   async verifyRegistrationOtp(
     @Body() dto: VerifyRegistrationDto,
@@ -56,6 +60,7 @@ export class AuthController {
     };
   }
 
+  @ApiOperation({ summary: 'Login and set auth cookie' })
   @Post('login')
   async login(@Body() dto: LoginDto, @Res({ passthrough: true }) res: Response) {
     const result = await this.authService.login(dto);
@@ -67,6 +72,7 @@ export class AuthController {
     };
   }
 
+  @ApiOperation({ summary: 'Logout and clear auth cookie' })
   @Post('logout')
   logout(@Res({ passthrough: true }) res: Response) {
     clearAuthCookie(res);
@@ -76,12 +82,14 @@ export class AuthController {
     };
   }
 
+  @ApiOperation({ summary: 'Send password reset OTP to email' })
   @Post('forgot-password')
   async forgotPassword(@Body() dto: ForgotPasswordDto) {
     await this.authHelper.handleForgetPassword(dto.email, 'user');
     return { message: 'OTP sent. Please check your email.' };
   }
 
+  @ApiOperation({ summary: 'Verify password reset OTP and get reset token' })
   @Post('verify-forget-password-otp')
   async verifyForgetPasswordOtp(@Body() dto: VerifyOtpDto) {
     const resetToken = await this.authHelper.verifyForgetPasswordOtp(dto.email, dto.otp);
@@ -91,24 +99,31 @@ export class AuthController {
     };
   }
 
+  @ApiOperation({ summary: 'Reset password using email, reset token and new password' })
   @Post('reset-password')
   resetPassword(@Body() dto: ResetPasswordDto) {
     return this.authService.resetPassword(dto);
   }
 
+  @ApiSecurity('cookie')
   @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'Get current user profile' })
   @Get('me')
   me(@CurrentUser() user: any) {
     return this.authService.getProfile(user?.id);
   }
 
+  @ApiSecurity('cookie')
   @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'Send OTP to change password' })
   @Post('send-change-password-otp')
   sendChangePasswordOtp(@CurrentUser() user: any) {
     return this.authService.sendChangePasswordOtp(user?.id);
   }
 
+  @ApiSecurity('cookie')
   @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'Verify change-password OTP' })
   @Post('verify-change-password-otp')
   verifyChangePasswordOtp(
     @CurrentUser() user: any,
@@ -117,7 +132,9 @@ export class AuthController {
     return this.authService.verifyChangePasswordOtp(user?.id, dto.otp);
   }
 
+  @ApiSecurity('cookie')
   @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'Change password' })
   @Post('change-password')
   changePassword(@CurrentUser() user: any, @Body() dto: ChangePasswordDto) {
     return this.authService.changePassword(user?.id, dto.currentPassword, dto.newPassword);

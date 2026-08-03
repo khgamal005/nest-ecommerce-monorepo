@@ -2016,6 +2016,15 @@
         "hash": "sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA=="
       }
     },
+    "npm:@microsoft/tsdoc": {
+      "type": "npm",
+      "name": "npm:@microsoft/tsdoc",
+      "data": {
+        "version": "0.16.0",
+        "packageName": "@microsoft/tsdoc",
+        "hash": "sha512-xgAyonlVVS+q7Vc7qLW0UrJU7rSFcETRWsqdXZtjzRU8dF+6CkozTK4V4y1LwOX7j8r/vHphjDeMeGI4tNGeGA=="
+      }
+    },
     "npm:@napi-rs/wasm-runtime@0.2.4": {
       "type": "npm",
       "name": "npm:@napi-rs/wasm-runtime@0.2.4",
@@ -2088,6 +2097,15 @@
         "hash": "sha512-rK8aE/3/Ma45gAWfCksAXUNbOoSOUudU0Kn3rT39htPF7wsYXtKfjALKeKKJbFrIWbLjsbqfXX5bIJNvgBugGA=="
       }
     },
+    "npm:@nestjs/mapped-types": {
+      "type": "npm",
+      "name": "npm:@nestjs/mapped-types",
+      "data": {
+        "version": "2.1.1",
+        "packageName": "@nestjs/mapped-types",
+        "hash": "sha512-SCCoMEJ6jdeI5h/N+KCVF1+pmg/hmEkNA5nHTS8Gvww7T/LCl4o1gFLinw2iQ60w7slFkszHcGLKGdazVI4F8A=="
+      }
+    },
     "npm:@nestjs/passport": {
       "type": "npm",
       "name": "npm:@nestjs/passport",
@@ -2113,6 +2131,15 @@
         "version": "11.1.0",
         "packageName": "@nestjs/schematics",
         "hash": "sha512-lVxGZ46tcdItFMoXr6vyKWlnOsm1SZm/GUqAEDvy2RL4Q4O+3bkziAhrO7Y8JLssFUUvNFEGqAizI52WAxhjDw=="
+      }
+    },
+    "npm:@nestjs/swagger": {
+      "type": "npm",
+      "name": "npm:@nestjs/swagger",
+      "data": {
+        "version": "11.4.6",
+        "packageName": "@nestjs/swagger",
+        "hash": "sha512-Le136h2WC7HGsd70+WyK1qrm+Zq7kFxBLkYC1JgAVqNRCt8kNh7bMF7Qkn65D5j2t/aks0+VbWmUVlYIwPrs3A=="
       }
     },
     "npm:@nestjs/testing": {
@@ -2932,6 +2959,15 @@
         "version": "2.1.7",
         "packageName": "@rspack/core",
         "hash": "sha512-d5Ju3zXzGgbqQWvlMlLUtek2eFPIzsFe2QOF4nwTAknxo/4OZ64t+kPT9nM6fr3aZX93VK0R3v02/kZYIRrV9Q=="
+      }
+    },
+    "npm:@scarf/scarf": {
+      "type": "npm",
+      "name": "npm:@scarf/scarf",
+      "data": {
+        "version": "1.4.0",
+        "packageName": "@scarf/scarf",
+        "hash": "sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ=="
       }
     },
     "npm:@sinclair/typebox": {
@@ -7506,6 +7542,15 @@
         "hash": "sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q=="
       }
     },
+    "npm:js-yaml@5.2.1": {
+      "type": "npm",
+      "name": "npm:js-yaml@5.2.1",
+      "data": {
+        "version": "5.2.1",
+        "packageName": "js-yaml",
+        "hash": "sha512-zfLtNfQqxVqq3uaTqSkh4x4hZw3KHobGUA0fJUj4wawW8bsQLTVqpHdXSIzidh7o+4lEW36tANuAGdaFx6Zgnw=="
+      }
+    },
     "npm:jsesc": {
       "type": "npm",
       "name": "npm:jsesc",
@@ -10719,6 +10764,33 @@
         "hash": "sha512-ekx94z1rRc5LDi6oSUaeRnYhd0UOJxdtQCL2rF8xpWxD3TPAsISWOrxezqGovqS38GRZOdpDfvQe3ts6F7nsng=="
       }
     },
+    "npm:swagger-ui-dist@5.32.11": {
+      "type": "npm",
+      "name": "npm:swagger-ui-dist@5.32.11",
+      "data": {
+        "version": "5.32.11",
+        "packageName": "swagger-ui-dist",
+        "hash": "sha512-NEZzRuxHHQkbG3GCjNbzz+XRDoM7AztnXyzc2VCW5RXUvZBDW7bb3W29/SPfvav3yOzqnDTOLP2Xzbjxo0bldQ=="
+      }
+    },
+    "npm:swagger-ui-dist@5.32.8": {
+      "type": "npm",
+      "name": "npm:swagger-ui-dist@5.32.8",
+      "data": {
+        "version": "5.32.8",
+        "packageName": "swagger-ui-dist",
+        "hash": "sha512-dgMdWXIgnI4zX4OPhKEdWnlDODbgm8W3AX0Ivn/BBqcUh6xZsBxhZMnvk6DJyRz1BTrj8dPxtarmEGgkz30oyA=="
+      }
+    },
+    "npm:swagger-ui-express": {
+      "type": "npm",
+      "name": "npm:swagger-ui-express",
+      "data": {
+        "version": "5.0.1",
+        "packageName": "swagger-ui-express",
+        "hash": "sha512-SrNU3RiBGTLLmFU8GIJdOdanJTl4TOmT27tt3bWWHppqYmAZ6IDuEuBvMU6nZq0zLEe6b/1rACXCgLZqO6ZfrA=="
+      }
+    },
     "npm:symbol-observable": {
       "type": "npm",
       "name": "npm:symbol-observable",
@@ -12248,6 +12320,9 @@
     "@lukeed/csprng@1.1.0": [
       "npm:@lukeed/csprng"
     ],
+    "@microsoft/tsdoc@0.16.0": [
+      "npm:@microsoft/tsdoc"
+    ],
     "@napi-rs/wasm-runtime@0.2.4": [
       "npm:@napi-rs/wasm-runtime@0.2.4"
     ],
@@ -12275,6 +12350,9 @@
     "@nestjs/jwt@11.0.2(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))": [
       "npm:@nestjs/jwt"
     ],
+    "@nestjs/mapped-types@2.1.1(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)": [
+      "npm:@nestjs/mapped-types"
+    ],
     "@nestjs/passport@11.0.5(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)": [
       "npm:@nestjs/passport"
     ],
@@ -12283,6 +12361,9 @@
     ],
     "@nestjs/schematics@11.1.0(chokidar@4.0.3)(typescript@5.9.3)": [
       "npm:@nestjs/schematics"
+    ],
+    "@nestjs/swagger@11.4.6(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)": [
+      "npm:@nestjs/swagger"
     ],
     "@nestjs/testing@11.1.28(@nestjs/common@11.1.28(class-transformer@0.5.1)(class-validator@0.14.4)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.28)(@nestjs/platform-express@11.1.28)": [
       "npm:@nestjs/testing"
@@ -12556,6 +12637,9 @@
     ],
     "@rspack/core@2.1.7": [
       "npm:@rspack/core"
+    ],
+    "@scarf/scarf@1.4.0": [
+      "npm:@scarf/scarf"
     ],
     "@sinclair/typebox@0.34.52": [
       "npm:@sinclair/typebox"
@@ -14084,6 +14168,9 @@
     "js-yaml@4.3.0": [
       "npm:js-yaml@4.3.0"
     ],
+    "js-yaml@5.2.1": [
+      "npm:js-yaml@5.2.1"
+    ],
     "jsesc@3.1.0": [
       "npm:jsesc"
     ],
@@ -15146,6 +15233,15 @@
     ],
     "svgo@4.0.2": [
       "npm:svgo@4.0.2"
+    ],
+    "swagger-ui-dist@5.32.11": [
+      "npm:swagger-ui-dist@5.32.11"
+    ],
+    "swagger-ui-dist@5.32.8": [
+      "npm:swagger-ui-dist@5.32.8"
+    ],
+    "swagger-ui-express@5.0.1(express@5.2.1)": [
+      "npm:swagger-ui-express"
     ],
     "symbol-observable@4.0.0": [
       "npm:symbol-observable"

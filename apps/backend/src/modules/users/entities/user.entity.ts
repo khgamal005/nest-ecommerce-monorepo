@@ -16,18 +16,15 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   name: string | null;
 
   @Index({ unique: true })
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   email: string | null;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   password: string | null;
-
-  @Column('simple-array', { nullable: true })
-  followings: string[];
 
   @OneToMany(() => Address, (address) => address.user, { cascade: true })
   addresses: Address[];

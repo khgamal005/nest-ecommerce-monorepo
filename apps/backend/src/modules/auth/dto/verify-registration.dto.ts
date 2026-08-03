@@ -1,26 +1,8 @@
-import { IsEmail, IsObject, IsOptional, IsString, MinLength } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsString } from 'class-validator';
 
 export class VerifyRegistrationDto {
-  @IsString()
-  name: string;
-
-  @IsEmail()
-  email: string;
-
-  @IsString()
-  @MinLength(6)
-  password: string;
-
+  @ApiProperty({ example: '123456' })
   @IsString()
   otp: string;
-
-  @IsOptional()
-  @IsObject()
-  address?: {
-    country?: string;
-    city?: string;
-    street?: string;
-    zipCode?: string;
-    phone?: string;
-  };
 }
