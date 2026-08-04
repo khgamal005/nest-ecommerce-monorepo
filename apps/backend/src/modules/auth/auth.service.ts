@@ -62,13 +62,13 @@ export class AuthService {
       addresses: pending.address
         ? [
             {
-              label: AddressType.HOME,
+              label: pending.address.label ?? AddressType.HOME,
               country: pending.address.country ?? '',
               city: pending.address.city,
               street: pending.address.street,
               zipCode: pending.address.zipCode || null,
               phone: pending.address.phone || null,
-              isDefault: true,
+              isDefault: pending.address.isDefault ?? true,
             },
           ]
         : [],

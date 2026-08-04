@@ -18,8 +18,8 @@ export class ShippingController {
     return this.shippingService.findOne(id);
   }
 
-  // Admin-dashboard only writes by default. Adjust per module -- e.g. cart/orders
-  // need customer-level write access from user-web too (use JwtAuthGuard only
+  // Admin-ui only writes by default. Adjust per module -- e.g. cart/orders
+  // need customer-level write access from user-ui too (use JwtAuthGuard only
   // for those routes instead of RolesGuard).
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin', 'staff')

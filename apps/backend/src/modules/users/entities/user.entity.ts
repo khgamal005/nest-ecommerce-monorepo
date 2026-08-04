@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { Address } from './address.entity';
 
-export type UserRole = 'user' | 'admin';
+export type UserRole = 'user' | 'admin' | 'seller' | 'staff';
 
 @Entity('users')
 export class User {

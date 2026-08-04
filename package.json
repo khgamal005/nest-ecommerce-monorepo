@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev:user-web": "nx dev user-web",
-    "dev:admin-dashboard": "nx dev admin-dashboard",
+    "dev:user-ui": "nx dev user-ui",
+    "dev:admin-ui": "nx dev admin-ui",
     "dev:backend": "nx serve backend",
     "build": "nx run-many --target=build --all",
     "test": "nx run-many --target=test --all",

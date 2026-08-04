@@ -9,7 +9,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
-  // Public: used by user-web storefront
+  // Public: used by user-ui storefront
   @Get()
   findAll() {
     return this.productsService.findAll();
@@ -20,7 +20,7 @@ export class ProductsController {
     return this.productsService.findBySlug(slug);
   }
 
-  // Admin-only: used by admin-dashboard product management
+  // Admin-only: used by Admin-ui product management
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin', 'staff')
   @Post()

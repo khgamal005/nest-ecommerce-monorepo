@@ -1,5 +1,5 @@
 {
-  "apps/admin-dashboard": {
+  "apps/admin-ui": {
     "root": [
       "nx.json#targetDefaults.build",
       "nx/target-defaults"
@@ -9,7 +9,7 @@
       "nx/target-defaults"
     ],
     "targets.build": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.cache": [
@@ -25,135 +25,135 @@
       "nx/target-defaults"
     ],
     "targets.build.executor": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "name": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "projectType": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "tags": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "tags.npm:private": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts.0": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts.1": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts.2": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js.packageName": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js.packageVersion": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js.isInPackageManagerWorkspaces": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.executor": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.metadata": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.options.script": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.options": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.metadata.scriptContent": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.metadata.runCommand": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.metadata": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.options.script": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.options": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.metadata.scriptContent": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.metadata.runCommand": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.executor": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.metadata": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.options.script": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.options": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.metadata.scriptContent": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.metadata.runCommand": [
-      "apps/admin-dashboard/package.json",
+      "apps/admin-ui/package.json",
       "nx/core/package-json"
     ]
   },
@@ -315,7 +315,7 @@
       "nx/core/package-json"
     ]
   },
-  "apps/user-web": {
+  "apps/user-ui": {
     "root": [
       "nx.json#targetDefaults.build",
       "nx/target-defaults"
@@ -325,7 +325,7 @@
       "nx/target-defaults"
     ],
     "targets.build": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.cache": [
@@ -341,135 +341,135 @@
       "nx/target-defaults"
     ],
     "targets.build.executor": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "name": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "projectType": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "tags": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "tags.npm:private": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts.0": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts.1": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.targetGroups.NPM Scripts.2": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js.packageName": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js.packageVersion": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "metadata.js.isInPackageManagerWorkspaces": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.executor": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.metadata": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.options.script": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.options": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.metadata.scriptContent": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.dev.metadata.runCommand": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.metadata": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.options.script": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.options": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.metadata.scriptContent": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.build.metadata.runCommand": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.executor": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.metadata": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.options.script": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.options": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.metadata.scriptContent": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ],
     "targets.start.metadata.runCommand": [
-      "apps/user-web/package.json",
+      "apps/user-ui/package.json",
       "nx/core/package-json"
     ]
   }

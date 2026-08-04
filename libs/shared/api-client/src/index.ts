@@ -1,4 +1,4 @@
-// Thin typed fetch wrapper shared by user-web and admin-dashboard.
+// Thin typed fetch wrapper shared by user-ui and Admin-ui.
 // Both apps set NEXT_PUBLIC_API_URL to point at the same NestJS backend.
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3333/api';

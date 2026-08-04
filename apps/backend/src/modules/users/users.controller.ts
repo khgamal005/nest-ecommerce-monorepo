@@ -10,7 +10,7 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  // Admin-dashboard only: customer management list.
+  // Admin-ui only: customer management list.
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin', 'staff')
   @Get()
