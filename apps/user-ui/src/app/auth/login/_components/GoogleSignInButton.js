@@ -1,0 +1,10 @@
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = GoogleSignInButton;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_1 = require("next-auth/react");
+function GoogleSignInButton({ callbackUrl = '/' }) {
+    return ((0, jsx_runtime_1.jsxs)("button", { type: "button", onClick: () => (0, react_1.signIn)('google', { callbackUrl }), className: "w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors", children: [(0, jsx_runtime_1.jsxs)("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [(0, jsx_runtime_1.jsx)("path", { d: "M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.26H17.92C17.66 15.63 16.88 16.8 15.72 17.58V20.34H19.29C21.37 18.42 22.56 15.6 22.56 12.25Z", fill: "#4285F4" }), (0, jsx_runtime_1.jsx)("path", { d: "M12 23C14.97 23 17.46 22.02 19.29 20.34L15.72 17.58C14.73 18.24 13.47 18.64 12 18.64C9.16 18.64 6.75 16.73 5.86 14.16H2.17V17.02C3.98 20.62 7.69 23 12 23Z", fill: "#34A853" }), (0, jsx_runtime_1.jsx)("path", { d: "M5.86 14.16C5.63 13.48 5.5 12.76 5.5 12C5.5 11.24 5.63 10.52 5.86 9.84V6.98H2.17C1.43 8.46 1 10.18 1 12C1 13.82 1.43 15.54 2.17 17.02L5.86 14.16Z", fill: "#FBBC05" }), (0, jsx_runtime_1.jsx)("path", { d: "M12 5.36C13.62 5.36 15.06 5.92 16.21 7.02L19.36 3.87C17.45 2.08 14.97 1 12 1C7.69 1 3.98 3.38 2.17 6.98L5.86 9.84C6.75 7.27 9.16 5.36 12 5.36Z", fill: "#EA4335" })] }), (0, jsx_runtime_1.jsx)("span", { className: "text-sm font-medium text-gray-700", children: "\u0627\u0644\u0645\u062A\u0627\u0628\u0639\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 Google" })] }));
+}
+//# sourceMappingURL=GoogleSignInButton.js.map

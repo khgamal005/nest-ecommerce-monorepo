@@ -1,5 +1,17 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { CategoriesService } from './categories.service';
+import { CreateCategoryDto } from './dto/create-category.dto';
+import { UpdateCategoryDto } from './dto/update-category.dto';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
@@ -8,30 +20,49 @@ import { Roles } from '../../common/decorators/roles.decorator';
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
-  @Get()
-  findAll() {
-    return this.categoriesService.findAll();
+  // Public: pre-configured categories from SiteConfig (storefront)
+  @Get('config')
+  getCategories() {
+    return this.categoriesService.getCategories();
   }
 
+  // Public: all categories from Category model with hierarchy
+  @Get('all')
+  getAllCategoriesFromDB(@Query('level') level?: string) {
+    return this.categoriesService.getAllCategoriesFromDB(level);
+  }
+
+  // Public: category by slug with paginated products (storefront)
+  @Get('slug/:slug')
+  getCategoryBySlug(
+    @Param('slug') slug: string,
+    @Query('page') page?: string,
+    @Query('limit') limit?: string,
+  ) {
+    return this.categoriesService.getCategoryBySlug(
+      slug,
+      parseInt(page ?? '1', 10),
+      parseInt(limit ?? '20', 10),
+    );
+  }
+
+  // Public: single category by id
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.categoriesService.findOne(id);
   }
 
-  // Admin-ui only writes by default. Adjust per module -- e.g. cart/orders
-  // need customer-level write access from user-ui too (use JwtAuthGuard only
-  // for those routes instead of RolesGuard).
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin', 'staff')
   @Post()
-  create(@Body() dto: any) {
+  create(@Body() dto: CreateCategoryDto) {
     return this.categoriesService.create(dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin', 'staff')
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: any) {
+  update(@Param('id') id: string, @Body() dto: UpdateCategoryDto) {
     return this.categoriesService.update(id, dto);
   }
 

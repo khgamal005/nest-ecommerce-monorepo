@@ -1,0 +1,1 @@
+{"version":3,"file":"mail.service.d.ts","sourceRoot":"","sources":["mail.service.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,aAAa,EAAE,MAAM,gBAAgB,CAAC;AAU/C,qBACa,WAAW;IACV,OAAO,CAAC,QAAQ,CAAC,aAAa;gBAAb,aAAa,EAAE,aAAa;IAEzD,OAAO,CAAC,iBAAiB;IAcnB,QAAQ,CACZ,EAAE,EAAE,MAAM,EACV,OAAO,EAAE,MAAM,EACf,YAAY,EAAE,MAAM,EACpB,IAAI,EAAE,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC;CAmB5B"}

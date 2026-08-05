@@ -10827,6 +10827,15 @@
         "hash": "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="
       }
     },
+    "npm:slugify": {
+      "type": "npm",
+      "name": "npm:slugify",
+      "data": {
+        "version": "1.6.9",
+        "packageName": "slugify",
+        "hash": "sha512-vZ7rfeehZui7wQs438JXBckYLkIIdfHOXsaVEUMyS5fHo1483l1bMdo0EDSWYclY0yZKFOipDy4KHuKs6ssvdg=="
+      }
+    },
     "npm:smol-toml": {
       "type": "npm",
       "name": "npm:smol-toml",
@@ -15690,6 +15699,9 @@
     ],
     "slash@3.0.0": [
       "npm:slash"
+    ],
+    "slugify@1.6.9": [
+      "npm:slugify"
     ],
     "smol-toml@1.6.1": [
       "npm:smol-toml"

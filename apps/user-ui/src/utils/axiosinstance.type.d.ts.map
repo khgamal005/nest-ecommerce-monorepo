@@ -1,0 +1,1 @@
+{"version":3,"file":"axiosinstance.type.d.ts","sourceRoot":"","sources":["axiosinstance.type.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,MAAM,OAAO,CAAC;AAE3C,MAAM,WAAW,yBAA0B,SAAQ,kBAAkB;IACnE,YAAY,CAAC,EAAE,OAAO,CAAC;IACvB,MAAM,CAAC,EAAE,OAAO,CAAC;CAClB"}
