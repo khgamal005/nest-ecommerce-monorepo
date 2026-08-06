@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px; }
+        .header { background-color: #f8f9fa; padding: 10px; text-align: center; border-bottom: 2px solid #dc3545; }
+        .content { padding: 20px; }
+        .footer { font-size: 12px; color: #777; text-align: center; margin-top: 20px; }
+        .details { background-color: #fff5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #feb2b2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="color: #dc3545;">تم إلغاء الطلب</h2>
+        </div>
+        <div class="content">
+            <p>مرحباً <%= name %>،</p>
+            <p>نود إبلاغك بأنه تم إلغاء طلبك رقم <strong>#<%= orderId %></strong> من متجر <strong><%= shopName %></strong>.</p>
+            
+            <div class="details">
+                <p><strong>تم الإلغاء بواسطة:</strong> <%= cancelledBy %></p>
+                <p><strong>السبب:</strong> <%= reason %></p>
+            </div>
+
+            <p>إذا كنت قد قمت بالدفع مسبقاً، فسيتم مراجعة طلب الاسترداد من قبل الإدارة وإعادة المبلغ إلى حسابك خلال أيام عمل.</p>
+            <p>نشكرك على تفهمك.</p>
+        </div>
+        <div class="footer">
+            <p>هذا البريد تم إرساله تلقائياً من منصة Mahawed Shop.</p>
+        </div>
+    </div>
+</body>
+</html>

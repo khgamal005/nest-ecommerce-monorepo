@@ -20,6 +20,7 @@ import { RedisModule } from './modules/redis/redis.module';
 import { MailModule } from './modules/mail/mail.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { BrandsModule } from './modules/brands/brands.module';
+import { WorkersModule } from './modules/workers/workers.module';
 
 @Module({
   imports: [
@@ -52,6 +53,7 @@ import { BrandsModule } from './modules/brands/brands.module';
     MailModule,
     AdminModule,
     BrandsModule,
+    WorkersModule,
   ],
 })
 export class AppModule {}

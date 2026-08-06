@@ -1,0 +1,33 @@
+
+> backend@0.0.1 build D:\Data\nodejs-project\nest\ecommerce-monorepo\apps\backend
+> nest build
+
+[96msrc/modules/workers/processors/order.processor.ts[0m:[93m75[0m:[93m18[0m - [91merror[0m[90m TS2551: [0mProperty 'handleOrderPaidOrCOD' does not exist on type 'OrderPostProcessProcessor'. Did you mean 'handlePaidOrCOD'?
+
+[7m75[0m       await this.handleOrderPaidOrCOD(job, job.data);
+[7m  [0m [91m                 ~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/modules/workers/processors/order.processor.ts[0m:[93m114[0m:[93m17[0m
+    [7m114[0m   private async handlePaidOrCOD(
+    [7m   [0m [96m                ~~~~~~~~~~~~~~~[0m
+    'handlePaidOrCOD' is declared here.
+[96msrc/modules/workers/processors/order.processor.ts[0m:[93m114[0m:[93m17[0m - [91merror[0m[90m TS6133: [0m'handlePaidOrCOD' is declared but its value is never read.
+
+[7m114[0m   private async handlePaidOrCOD(
+[7m   [0m [91m                ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/workers/processors/order.processor.ts[0m:[93m115[0m:[93m5[0m - [91merror[0m[90m TS6133: [0m'job' is declared but its value is never read.
+
+[7m115[0m     job: Job,
+[7m   [0m [91m    ~~~[0m
+[96msrc/modules/workers/processors/order.processor.ts[0m:[93m118[0m:[93m36[0m - [91merror[0m[90m TS6133: [0m'shippingAddressId' is declared but its value is never read.
+
+[7m118[0m     const { orders, items, userId, shippingAddressId, totalAmount } = data;
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/workers/processors/order.processor.ts[0m:[93m208[0m:[93m38[0m - [91merror[0m[90m TS6133: [0m'job' is declared but its value is never read.
+
+[7m208[0m   private async handleOrderCancelled(job: Job, data: OrderPostProcessJob): Promise<void> {
+[7m   [0m [91m                                     ~~~[0m
+
+Found 5 error(s).
+
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

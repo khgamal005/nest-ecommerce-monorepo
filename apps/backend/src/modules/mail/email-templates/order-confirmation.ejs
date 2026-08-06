@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background-color: #2563eb;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .content h2 {
+        color: #2563eb;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .order-box {
+        background-color: #f0f4ff;
+        border: 1px solid #c7d2fe;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+      }
+
+      .order-box p {
+        margin: 6px 0;
+        font-size: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #2563eb;
+        color: #ffffff !important;
+        padding: 12px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #f9fafb;
+        font-size: 14px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Mahawed Shop</h1>
+    </div>
+
+    <div class="content">
+      <h2>Hello <%= name %>,</h2>
+
+      <p>
+        Thank you for your order! 🎉  
+        Your purchase has been successfully placed and is now being processed.
+      </p>
+
+      <div class="order-box">
+        <p><strong>Order ID:</strong> #<%= orderId %></p>
+        <p><strong>Total Amount:</strong> EGP <%= totalAmount %></p>
+      </div>
+
+      <p>You can track the status of your order using the link below:</p>
+
+      <a
+        href="<%= trackingUrl %>"
+        class="btn"
+        target="_blank"
+      >
+        Track Your Order
+      </a>
+
+      <p style="margin-top: 25px;">
+        If you have any questions or need assistance, our support team is always happy to help.
+      </p>
+
+      <p>
+        Happy shopping ❤️<br />
+        <strong>Mahawed Shop Team</strong>
+      </p>
+    </div>
+
+    <div class="footer">
+      © <%= new Date().getFullYear() %> Mahawed Shop. All rights reserved.
+    </div>
+  </div>
+</body>
+
+</html>

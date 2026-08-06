@@ -1,0 +1,17 @@
+{
+  "name": "@my-app/queue",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "bullmq": "^4.0.0",
+    "ioredis": "5.10.0"
+  }
+}

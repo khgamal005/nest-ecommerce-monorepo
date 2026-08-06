@@ -1,25 +1,37 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { randomUUID } from 'crypto';
+import { extname } from 'path';
+import { deleteFromR2, uploadToR2 } from './r2-storage';
 
-// TODO: inject TypeORM repository for the upload domain and implement real logic.
+const ALLOWED_FOLDERS = new Set(['reviews', 'brands', 'products', 'general']);
+
 @Injectable()
 export class UploadService {
-  async findAll() {
-    return [];
+  async uploadImage(file: Express.Multer.File, folder: string) {
+    if (!file) {
+      throw new BadRequestException('No image file provided');
+    }
+
+    if (!file.mimetype.startsWith('image/')) {
+      throw new BadRequestException('Only image files are allowed');
+    }
+
+    const targetFolder = ALLOWED_FOLDERS.has(folder) ? folder : 'general';
+    const extension = extname(file.originalname) || '.webp';
+    const fileId = `uploads/admin/${targetFolder}/${randomUUID()}${extension}`;
+
+    const { url } = await uploadToR2(file.buffer, fileId, file.mimetype);
+
+    return { file_url: url, fileId };
   }
 
-  async findOne(id: string) {
-    return { id };
-  }
+  async deleteImage(fileId: string) {
+    if (!fileId) {
+      throw new BadRequestException('fileId is required');
+    }
 
-  async create(dto: any) {
-    return { id: 'temp-id', ...dto };
-  }
+    await deleteFromR2(fileId);
 
-  async update(id: string, dto: any) {
-    return { id, ...dto };
-  }
-
-  async remove(id: string) {
-    return { id, deleted: true };
+    return { success: true, message: 'Image deleted successfully' };
   }
 }

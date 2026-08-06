@@ -472,5 +472,79 @@
       "apps/user-ui/package.json",
       "nx/core/package-json"
     ]
+  },
+  "libs/queue": {
+    "root": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "projectType": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageExports": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn.0": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "libs/queue/package.json",
+      "nx/core/package-json"
+    ]
   }
 }

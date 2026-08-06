@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import axiosInstance from '../utils/axiosInstance.js';
@@ -10,6 +10,19 @@ export interface ReviewImage {
 
 export type ImageUploadType = 'review' | 'brand' | 'product';
 
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+const MAX_IMAGE_DIMENSION = 1200;
+const WEBP_QUALITY = 0.8;
+
+const FOLDER_BY_TYPE: Record<ImageUploadType, string> = {
+  review: 'reviews',
+  brand: 'brands',
+  product: 'products',
+};
+
+const UPLOAD_ENDPOINT = '/api/uploads/upload-image';
+const DELETE_ENDPOINT = '/api/uploads/delete-image';
+
 export const useImageManagement = (
   initialImages: ReviewImage[] = [],
   maxImages: number = 1,
@@ -18,50 +31,79 @@ export const useImageManagement = (
   const [images, setImages] = useState<ReviewImage[]>(initialImages);
   const [uploading, setUploading] = useState(false);
 
-  const getUploadEndpoint = () => {
-    switch (uploadType) {
-      case 'brand':
-        return '/api/brands/upload-logo';
-      case 'product':
-        return '/api/products/upload-image';
-      default:
-        return '/user/api/reviews/upload-image';
-    }
-  };
+  const validateImage = (file: File): boolean => {
+    if (!file) return false;
 
-  const getDeleteEndpoint = () => {
-    switch (uploadType) {
-      case 'brand':
-        return '/api/brands/delete-logo';
-      case 'product':
-        return '/api/products/delete-image';
-      default:
-        return '/user/api/reviews/delete-image';
-    }
-  };
-
-  const uploadImage = async (file: File) => {
-    if (!file) return;
-
-    if (file.size > 5 * 1024 * 1024) {
-      toast.error('حجم الصورة كبير جداً. الحد الأقصى 5 ميجابايت.');
-      return;
+    if (file.size > MAX_FILE_SIZE) {
+      toast.error('حجم الصورة كبير جداً. الحد الأقصى 10 ميجابايت.');
+      return false;
     }
 
     if (!file.type.startsWith('image/')) {
       toast.error('الرجاء رفع صورة.');
-      return;
+      return false;
     }
+
+    return true;
+  };
+
+  const compressImage = useCallback((file: File): Promise<Blob> => {
+    return new Promise((resolve, reject) => {
+      const objectUrl = URL.createObjectURL(file);
+      const img = new window.Image();
+      img.src = objectUrl;
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
+        if (width > height && width > MAX_IMAGE_DIMENSION) {
+          height = (height * MAX_IMAGE_DIMENSION) / width;
+          width = MAX_IMAGE_DIMENSION;
+        } else if (height > MAX_IMAGE_DIMENSION) {
+          width = (width * MAX_IMAGE_DIMENSION) / height;
+          height = MAX_IMAGE_DIMENSION;
+        }
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          URL.revokeObjectURL(objectUrl);
+          reject(new Error('Failed to initialize canvas context'));
+          return;
+        }
+        ctx.drawImage(img, 0, 0, width, height);
+        canvas.toBlob(
+          (blob) => {
+            URL.revokeObjectURL(objectUrl);
+            if (!blob) {
+              reject(new Error('Failed to compress image'));
+              return;
+            }
+            resolve(blob);
+          },
+          'image/webp',
+          WEBP_QUALITY,
+        );
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(objectUrl);
+        reject(new Error('Failed to load image'));
+      };
+    });
+  }, []);
+
+  const uploadImage = async (file: File) => {
+    if (!validateImage(file)) return;
 
     setUploading(true);
     try {
-      const compressedBase64 = await compressImage(file);
+      const blob = await compressImage(file);
 
-      const res = await axiosInstance.post(
-        getUploadEndpoint(),
-        { fileName: compressedBase64 },
-        { withCredentials: true },
-      );
+      const formData = new FormData();
+      formData.append('image', blob, 'image.webp');
+      formData.append('folder', FOLDER_BY_TYPE[uploadType]);
+
+      const res = await axiosInstance.post(UPLOAD_ENDPOINT, formData);
 
       const newImage: ReviewImage = {
         url: res.data.file_url,
@@ -92,11 +134,9 @@ export const useImageManagement = (
     if (!imageToRemove) return;
 
     try {
-      await axiosInstance.post(
-        getDeleteEndpoint(),
-        { fileId: imageToRemove.fileId },
-        { withCredentials: true },
-      );
+      await axiosInstance.post(DELETE_ENDPOINT, {
+        fileId: imageToRemove.fileId,
+      });
       toast.success('تم حذف الصورة بنجاح!');
     } catch (error) {
       console.error('Delete image error:', error);
@@ -107,37 +147,6 @@ export const useImageManagement = (
 
   const clearImages = () => {
     setImages([]);
-  };
-
-  const compressImage = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = (event) => {
-        const img = new window.Image();
-        img.src = event.target?.result as string;
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          let width = img.width;
-          let height = img.height;
-          const maxSize = 1200;
-          if (width > height && width > maxSize) {
-            height = (height * maxSize) / width;
-            width = maxSize;
-          } else if (height > maxSize) {
-            width = (width * maxSize) / height;
-            height = maxSize;
-          }
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext('2d');
-          ctx?.drawImage(img, 0, 0, width, height);
-          resolve(canvas.toDataURL('image/webp', 0.8));
-        };
-        img.onerror = () => reject(new Error('Failed to load image'));
-      };
-      reader.onerror = () => reject(new Error('Failed to read file'));
-    });
   };
 
   return {

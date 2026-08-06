@@ -1,0 +1,1119 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_URI")
+}
+// Just add to existing Category — no change needed
+// Just add to existing Product — no change needed
+// Travel package = Product with type field
+
+enum ProductType {
+  PHYSICAL      // existing products
+  TRAVEL        // حج/عمرة/سياحة
+}
+
+// Add ONE field to Product:
+// type ProductType @default(PHYSICAL)
+
+// Add ONE model:
+model TravelDetails {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  productId     String   @unique @db.ObjectId
+  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  destination   String   // مكة / المدينة / شرم الشيخ
+  departureDate DateTime
+  returnDate    DateTime
+  seatsTotal    Int
+  seatsLeft     Int
+  inclusions    Json     // ["فيزا", "فندق 5 نجوم", "مواصلات"]
+  departureCity String   // القاهرة / الإسكندرية
+  licenseNumber String?  // رقم ترخيص مكتب السفر
+}
+//
+
+// -------------------- USER ---------------------
+
+//
+
+model users {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name String?
+
+  email String? @unique
+
+  password String?
+
+  followings String[]
+
+  role UserRole @default(user)
+
+  isBanned Boolean @default(false)
+
+  bannedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  shopReviews shopReviews[]
+
+  productReviews ProductReview[]
+
+  orders Orders[]
+
+  images Images[]
+
+  addresses Address[]
+
+  notifications notifications[] @relation("UserNotifications")
+
+  createdNotifications notifications[] @relation("CreatedNotifications")
+
+  refunds Refund[] @relation("RefundUser")
+
+  processedRefunds Refund[] @relation("RefundAdmin")
+
+  adminAuditLogs AdminAuditLog[]
+}
+
+enum ShopModerationStatus {
+  Pending // just created, awaiting review
+  Approved // bio/avatar cleared
+  Rejected // failed moderation
+  Flagged // active violation under review
+}
+
+model ShopAddress {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  shopId      String  @unique @db.ObjectId
+  governorate String
+  city        String
+  district    String?
+  street      String
+  building    String?
+  landmark    String?
+  zipCode     String?
+  phone       String
+  lat         Float?
+  lng         Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  shop Shops @relation(fields: [shopId], references: [id], onDelete: Cascade)
+}
+
+model Shops {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name String
+  slug String @unique // for SEO URLs /shop/slug
+
+  bio              String?
+  moderationStatus ShopModerationStatus @default(Pending)
+  violationCount   Int                  @default(0)
+  lastViolationAt  DateTime?
+
+  openingHours Json? // { mon: { open: "09:00", close: "22:00" }, ... }
+  socialLinks  Json? // [{ platform: "facebook", url: "..." }]
+
+  categoryId String?   @db.ObjectId
+  category   Category? @relation(fields: [categoryId], references: [id])
+
+  isVerified Boolean   @default(false)
+  isDeleted  Boolean   @default(false)
+  deletedAt  DateTime?
+
+  // balance in EGP (Float)
+  availableBalance Float @default(0)
+  pendingAmount    Float @default(0)
+  totalEarnings    Float @default(0)
+
+  // denormalized rating cache — update via worker on new review
+  ratingSum   Float @default(0)
+  ratingCount Int   @default(0)
+
+  sellerId String  @unique @db.ObjectId
+  seller   sellers @relation(fields: [sellerId], references: [id])
+
+  address     ShopAddress?
+  followers   ShopFollowers[]
+  reviews     shopReviews[]
+  products    Product[]
+  images      Images[]
+  orders      Orders[]
+  withdrawals Withdrawals[]
+  refunds     Refund[]
+
+  coverBanner String?
+  avatar      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model sellers {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name String
+
+  email String? @unique
+
+  storeName String?
+
+  password String
+
+  country String?
+  phone_number String? // backend only — never expose in API response
+
+  // New: account health tracking
+  warningCount  Int       @default(0)
+  isSuspended   Boolean   @default(false)
+  suspendedAt   DateTime?
+  suspendReason String?
+
+  shop Shops?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ChatViolations {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  shopId String @db.ObjectId
+  userId String @db.ObjectId // the buyer
+
+  // What was detected
+  violationType   String // "phone", "email", "social", "url", "address"
+  rawMessage      String // original message before filtering
+  filteredMessage String // what the user actually saw
+
+  isReviewed  Boolean   @default(false)
+  reviewedAt  DateTime?
+  actionTaken String? // "warned", "suspended", "ignored"
+
+  createdAt DateTime @default(now())
+}
+
+model shopReviews {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String? @unique @db.ObjectId
+
+  user users? @relation(fields: [userId], references: [id])
+
+  ratings Float
+
+  reviews String?
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  shopId String? @unique @db.ObjectId
+
+  shops Shops? @relation(fields: [shopId], references: [id])
+}
+
+model ShopFollowers {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  shopId String @db.ObjectId
+
+  userId String @db.ObjectId
+
+  shop Shops @relation(fields: [shopId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+//
+
+// -------------------- ENUM ---------------------
+
+//
+
+enum UserRole {
+  user
+
+  seller
+
+  admin
+}
+
+model SiteConfig {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  categories Json // 🔥 mega tree here
+
+  // banners: [{ fileId, file_Url, title, subtitle, buttonText, buttonLink, textPosition, textColor, overlayOpacity, order, isActive }]
+  banners Json?
+  logos   Json?
+}
+
+model Category {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  slug String @unique
+
+  parentId String?    @db.ObjectId
+  parent   Category?  @relation("CategoryToChildren", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  children Category[] @relation("CategoryToChildren")
+
+  level Int
+  path  String? // e.g. "/clothes/men/shirts/"
+
+  commissionRate Float @default(0.07) // 7% default admin fee for this category
+
+  products Product[]
+  shops    Shops[]
+  commissionConfigs CommissionConfig[]
+
+  createdAt DateTime @default(now())
+
+  @@index([path])
+  @@index([level])
+}
+
+// Commission rates by category level 1
+model CommissionConfig {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  categoryId String   @unique @db.ObjectId
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  rate Float // e.g., 0.07 = 7%
+
+  description String? // e.g., "أزياء رجالية"
+
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model discount_codes {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  public_name String
+
+  discount_type String
+
+  discount_value Float
+
+  discount_code String @unique
+
+  sellerId String @db.ObjectId
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+}
+
+enum ProductStatus {
+  active
+  approved
+  pending
+  draft
+  out_of_stock
+  discontinued
+  pending_review
+  rejected
+  archived
+}
+
+model Images {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  r2_key  String?
+  url     String
+
+  userId           String? @db.ObjectId
+  shopId           String? @db.ObjectId
+  productId        String? @db.ObjectId
+  productVariantId String? @db.ObjectId
+  hash             String?
+
+  user    users?          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shops   Shops?          @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  product Product?        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variant ProductVariant? @relation(fields: [productVariantId], references: [id], onDelete: Cascade)
+
+  @@index([hash])
+}
+
+model ProductVideo {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  url       String  // R2 URL (internal, never exposed to client)
+  r2_key    String?  // was r2_key — the actual R2 object key
+  mime_type String  // e.g. "video/mp4"
+  size_bytes Int?
+
+  productId        String? @db.ObjectId
+  productVariantId String? @db.ObjectId
+
+  product Product?        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variant ProductVariant? @relation(fields: [productVariantId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+  @@index([productVariantId])
+}
+
+model Brand {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String  @unique
+  slug     String  @unique
+  logo     String? // CDN URL
+  logoR2Key String? // R2 key for deletion/purge
+  verified Boolean @default(false)
+
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Product {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  slug  String
+
+  // Category
+  categoryLevel1Id String?  @db.ObjectId
+  categoryLevel2Id String?  @db.ObjectId
+  categoryLevel3Id String?  @db.ObjectId
+  categoryPath     String
+  categoryId       String   @db.ObjectId
+  category         Category @relation(fields: [categoryId], references: [id])
+
+  short_description    String
+  detailed_description String
+
+  images Images[]
+  videos ProductVideo[]
+  tags   String[]
+
+  // Brand
+  brandId   String? @db.ObjectId
+  brandName String? // free-text fallback when not in Brand table
+  brand     Brand?  @relation(fields: [brandId], references: [id])
+
+  hasVariants Boolean @default(false)
+
+  rating      Float @default(5)
+  reviewCount Int   @default(0)
+
+  warranty              String?
+  custom_specifications Json?
+  customProperties      Json?
+  cashOnDelivery        String?
+  isReturnable          Boolean @default(true)
+
+  totalSales Int           @default(0)
+  status     ProductStatus @default(pending_review)
+  isDeleted  Boolean       @default(false)
+
+  rejectionReason String?
+  reviewedAt      DateTime?
+  reviewedBy      String?   @db.ObjectId
+
+  shopId   String @db.ObjectId
+  sellerId String @db.ObjectId
+
+  shop Shops @relation(fields: [shopId], references: [id])
+
+  // ✅ ADD 1 — product type
+  type ProductType @default(PHYSICAL)
+
+  options       ProductOption[]
+  variants      ProductVariant[]
+  reviews       ProductReview[]
+  orderItems    OrderItem[]
+
+  // ✅ ADD 2 — travel relation
+  travelDetails TravelDetails?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@unique([shopId, slug])
+  @@index([categoryLevel1Id, status, isDeleted])
+  @@index([categoryLevel2Id, status, isDeleted])
+  @@index([categoryLevel3Id, status, isDeleted])
+  @@index([shopId, status, isDeleted, createdAt])
+  @@index([shopId, categoryLevel1Id, status, isDeleted])
+  @@index([shopId, categoryLevel2Id, status, isDeleted])
+  @@index([shopId, categoryLevel3Id, status, isDeleted])
+  @@index([brandId, status, isDeleted])
+  // ✅ ADD 3 — index for filtering travel products
+  @@index([type, status, isDeleted])
+}
+
+
+
+model ProductOption {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  productId String  @db.ObjectId
+  name      String
+  required  Boolean @default(true)
+
+  product Product              @relation(fields: [productId], references: [id], onDelete: Cascade)
+  values  ProductOptionValue[]
+
+  @@unique([productId, name])
+  @@index([productId])
+}
+
+model ProductOptionValue {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  optionId String @db.ObjectId
+  value    String
+
+  option        ProductOption        @relation(fields: [optionId], references: [id], onDelete: Cascade)
+  variantValues VariantOptionValue[]
+
+  @@unique([optionId, value])
+  @@index([optionId])
+}
+
+model ProductVariant {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  productId String  @db.ObjectId
+  sku       String? @unique
+
+  price     Float
+  salePrice Float?
+  stock     Int     @default(0)
+  isActive  Boolean @default(true)
+
+  starting_date DateTime?
+  ending_date   DateTime?
+
+  images Images[]
+  videos ProductVideo[]
+
+  product      Product              @relation(fields: [productId], references: [id], onDelete: Cascade)
+  optionValues VariantOptionValue[]
+  orderItems   OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([productId, sku])
+  @@index([productId, isActive, price])
+  @@index([productId, isActive, stock])
+}
+
+model VariantOptionValue {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  variantId     String @db.ObjectId
+  optionValueId String @db.ObjectId
+
+  variant     ProductVariant     @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  optionValue ProductOptionValue @relation(fields: [optionValueId], references: [id], onDelete: Cascade)
+
+  @@unique([variantId, optionValueId])
+  @@index([variantId])
+  @@index([optionValueId])
+}
+
+
+model Orders {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String @db.ObjectId
+
+  shopId String @db.ObjectId
+
+  total Float
+
+  paymentStatus PaymentStatus @default(PENDING)
+
+  status OrderStatus @default(PENDING)
+
+  shippingAddressId String?
+
+  phone String?
+
+  paymentType PaymentType?
+
+  couponCode String?
+
+  discountAmount Float?
+
+  shippingFee Float? @default(0)
+
+  paymentSessionId String? // <--- ADD THIS
+
+  adminFee Float?
+
+  sellerAmount Float?
+
+  items OrderItem[]
+
+  deliveryStatus String? @default("ordered")
+
+  cancelReason String?
+
+  cancelledBy String?
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  user users @relation(fields: [userId], references: [id])
+
+  shop Shops @relation(fields: [shopId], references: [id])
+
+  refunds Refund[]
+
+  @@index([userId])
+  @@index([shopId])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([createdAt])
+  @@index([userId, status])
+  @@index([shopId, status])
+}
+
+model OrderItem {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  orderId   String  @db.ObjectId
+  productId String? @db.ObjectId
+  variantId String? @db.ObjectId
+
+  quantity Int
+  price    Float
+
+  selectedOptions Json? // optional extras (engraving, notes)
+
+  order   Orders          @relation(fields: [orderId], references: [id])
+  product Product?        @relation(fields: [productId], references: [id], onDelete: SetNull)
+  variant ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+}
+
+enum OrderStatus {
+  PENDING
+
+  PROCESSING
+
+  SHIPPED
+
+  DELIVERED
+
+  CANCELED
+}
+
+enum PaymentStatus {
+  PENDING
+
+  PAID
+
+  FAILED
+
+  REFUNDED
+}
+
+enum PaymentType {
+  KASHIER
+  PAYMOB_CARD
+  PAYMOB_WALLET
+  PAYMOB_INSTAPAY
+  PAYPAL
+  COD
+}
+
+model UserAnalytics {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String @unique
+
+  actions Json
+
+  recommendations String[]
+
+  lastTrainedAt DateTime?
+
+  device String?
+
+  city String?
+
+  lastVisited DateTime
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+}
+
+model ProductAnalytics {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  productId String @unique
+
+  shopId String?
+
+  views Int @default(0)
+
+  cartAdds Int @default(0)
+
+  wishlistAdds Int @default(0)
+
+  purchases Int @default(0)
+
+  cartRemovals Int @default(0)
+
+  removeFromCart Int @default(0) // Add this
+
+  removeFromWishlist Int @default(0) // Add this
+
+  quantityDecreases Int @default(0) // Add this
+
+  lastVisited DateTime
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+}
+
+
+
+enum addressType {
+  Home
+
+  Work
+
+  Other
+}
+
+model StockDeductionFailure {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  sellerId    String   @db.ObjectId
+  shopId      String   @db.ObjectId
+  sku         String
+  quantity    Int
+  errorReason String
+  retryStatus String   @default("pending")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([sellerId])
+  @@index([shopId])
+  @@index([createdAt])
+}
+
+model Address {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String @db.ObjectId
+
+  label addressType
+
+  country String
+
+  city String
+
+  street String
+
+  zipCode String?
+
+  phone String?
+
+  isDefault Boolean @default(true)
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model uniqueShopVisitors {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  shopId String @db.ObjectId
+
+  userId String @db.ObjectId
+
+  visitDate DateTime @default(now())
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  @@unique([shopId, userId])
+}
+
+model notifications {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  creatorId String? @db.ObjectId
+
+  recipientId String? @db.ObjectId
+
+  recipientRole String?
+
+  title String
+
+  message String
+
+  redirectLink String?
+
+  type AdminNotificationType
+
+  isRead Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  creator users? @relation("CreatedNotifications", fields: [creatorId], references: [id])
+
+  recipient users? @relation("UserNotifications", fields: [recipientId], references: [id])
+}
+
+enum AdminNotificationType {
+  NEW_ORDER
+
+  PAYMENT_SUCCESS
+
+  PAYMENT_FAILED
+
+  SELLER_REGISTERED
+
+  SELLER_VERIFICATION
+
+  PRODUCT_REVIEW
+
+  LOW_STOCK
+
+  ORDER_ISSUE
+
+  USER_REPORT
+
+  REFUND_REQUESTED
+
+  REFUND_APPROVED
+
+  REFUND_REJECTED
+
+  SYSTEM_ERROR
+
+  SECURITY_ALERT
+}
+
+model Withdrawals {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  shopId String @db.ObjectId
+
+  amount Float
+
+  status WithdrawStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  shop Shops @relation(fields: [shopId], references: [id])
+}
+
+enum WithdrawStatus {
+  PENDING
+
+  APPROVED
+
+  REJECTED
+}
+
+// -------------------- REFUND SYSTEM ---------------------
+
+model Refund {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  orderId String @db.ObjectId
+  order   Orders @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  userId String @db.ObjectId
+  user   users  @relation("RefundUser", fields: [userId], references: [id])
+
+  shopId String @db.ObjectId
+  shop   Shops  @relation(fields: [shopId], references: [id])
+
+  amount    Float
+  reason    String
+  userNotes String?
+
+  status RefundStatus @default(PENDING)
+
+  // Payment info
+  paymentSessionId String?
+  refundId         String? // External refund ID from payment processor
+
+  // Admin who reviewed
+  adminId     String?   @db.ObjectId
+  admin       users?    @relation("RefundAdmin", fields: [adminId], references: [id])
+  adminNotes  String?
+  reviewedAt  DateTime?
+  processedAt DateTime?
+  completedAt DateTime?
+
+  // Metadata for storing additional info
+  metadata Json?
+
+  requestedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([userId])
+  @@index([shopId])
+  @@index([status])
+}
+
+enum RefundStatus {
+  PENDING // User/seller requested
+  APPROVED // Admin verified payment, approved
+  PROCESSING // Refund is being processed
+  REJECTED // Admin rejected
+  COMPLETED // Admin confirms money was sent back
+  FAILED // Refund processing failed
+}
+
+model chat_messages {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  conversationId String @db.ObjectId
+
+  senderId String @db.ObjectId
+
+  senderType String
+
+  content String
+
+  attachments String[]
+
+  status String @default("sent")
+
+  updatedAt DateTime @updatedAt
+
+  @@unique([conversationId, senderId, content, updatedAt])
+}
+
+model conversationGroup {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  isGroup Boolean @default(false)
+
+  Name String?
+
+  creatorId String
+
+  participantIds String[] @db.ObjectId
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+}
+
+model participant {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  conversationGroupId String @db.ObjectId
+
+  userId String @db.ObjectId
+
+  sellerId String @db.ObjectId
+
+  lastSeenAt DateTime @default(now())
+
+  isOnline Boolean @default(false)
+
+  unreadCount Int @default(0)
+
+  joinedAt DateTime @default(now())
+
+  muted Boolean @default(false)
+}
+
+// -------------------- PRODUCT REVIEWS ---------------------
+
+model ProductReview {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String @db.ObjectId
+
+  productId String @db.ObjectId
+
+  rating Int // 1-5 stars
+
+  comment String?
+
+  images String[] // Optional review images
+
+  isVerifiedPurchase Boolean @default(true)
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId]) // One review per user per product
+}
+
+model AdminAuditLog {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  action String // HARD_DELETE_PRODUCT, HARD_DELETE_PRODUCT_MEDIA, etc.
+
+  targetId String @db.ObjectId
+
+  performedBy String @db.ObjectId
+
+  performer users @relation(fields: [performedBy], references: [id])
+
+  metadata Json? // Additional context
+
+  createdAt DateTime @default(now())
+
+  @@index([action])
+  @@index([performedBy])
+  @@index([createdAt])
+}
+
+// -------------------- REFRESH TOKEN MANAGEMENT ---------------------
+
+model RefreshToken {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String @db.ObjectId
+
+  token String @unique // The actual refresh token value
+
+  expiresAt DateTime // Token expiration timestamp
+
+  isBlacklisted Boolean @default(false) // Token rotation invalidation flag
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@index([isBlacklisted])
+  @@index([userId, isBlacklisted])
+}
+// enum ServiceStatus {
+//   ACTIVE
+//   PAUSED
+//   SUSPENDED
+// }
+
+// enum BookingPhase {
+//   INSPECTION
+//   QUOTED
+//   AGREED
+//   EXECUTING
+//   COMPLETED
+//   CANCELLED
+// }
+
+// model ServiceListing {
+//   id          String        @id @default(auto()) @map("_id") @db.ObjectId
+//   shopId      String        @db.ObjectId
+//   sellerId    String        @db.ObjectId
+//   title       String
+//   description String
+//   categoryId  String        @db.ObjectId
+//   visitFee    Float
+//   status      ServiceStatus @default(ACTIVE)
+//   isDeleted   Boolean       @default(false)
+
+//   shop        Shops         @relation(fields: [shopId], references: [id])
+//   bookings    ServiceBooking[]
+
+//   createdAt   DateTime      @default(now())
+//   updatedAt   DateTime      @updatedAt
+
+//   @@index([shopId, status])
+//   @@index([categoryId, status])
+// }
+
+// model ServiceBooking {
+//   id             String       @id @default(auto()) @map("_id") @db.ObjectId
+//   serviceId      String       @db.ObjectId
+//   userId         String       @db.ObjectId
+//   shopId         String       @db.ObjectId
+
+//   phase          BookingPhase @default(INSPECTION)
+//   scheduledAt    DateTime?
+//   completedAt    DateTime?
+
+//   visitFee       Float
+//   quotedPrice    Float?
+//   materialsEst   Float?
+//   finalAmount    Float?
+
+//   clientNote     String?
+//   sellerNote     String?
+
+//   paymentStatus  PaymentStatus @default(PENDING)  // reuse existing enum
+//   paymentType    PaymentType?                      // reuse existing enum
+
+//   cancelReason   String?
+//   cancelledBy    String?
+
+//   service        ServiceListing @relation(fields: [serviceId], references: [id])
+//   user           users          @relation(fields: [userId], references: [id])
+
+//   createdAt      DateTime @default(now())
+//   updatedAt      DateTime @updatedAt
+
+//   @@index([userId])
+//   @@index([shopId])
+//   @@index([phase])
+// }
+// **What I dropped for MVP and why:**
+
+// | Dropped Index | Reason |
+// |---|---|
+// | Global `[colors, status, isDeleted]` | add after launch if needed |
+// | Global `[sizes, status, isDeleted]` | add after launch if needed |
+// | Global `[brand, status, isDeleted]` | add after launch if needed |
+// | Global `[rating, status, isDeleted]` | add after launch if needed |
+// | Global `[totalSales, status, isDeleted]` | add after launch if needed |
+// | Global `[createdAt, status, isDeleted]` | add after launch if needed |
+// | Global `[sale_price, status, isDeleted]` | add after launch if needed |
+// | `[shopId, brand, status, isDeleted]` | observe first |
+// | `[shopId, rating, status, isDeleted]` | observe first |
+// | `[shopId, totalSales, status, isDeleted]` | observe first |
+// | `[shopId, sale_price, status, isDeleted]` | observe first |
+// | `[sellerId, status, isDeleted]` | observe first |
+// | `[productId, isActive, salePrice]` on variant | observe first |
+// | `[isActive, price]` global variant | observe first |
+// | `[isActive, salePrice]` global variant | observe first |
+// | `[optionValueId, variantId]` compound | split to two simple |
+
+// ---
+
+// **MVP index count:**
+// ```
+// Product:        11 indexes  ✅
+// ProductVariant:  3 indexes  ✅
+// ProductOption:   2 indexes  ✅
+// OptionValue:     2 indexes  ✅
+// VariantOption:   3 indexes  ✅
+
+// Total: 21 indexes vs your original 35+
+// Much lighter on RAM at launch
+

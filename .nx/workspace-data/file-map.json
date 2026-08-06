@@ -19,480 +19,124 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".history/apps/backend/src/modules/products/products.service_20260805051021.ts",
-        "hash": "4520435400657295185"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.controller_20260805050129.ts",
-        "hash": "5419406039607113146"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/promote-brand.dto_20260805034715.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/backend/tsconfig_20260730032950.json",
-        "hash": "11325319740537787842"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/dto/create-product.dto_20260805045851.ts",
-        "hash": "3355282801836258538"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.service_20260805050025.ts",
-        "hash": "9638323052368969786"
-      },
-      {
-        "file": "libs/api-client/src/index.js",
-        "hash": "11226665577327490879"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/upload-image.dto_20260805034715.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/entities/product-status.enum_20260805043634.ts",
-        "hash": "1113597119676133885"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/auth/utils/auth.helper_20260731032515.ts",
-        "hash": "9749703211073028575"
-      },
-      {
         "file": ".history/apps/backend/src/modules/products/products.service_20260805050921.ts",
         "hash": "16424823616279433761"
-      },
-      {
-        "file": ".history/apps/user-web/src/app/auth/register-user/RegisterForm_20260803053201.tsx",
-        "hash": "12218670625295832645"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805040919.ts",
-        "hash": "13936518836266776611"
-      },
-      {
-        "file": "libs/types/src/index.js",
-        "hash": "16104076235999945800"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.module_20260805034920.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/entities/product.entity_20260805043728.ts",
-        "hash": "223218656800509350"
-      },
-      {
-        "file": "libs/api-client/src/index.js.map",
-        "hash": "15681378595323743865"
-      },
-      {
-        "file": ".history/apps/user-web/src/validation/registerSchema_20260803054435.ts",
-        "hash": "9945499642164338290"
-      },
-      {
-        "file": ".history/apps/admin-ui/src/app/hooks/useImageManagement_20260805033849.ts",
-        "hash": "7100755845284827014"
-      },
-      {
-        "file": "libs/types/src/index.js.map",
-        "hash": "3743159328105132689"
-      },
-      {
-        "file": "libs/ui/src/index.d.ts.map",
-        "hash": "144212689050474492"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "289273778159874079"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "9298600618409844635"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045333.ts",
-        "hash": "12081680752821944655"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/update-brand.dto_20260805034714.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/user-web/src/app/auth/register-user/RegisterForm_20260803054454.tsx",
-        "hash": "15463328371428386117"
-      },
-      {
-        "file": "nginx/nginx.conf",
-        "hash": "10679860972458368554"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045330.ts",
-        "hash": "11467985584306500929"
-      },
-      {
-        "file": ".history/apps/backend/.env_20260730013532.example",
-        "hash": "11575151673286421668"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805040130.ts",
-        "hash": "9792570090072608839"
-      },
-      {
-        "file": "libs/api-client/src/index.d.ts.map",
-        "hash": "7046191815345657701"
-      },
-      {
-        "file": "libs/utils/index.js.map",
-        "hash": "4931383529757541615"
-      },
-      {
-        "file": "libs/types/src/lib/product.types.js",
-        "hash": "4087169049324161237"
-      },
-      {
-        "file": ".history/apps/user-web/src/validation/registerSchema_20260803054434.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.controller_20260805052011.ts",
-        "hash": "1452904120588009362"
-      },
-      {
-        "file": ".history/apps/backend/src/main_20260730030217.ts",
-        "hash": "16904077821098978563"
-      },
-      {
-        "file": "libs/ui/src/index.ts",
-        "hash": "17303048992141335410"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805034829.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "libs/types/src/lib/auth.types.d.ts",
-        "hash": "12722783210499144500"
-      },
-      {
-        "file": ".history/apps/backend/src/main_20260730032408.ts",
-        "hash": "15907102880714070031"
-      },
-      {
-        "file": ".history/apps/admin-ui/src/app/hooks/useImageManagement_20260805034014.ts",
-        "hash": "13545900449223172999"
-      },
-      {
-        "file": ".history/apps/backend/src/main_20260730033239.ts",
-        "hash": "1512817435969774665"
-      },
-      {
-        "file": "package.json",
-        "hash": "15058239776843492950"
-      },
-      {
-        "file": "libs/ui/src/index.js",
-        "hash": "11028123889093712314"
-      },
-      {
-        "file": "libs/types/src/index.d.ts",
-        "hash": "5526413576956987299"
-      },
-      {
-        "file": ".history/apps/user-web/src/utils/axiosInstance_20260803054431.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.module_20260805050239.ts",
-        "hash": "49087374681450121"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805034906.ts",
-        "hash": "3662256725954228804"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/entities/product-status.enum_20260805045305.ts",
-        "hash": "14784073199708968703"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/upload-image.dto_20260805034716.ts",
-        "hash": "1336185986779436204"
-      },
-      {
-        "file": "libs/types/src/lib/auth.types.js",
-        "hash": "8932599511329815901"
-      },
-      {
-        "file": "libs/types/src/lib/order.types.js.map",
-        "hash": "13001817308510041795"
-      },
-      {
-        "file": "libs/ui/src/lib/button.tsx",
-        "hash": "6139300812789419542"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805040154.ts",
-        "hash": "777115754329380414"
-      },
-      {
-        "file": "libs/types/src/lib/order.types.d.ts",
-        "hash": "13402083263944993082"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "6473704547225149886"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/create-brand.dto_20260805034714.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "libs/types/src/index.d.ts.map",
-        "hash": "2606720678886682191"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/promote-brand.dto_20260805034716.ts",
-        "hash": "16276254076583896985"
-      },
-      {
-        "file": "libs/utils/index.ts",
-        "hash": "16429958627362454498"
-      },
-      {
-        "file": "libs/package.json",
-        "hash": "8630294688235076505"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/dto/create-product.dto_20260730013532.ts",
-        "hash": "16992158520227349519"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.controller_20260804005017.ts",
-        "hash": "3314934957999064161"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.service_20260730033313.ts",
-        "hash": "12542218355957296572"
-      },
-      {
-        "file": "libs/ui/src/index.d.ts",
-        "hash": "9021226177137712490"
-      },
-      {
-        "file": "libs/types/src/lib/auth.types.ts",
-        "hash": "1976372579735190372"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.service_20260805050950.ts",
-        "hash": "4061293772978908192"
-      },
-      {
-        "file": ".history/apps/admin-ui/src/app/hooks/useImageManagement_20260805030806.ts",
-        "hash": "13545900449223172999"
-      },
-      {
-        "file": "libs/types/src/lib/user.types.d.ts.map",
-        "hash": "12389302819263312068"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/update-brand.dto_20260805034715.ts",
-        "hash": "8846095905149763004"
-      },
-      {
-        "file": "libs/utils/index.js",
-        "hash": "817519745710046357"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/dto/create-brand.dto_20260805034715.ts",
-        "hash": "11702819253548287906"
-      },
-      {
-        "file": "libs/types/src/lib/product.types.ts",
-        "hash": "10709035629756380955"
-      },
-      {
-        "file": ".history/apps/backend/.env_20260731033826.example",
-        "hash": "7334408610258612586"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.service_20260805050845.ts",
-        "hash": "10897675081116233616"
-      },
-      {
-        "file": "libs/types/src/lib/auth.types.d.ts.map",
-        "hash": "9960901029485413672"
-      },
-      {
-        "file": ".history/apps/backend/src/app.module_20260805035027.ts",
-        "hash": "17615187261630236042"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "2811845925925127796"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/products.module_20260805020222.ts",
-        "hash": "13247958306133636229"
-      },
-      {
-        "file": "libs/types/src/lib/product.types.d.ts.map",
-        "hash": "13136647615097715070"
-      },
-      {
-        "file": ".history/apps/user-web/src/app/auth/register-user/RegisterForm_20260803055111.tsx",
-        "hash": "10718083956187061222"
-      },
-      {
-        "file": ".history/apps/backend/.env_20260731033834.example",
-        "hash": "4418520010981147041"
-      },
-      {
-        "file": "libs/ui/src/lib/button.d.ts.map",
-        "hash": "7124054413276811133"
-      },
-      {
-        "file": "libs/types/src/lib/user.types.ts",
-        "hash": "6317061170784694507"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805034905.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "libs/ui/src/lib/button.d.ts",
-        "hash": "9410696582652922919"
-      },
-      {
-        "file": "libs/api-client/src/index.ts",
-        "hash": "1475281304421812529"
-      },
-      {
-        "file": "libs/ui/src/index.js.map",
-        "hash": "17887149611527628647"
-      },
-      {
-        "file": "libs/cdn-purge.ts",
-        "hash": "12852164924130610501"
-      },
-      {
-        "file": "nx.json",
-        "hash": "4087260032564599213"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/auth/utils/auth.helper_20260420005155.ts",
-        "hash": "6108680449626534923"
       },
       {
         "file": "libs/utils/index.d.ts",
         "hash": "11115567917819888419"
       },
       {
-        "file": "docker-compose.yml",
-        "hash": "3776847617908554800"
-      },
-      {
-        "file": "libs/types/src/lib/auth.types.js.map",
-        "hash": "6203157482327389071"
-      },
-      {
-        "file": "query",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "libs/ui/src/lib/button.js",
-        "hash": "1209945562308570366"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/entities/brand.entity_20260805034712.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".history/apps/backend/src/app.module_20260805035836.ts",
-        "hash": "7271184446636531110"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/products/entities/product.entity_20260805044911.ts",
-        "hash": "13345820583151152709"
-      },
-      {
-        "file": "tsconfig.json",
-        "hash": "5321296246824382825"
+        "file": ".history/apps/backend/src/modules/brands/dto/create-brand.dto_20260805034715.ts",
+        "hash": "11702819253548287906"
       },
       {
         "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805040846.ts",
         "hash": "18117748555673361791"
       },
       {
-        "file": "libs/ui/src/lib/button.js.map",
-        "hash": "15800047126694199958"
+        "file": "libs/utils/index.js",
+        "hash": "817519745710046357"
       },
       {
-        "file": ".history/apps/user-web/src/utils/axiosInstance_20260803054432.ts",
-        "hash": "7791709374019981967"
+        "file": "libs/types/src/lib/auth.types.ts",
+        "hash": "1976372579735190372"
       },
       {
-        "file": "libs/types/src/lib/product.types.d.ts",
-        "hash": "16887552498491540951"
-      },
-      {
-        "file": "libs/api-client/src/index.d.ts",
-        "hash": "3699022489257147107"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805034830.ts",
-        "hash": "18275337624771479505"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045337.ts",
-        "hash": "14847064929183199299"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045124.ts",
-        "hash": "2748537814508214937"
-      },
-      {
-        "file": "libs/types/src/lib/user.types.js.map",
-        "hash": "10414342886447862095"
+        "file": ".history/apps/backend/src/modules/products/products.module_20260805050239.ts",
+        "hash": "49087374681450121"
       },
       {
         "file": "libs/types/src/index.ts",
         "hash": "5481669459384211778"
       },
       {
-        "file": "libs/types/src/lib/user.types.d.ts",
-        "hash": "2802435263422540780"
+        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805040130.ts",
+        "hash": "9792570090072608839"
       },
       {
-        "file": "libs/types/src/lib/product.types.js.map",
-        "hash": "10509862586178600481"
-      },
-      {
-        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805040111.ts",
-        "hash": "12932776124326311239"
-      },
-      {
-        "file": "libs/r2-upload.ts",
-        "hash": "1936151181416282191"
-      },
-      {
-        "file": ".history/apps/backend/tsconfig_20260730032949.json",
+        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805034905.ts",
         "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.service_20260805050950.ts",
+        "hash": "4061293772978908192"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.module_20260805034921.ts",
+        "hash": "12264910608082622062"
+      },
+      {
+        "file": "libs/types/src/index.d.ts.map",
+        "hash": "2606720678886682191"
+      },
+      {
+        "file": "libs/api-client/src/index.js.map",
+        "hash": "15681378595323743865"
+      },
+      {
+        "file": "nginx/nginx.conf",
+        "hash": "10679860972458368554"
+      },
+      {
+        "file": ".history/apps/user-web/src/utils/axiosInstance_20260803054432.ts",
+        "hash": "7791709374019981967"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "3776847617908554800"
+      },
+      {
+        "file": "libs/api-client/src/index.ts",
+        "hash": "1475281304421812529"
+      },
+      {
+        "file": "libs/ui/src/index.d.ts",
+        "hash": "9021226177137712490"
+      },
+      {
+        "file": "libs/ui/src/index.js",
+        "hash": "11028123889093712314"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.service_20260730033313.ts",
+        "hash": "12542218355957296572"
+      },
+      {
+        "file": "libs/utils/index.ts",
+        "hash": "16429958627362454498"
+      },
+      {
+        "file": "package.json",
+        "hash": "15058239776843492950"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/entities/product.entity_20260805044911.ts",
+        "hash": "13345820583151152709"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045333.ts",
+        "hash": "12081680752821944655"
       },
       {
         "file": ".history/apps/backend/src/app.module_20260804040250.ts",
         "hash": "15105853087333871453"
       },
       {
-        "file": ".history/apps/backend/src/modules/brands/entities/brand.entity_20260805034713.ts",
-        "hash": "10389636303460576114"
+        "file": "libs/types/src/lib/auth.types.js.map",
+        "hash": "6203157482327389071"
       },
       {
-        "file": "README.md",
-        "hash": "2027678561092172579"
+        "file": ".history/apps/backend/src/modules/products/entities/product-status.enum_20260805045305.ts",
+        "hash": "14784073199708968703"
       },
       {
-        "file": ".history/apps/backend/src/modules/brands/brands.module_20260805034921.ts",
-        "hash": "12264910608082622062"
+        "file": ".history/apps/backend/src/modules/products/products.controller_20260805050129.ts",
+        "hash": "5419406039607113146"
+      },
+      {
+        "file": "libs/ui/src/lib/button.tsx",
+        "hash": "6139300812789419542"
       },
       {
         "file": "libs/types/src/lib/user.types.js",
@@ -503,31 +147,412 @@
         "hash": "12755978346252890983"
       },
       {
-        "file": "libs/types/src/lib/order.types.ts",
-        "hash": "2928274707878303938"
+        "file": "libs/types/src/lib/user.types.d.ts",
+        "hash": "2802435263422540780"
       },
       {
-        "file": "libs/utils/index.d.ts.map",
-        "hash": "13472090990996760108"
+        "file": ".history/apps/backend/src/modules/products/products.service_20260805050025.ts",
+        "hash": "9638323052368969786"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/entities/brand.entity_20260805034713.ts",
+        "hash": "10389636303460576114"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/update-brand.dto_20260805034715.ts",
+        "hash": "8846095905149763004"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.service_20260805051021.ts",
+        "hash": "4520435400657295185"
+      },
+      {
+        "file": ".history/apps/backend/src/app.module_20260805035027.ts",
+        "hash": "17615187261630236042"
+      },
+      {
+        "file": ".history/apps/admin-ui/src/app/hooks/useImageManagement_20260805034014.ts",
+        "hash": "13545900449223172999"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/entities/product.entity_20260805043728.ts",
+        "hash": "223218656800509350"
+      },
+      {
+        "file": "libs/types/src/lib/auth.types.js",
+        "hash": "8932599511329815901"
+      },
+      {
+        "file": ".history/apps/user-web/src/app/auth/register-user/RegisterForm_20260803055111.tsx",
+        "hash": "10718083956187061222"
+      },
+      {
+        "file": ".history/apps/backend/tsconfig_20260730032949.json",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/user-web/src/app/auth/register-user/RegisterForm_20260803053201.tsx",
+        "hash": "12218670625295832645"
       },
       {
         "file": ".vscode/settings.json",
         "hash": "3258039546408967395"
       },
       {
+        "file": "libs/types/src/lib/product.types.d.ts.map",
+        "hash": "13136647615097715070"
+      },
+      {
+        "file": "libs/ui/src/lib/button.js.map",
+        "hash": "15800047126694199958"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805034829.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "libs/ui/src/lib/button.d.ts.map",
+        "hash": "7124054413276811133"
+      },
+      {
+        "file": "libs/types/src/lib/product.types.d.ts",
+        "hash": "16887552498491540951"
+      },
+      {
+        "file": "libs/ui/src/index.d.ts.map",
+        "hash": "144212689050474492"
+      },
+      {
+        "file": "libs/types/src/lib/order.types.js.map",
+        "hash": "13001817308510041795"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045337.ts",
+        "hash": "14847064929183199299"
+      },
+      {
+        "file": ".history/apps/backend/.env_20260731033834.example",
+        "hash": "4418520010981147041"
+      },
+      {
+        "file": "libs/types/src/lib/product.types.js",
+        "hash": "4087169049324161237"
+      },
+      {
+        "file": "libs/api-client/src/index.d.ts.map",
+        "hash": "7046191815345657701"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/entities/brand.entity_20260805034712.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "libs/ui/src/index.js.map",
+        "hash": "17887149611527628647"
+      },
+      {
+        "file": ".history/apps/backend/src/main_20260730032408.ts",
+        "hash": "15907102880714070031"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/auth/utils/auth.helper_20260731032515.ts",
+        "hash": "9749703211073028575"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4087260032564599213"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "9298600618409844635"
+      },
+      {
+        "file": "libs/types/src/lib/order.types.d.ts",
+        "hash": "13402083263944993082"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/promote-brand.dto_20260805034716.ts",
+        "hash": "16276254076583896985"
+      },
+      {
+        "file": "libs/types/src/index.d.ts",
+        "hash": "5526413576956987299"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805034830.ts",
+        "hash": "18275337624771479505"
+      },
+      {
+        "file": "libs/types/src/lib/user.types.d.ts.map",
+        "hash": "12389302819263312068"
+      },
+      {
+        "file": "README.md",
+        "hash": "2027678561092172579"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "5321296246824382825"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/entities/product-status.enum_20260805043634.ts",
+        "hash": "1113597119676133885"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805034906.ts",
+        "hash": "3662256725954228804"
+      },
+      {
+        "file": "libs/api-client/src/index.js",
+        "hash": "11226665577327490879"
+      },
+      {
+        "file": "libs/ui/src/lib/button.d.ts",
+        "hash": "9410696582652922919"
+      },
+      {
+        "file": "libs/ui/src/lib/button.js",
+        "hash": "1209945562308570366"
+      },
+      {
+        "file": "libs/types/src/lib/user.types.ts",
+        "hash": "6317061170784694507"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "289273778159874079"
+      },
+      {
+        "file": "libs/types/src/lib/product.types.ts",
+        "hash": "10709035629756380955"
+      },
+      {
+        "file": "libs/ui/src/index.ts",
+        "hash": "17303048992141335410"
+      },
+      {
+        "file": "libs/utils/index.d.ts.map",
+        "hash": "13472090990996760108"
+      },
+      {
+        "file": "libs/cdn-purge.ts",
+        "hash": "12852164924130610501"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/dto/create-product.dto_20260805045851.ts",
+        "hash": "3355282801836258538"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045124.ts",
+        "hash": "2748537814508214937"
+      },
+      {
+        "file": ".history/apps/user-web/src/utils/axiosInstance_20260803054431.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/user-web/src/validation/registerSchema_20260803054435.ts",
+        "hash": "9945499642164338290"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "2811845925925127796"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.module_20260805034920.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/backend/src/main_20260730030217.ts",
+        "hash": "16904077821098978563"
+      },
+      {
+        "file": ".history/apps/backend/tsconfig_20260730032950.json",
+        "hash": "11325319740537787842"
+      },
+      {
         "file": "libs/types/src/lib/order.types.js",
         "hash": "9527957696484979273"
       },
       {
+        "file": "libs/types/src/index.js",
+        "hash": "16104076235999945800"
+      },
+      {
+        "file": "libs/r2-upload.ts",
+        "hash": "1936151181416282191"
+      },
+      {
+        "file": ".history/apps/backend/src/app.module_20260805035836.ts",
+        "hash": "7271184446636531110"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/upload-image.dto_20260805034715.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "libs/types/src/lib/user.types.js.map",
+        "hash": "10414342886447862095"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805040919.ts",
+        "hash": "13936518836266776611"
+      },
+      {
+        "file": ".history/apps/user-web/src/validation/registerSchema_20260803054434.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/backend/src/main_20260730033239.ts",
+        "hash": "1512817435969774665"
+      },
+      {
+        "file": ".history/apps/user-web/src/app/auth/register-user/RegisterForm_20260803054454.tsx",
+        "hash": "15463328371428386117"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/auth/auth.service_20260731045330.ts",
+        "hash": "11467985584306500929"
+      },
+      {
+        "file": ".history/apps/admin-ui/src/app/hooks/useImageManagement_20260805030806.ts",
+        "hash": "13545900449223172999"
+      },
+      {
+        "file": "libs/types/src/lib/auth.types.d.ts.map",
+        "hash": "9960901029485413672"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/update-brand.dto_20260805034714.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.controller_20260805052011.ts",
+        "hash": "1452904120588009362"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.controller_20260804005017.ts",
+        "hash": "3314934957999064161"
+      },
+      {
+        "file": "libs/package.json",
+        "hash": "8630294688235076505"
+      },
+      {
+        "file": "libs/utils/index.js.map",
+        "hash": "4931383529757541615"
+      },
+      {
+        "file": "libs/api-client/src/index.d.ts",
+        "hash": "3699022489257147107"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/upload-image.dto_20260805034716.ts",
+        "hash": "1336185986779436204"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/promote-brand.dto_20260805034715.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.service_20260805050845.ts",
+        "hash": "10897675081116233616"
+      },
+      {
+        "file": ".history/apps/backend/.env_20260731033826.example",
+        "hash": "7334408610258612586"
+      },
+      {
+        "file": ".history/apps/admin-ui/src/app/hooks/useImageManagement_20260805033849.ts",
+        "hash": "7100755845284827014"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/dto/create-product.dto_20260730013532.ts",
+        "hash": "16992158520227349519"
+      },
+      {
+        "file": "query",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "libs/types/src/index.js.map",
+        "hash": "3743159328105132689"
+      },
+      {
+        "file": "libs/types/src/lib/product.types.js.map",
+        "hash": "10509862586178600481"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.service_20260805040111.ts",
+        "hash": "12932776124326311239"
+      },
+      {
         "file": "libs/types/src/lib/order.types.d.ts.map",
         "hash": "7125559394501773021"
+      },
+      {
+        "file": ".history/apps/backend/.env_20260730013532.example",
+        "hash": "11575151673286421668"
+      },
+      {
+        "file": "libs/types/src/lib/order.types.ts",
+        "hash": "2928274707878303938"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/dto/create-brand.dto_20260805034714.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "libs/types/src/lib/auth.types.d.ts",
+        "hash": "12722783210499144500"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/auth/utils/auth.helper_20260420005155.ts",
+        "hash": "6108680449626534923"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "14784227052000112790"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/products/products.module_20260805020222.ts",
+        "hash": "13247958306133636229"
+      },
+      {
+        "file": ".history/apps/backend/src/modules/brands/brands.controller_20260805040154.ts",
+        "hash": "777115754329380414"
       }
     ],
     "projectFileMap": {
+      "@my-app/queue": [
+        {
+          "file": "libs/queue/connection.ts",
+          "hash": "14361494823023028590",
+          "deps": [
+            "npm:ioredis@5.11.1"
+          ]
+        },
+        {
+          "file": "libs/queue/index.ts",
+          "hash": "15945159247834480396",
+          "deps": [
+            "npm:bullmq",
+            "npm:ioredis@5.11.1"
+          ]
+        },
+        {
+          "file": "libs/queue/package.json",
+          "hash": "2902525291114783842",
+          "deps": [
+            "npm:bullmq",
+            "npm:ioredis@5.11.1"
+          ]
+        }
+      ],
       "backend": [
         {
           "file": "apps/backend/.env.example",
-          "hash": "4605631529311691135"
+          "hash": "4927084570734219549"
         },
         {
           "file": "apps/backend/.gitignore",
@@ -539,19 +564,24 @@
         },
         {
           "file": "apps/backend/package.json",
-          "hash": "16181444786684080846",
+          "hash": "15747730858211253301",
           "deps": [
             "npm:@nestjs/cli",
             "npm:@nestjs/testing",
             "npm:@types/cookie-parser",
             "npm:@types/ejs",
             "npm:@types/express",
+            "npm:@types/fluent-ffmpeg",
             "npm:@types/ioredis",
+            "npm:@types/multer",
             "npm:@types/node@22.20.1",
             "npm:@types/nodemailer",
             "npm:@types/passport-jwt",
             "npm:ts-node",
             "npm:typescript@6.0.3",
+            "npm:@aws-sdk/client-s3",
+            "npm:@aws-sdk/s3-request-presigner",
+            "npm:@nestjs/bullmq",
             "npm:@nestjs/common",
             "npm:@nestjs/config",
             "npm:@nestjs/core",
@@ -561,11 +591,14 @@
             "npm:@nestjs/swagger",
             "npm:@nestjs/typeorm",
             "npm:bcrypt",
+            "npm:bullmq",
             "npm:class-transformer",
             "npm:class-validator",
             "npm:cookie-parser",
             "npm:ejs@6.0.1",
-            "npm:ioredis",
+            "npm:fluent-ffmpeg",
+            "npm:ioredis@5.11.1",
+            "npm:multer",
             "npm:nodemailer",
             "npm:passport",
             "npm:passport-jwt",
@@ -583,12 +616,16 @@
         },
         {
           "file": "apps/backend/src/app.module.ts",
-          "hash": "7271184446636531110",
+          "hash": "14073320017078723181",
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/config",
             "npm:@nestjs/typeorm"
           ]
+        },
+        {
+          "file": "apps/backend/src/common/cdn-purge.ts",
+          "hash": "9368804435837727486"
         },
         {
           "file": "apps/backend/src/common/decorators/current-user.decorator.d.ts.map",
@@ -621,7 +658,7 @@
           "hash": "3698598268309472025",
           "deps": [
             "npm:@nestjs/common",
-            "npm:@types/express"
+            "npm:express@5.2.1"
           ]
         },
         {
@@ -646,6 +683,16 @@
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/backend/src/common/r2.service.ts",
+          "hash": "10598884798558657792",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@aws-sdk/client-s3",
+            "npm:@aws-sdk/s3-request-presigner"
           ]
         },
         {
@@ -764,7 +811,7 @@
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/swagger",
-            "npm:@types/express"
+            "npm:express@5.2.1"
           ]
         },
         {
@@ -911,7 +958,7 @@
             "npm:@nestjs/common",
             "npm:@nestjs/passport",
             "npm:passport-jwt",
-            "npm:@types/express"
+            "npm:express@5.2.1"
           ]
         },
         {
@@ -1132,6 +1179,34 @@
         {
           "file": "apps/backend/src/modules/mail/email-templates/login.ejs",
           "hash": "11643072471332472063"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/order-cancelled-admin.ejs",
+          "hash": "11714449755515448184"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/order-cancelled-user.ejs",
+          "hash": "12878163662816130132"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/order-confirmation.ejs",
+          "hash": "1391385824764391942"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/refund-approved-user.ejs",
+          "hash": "12383751356972664913"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/refund-completed-user.ejs",
+          "hash": "3625038367581764478"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/refund-rejected-user.ejs",
+          "hash": "6093761632999657662"
+        },
+        {
+          "file": "apps/backend/src/modules/mail/email-templates/refund-requested-admin.ejs",
+          "hash": "18387698597091310400"
         },
         {
           "file": "apps/backend/src/modules/mail/email-templates/reset-password.ejs",
@@ -1417,7 +1492,7 @@
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/config",
-            "npm:ioredis"
+            "npm:ioredis@5.11.1"
           ]
         },
         {
@@ -1429,7 +1504,7 @@
           "hash": "8764019847996955112",
           "deps": [
             "npm:@nestjs/common",
-            "npm:ioredis"
+            "npm:ioredis@5.11.1"
           ]
         },
         {
@@ -1499,14 +1574,31 @@
           ]
         },
         {
+          "file": "apps/backend/src/modules/upload/multer.config.ts",
+          "hash": "14291665581121711659",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/platform-express",
+            "npm:multer"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/upload/r2-storage.ts",
+          "hash": "2045783029462648827",
+          "deps": [
+            "npm:@aws-sdk/client-s3"
+          ]
+        },
+        {
           "file": "apps/backend/src/modules/upload/upload.controller.d.ts.map",
           "hash": "2327032687553252426"
         },
         {
           "file": "apps/backend/src/modules/upload/upload.controller.ts",
-          "hash": "2312341159106632981",
+          "hash": "12811891735879615074",
           "deps": [
-            "npm:@nestjs/common"
+            "npm:@nestjs/common",
+            "npm:@nestjs/platform-express"
           ]
         },
         {
@@ -1526,7 +1618,7 @@
         },
         {
           "file": "apps/backend/src/modules/upload/upload.service.ts",
-          "hash": "6620378002243634413",
+          "hash": "17173843990959199968",
           "deps": [
             "npm:@nestjs/common"
           ]
@@ -1606,6 +1698,167 @@
             "npm:@nestjs/common",
             "npm:@nestjs/typeorm",
             "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/admin-audit-log.entity.ts",
+          "hash": "1976106541341124339",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/notification.entity.ts",
+          "hash": "14619518008506012491",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/product-analytics.entity.ts",
+          "hash": "8522911840222845005",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/product-review.entity.ts",
+          "hash": "6389580494937132041",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/refresh-token.entity.ts",
+          "hash": "16533175943475644052",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/schema.prisma",
+          "hash": "8833929546873357650"
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/stock-deduction-failure.entity.ts",
+          "hash": "15364010002084318161",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/entities/user-analytics.entity.ts",
+          "hash": "1062567095709794550",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/email.processor.ts",
+          "hash": "2410664331182212716",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/media-cleanup.processor.ts",
+          "hash": "5171345115561289612",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/order.processor.ts",
+          "hash": "4025666696198595592",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/orphan-cleanup.processor.ts",
+          "hash": "9538122853366634832",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/refund.processor.ts",
+          "hash": "1014525255783340791",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/stock-deduct.processor.ts",
+          "hash": "17775910575554269559",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/token-cleanup.processor.ts",
+          "hash": "10702391668938912062",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/user-events.processor.ts",
+          "hash": "16960465964177153402",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/processors/video.processor.ts",
+          "hash": "12497684643518883450",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:fluent-ffmpeg"
+          ]
+        },
+        {
+          "file": "apps/backend/src/modules/workers/workers.module.ts",
+          "hash": "5178467687810671610",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/bullmq",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/config"
           ]
         },
         {
@@ -1986,7 +2239,7 @@
         },
         {
           "file": "apps/admin-ui/src/app/hooks/useImageManagement.ts",
-          "hash": "17081384215929688646",
+          "hash": "14568149651222118719",
           "deps": [
             "npm:react",
             "npm:react-hot-toast",
@@ -2021,7 +2274,7 @@
         },
         {
           "file": "apps/admin-ui/src/app/utils/axiosInstance.ts",
-          "hash": "13319662547729942365",
+          "hash": "9716099371234664529",
           "deps": [
             "npm:axios@1.19.0"
           ]
@@ -3127,5 +3380,5 @@
       ]
     }
   },
-  "externalNodesHash": "12350162521613426166"
+  "externalNodesHash": "15713669136486098542"
 }
