@@ -25,6 +25,23 @@ export class UploadService {
     return { file_url: url, fileId };
   }
 
+  async uploadVideo(file: Express.Multer.File) {
+    if (!file) {
+      throw new BadRequestException('No video file provided');
+    }
+
+    if (!file.mimetype.startsWith('video/')) {
+      throw new BadRequestException('Only video files are allowed');
+    }
+
+    const extension = extname(file.originalname) || '.mp4';
+    const fileId = `uploads/admin/videos/${randomUUID()}${extension}`;
+
+    const { url } = await uploadToR2(file.buffer, fileId, file.mimetype);
+
+    return { file_url: url, fileId };
+  }
+
   async deleteImage(fileId: string) {
     if (!fileId) {
       throw new BadRequestException('fileId is required');
@@ -33,5 +50,15 @@ export class UploadService {
     await deleteFromR2(fileId);
 
     return { success: true, message: 'Image deleted successfully' };
+  }
+
+  async deleteVideo(fileId: string) {
+    if (!fileId) {
+      throw new BadRequestException('fileId is required');
+    }
+
+    await deleteFromR2(fileId);
+
+    return { success: true, message: 'Video deleted successfully' };
   }
 }

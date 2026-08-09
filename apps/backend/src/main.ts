@@ -1,17 +1,54 @@
 import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
-import { ValidationPipe } from '@nestjs/common';
+import { BadRequestException, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import cookieParser from 'cookie-parser';
+import { ValidationError } from 'class-validator';
 import { AppModule } from './app.module';
 
+function flattenValidationErrors(
+  errors: ValidationError[],
+  parent = '',
+): { field: string; message: string }[] {
+  const result: { field: string; message: string }[] = [];
+  for (const error of errors) {
+    const field = parent ? `${parent}.${error.property}` : error.property;
+    if (error.constraints) {
+      const message = Object.values(error.constraints)[0];
+      result.push({ field, message });
+    }
+    if (error.children?.length) {
+      result.push(...flattenValidationErrors(error.children, field));
+    }
+  }
+  return result;
+}
+
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.use(cookieParser());
 
   app.setGlobalPrefix('api');
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
+
+  // Allow base64 image payloads (e.g. banner uploads) in JSON bodies.
+  app.useBodyParser('json', { limit: '20mb' });
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+      exceptionFactory: (errors) => {
+        const fieldErrors = flattenValidationErrors(errors);
+        return new BadRequestException({
+          message: fieldErrors,
+          errors: fieldErrors,
+          statusCode: 400,
+        });
+      },
+    }),
+  );
 
   // CORS: allow both frontend origins (main domain + admin subdomain)
   app.enableCors({

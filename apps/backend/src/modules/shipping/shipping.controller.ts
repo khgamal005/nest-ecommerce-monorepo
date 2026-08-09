@@ -22,21 +22,21 @@ export class ShippingController {
   // need customer-level write access from user-ui too (use JwtAuthGuard only
   // for those routes instead of RolesGuard).
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Post()
   create(@Body() dto: any) {
     return this.shippingService.create(dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Patch(':id')
   update(@Param('id') id: string, @Body() dto: any) {
     return this.shippingService.update(id, dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.shippingService.remove(id);

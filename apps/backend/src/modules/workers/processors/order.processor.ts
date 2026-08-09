@@ -10,7 +10,7 @@ import { Product } from '../../products/entities/product.entity';
 import { ProductAnalytics } from '../entities/product-analytics.entity';
 import { UserAnalytics } from '../entities/user-analytics.entity';
 import { User } from '../../users/entities/user.entity';
-import { Notification } from '../entities/notification.entity';
+import { Notification, AdminNotificationType } from '../entities/notification.entity';
 
 interface OrderItem {
   productId?: string;
@@ -87,7 +87,7 @@ export class OrderPostProcessProcessor extends WorkerHost {
     title: string,
     message: string,
     redirectLink: string,
-    type: string,
+    type: AdminNotificationType,
     creatorId?: string,
   ) {
     const admins = await this.users.find({

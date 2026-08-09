@@ -3,6 +3,7 @@ import { PromotionsService } from './promotions.service';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
+import { CreatePromotionDto, UpdatePromotionDto } from './dto/promotion.dto';
 
 @Controller('promotions')
 export class PromotionsController {
@@ -11,6 +12,11 @@ export class PromotionsController {
   @Get()
   findAll() {
     return this.promotionsService.findAll();
+  }
+
+  @Get('code/:code')
+  findByCode(@Param('code') code: string) {
+    return this.promotionsService.findByCode(code);
   }
 
   @Get(':id')
@@ -22,21 +28,21 @@ export class PromotionsController {
   // need customer-level write access from user-ui too (use JwtAuthGuard only
   // for those routes instead of RolesGuard).
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Post()
-  create(@Body() dto: any) {
+  create(@Body() dto: CreatePromotionDto) {
     return this.promotionsService.create(dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: any) {
+  update(@Param('id') id: string, @Body() dto: UpdatePromotionDto) {
     return this.promotionsService.update(id, dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.promotionsService.remove(id);

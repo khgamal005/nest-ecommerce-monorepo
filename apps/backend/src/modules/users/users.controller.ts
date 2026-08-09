@@ -12,7 +12,7 @@ export class UsersController {
 
   // Admin-ui only: customer management list.
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Get()
   findAll() {
     return this.usersService.findAll();
@@ -37,6 +37,14 @@ export class UsersController {
       success: true,
       message: 'Address deleted successfully',
     };
+  }
+
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  @Get('addresses/:addressId')
+  async getAddress(@Param('addressId') addressId: string) {
+    const address = await this.usersService.getAddressById(addressId);
+    return { address };
   }
 
   @UseGuards(JwtAuthGuard)

@@ -22,11 +22,23 @@ export class RedisService {
     return this.redis.set(key, value);
   }
 
-  async del(...keys: string[]): Promise<number> {
+async del(...keys: string[]): Promise<number> {
     return this.redis.del(...keys);
   }
 
   async expire(key: string, seconds: number): Promise<number> {
     return this.redis.expire(key, seconds);
+  }
+
+  // Atomic set-if-not-exists with TTL. Returns true when the lock was acquired.
+  async setnx(key: string, value: string, ttlSeconds: number): Promise<boolean> {
+    const result = await this.redis.set(
+      key,
+      value,
+      'EX',
+      ttlSeconds,
+      'NX',
+    );
+    return result === 'OK';
   }
 }

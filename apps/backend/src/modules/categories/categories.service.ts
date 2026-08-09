@@ -38,6 +38,28 @@ export class CategoriesService {
     };
   }
 
+  // Public: site logo + banners from SiteConfig (storefront display)
+  async getSiteConfig() {
+    const config = await this.siteConfigRepository.find({
+      order: { createdAt: 'ASC' },
+      take: 1,
+    });
+    const siteConfig = config[0];
+
+    let bannersArray: any[] = [];
+    if (siteConfig?.banners) {
+      bannersArray = Array.isArray(siteConfig.banners)
+        ? siteConfig.banners
+        : [siteConfig.banners];
+    }
+
+    return {
+      logo: siteConfig?.logos?.[0] || null,
+      logos: siteConfig?.logos || [],
+      banners: bannersArray,
+    };
+  }
+
   // Get all categories from Category model (with hierarchy)
   async getAllCategoriesFromDB(level?: string) {
     const where: any = {};

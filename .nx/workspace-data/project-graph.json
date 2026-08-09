@@ -1689,6 +1689,24 @@
         "hash": "sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA=="
       }
     },
+    "npm:@emotion/is-prop-valid": {
+      "type": "npm",
+      "name": "npm:@emotion/is-prop-valid",
+      "data": {
+        "version": "1.4.0",
+        "packageName": "@emotion/is-prop-valid",
+        "hash": "sha512-QgD4fyscGcbbKwJmqNvUMSE02OsHUa+lAWKdEUIJKgqe5IwRSKd7+KhibEWdaKwgjLj0DRSHA9biAIqGBk05lw=="
+      }
+    },
+    "npm:@emotion/memoize": {
+      "type": "npm",
+      "name": "npm:@emotion/memoize",
+      "data": {
+        "version": "0.9.0",
+        "packageName": "@emotion/memoize",
+        "hash": "sha512-30FAj7/EoJ5mwVPOWhAyCX+FPfMDrVecJAM+Iw9NRoSl4BBAQeqj4cApHHUXOVvIPgLVDsCFoz/hGD+5QQD1GQ=="
+      }
+    },
     "npm:@eslint-community/eslint-utils": {
       "type": "npm",
       "name": "npm:@eslint-community/eslint-utils",
@@ -3885,6 +3903,42 @@
         "hash": "sha512-yRg2pfOCxIs4ZJW3XYYHU/WgtD04FHSnfHlpRT7h7pR77hwkdRG4wxbKe4aq6P0RvXUTBSQpQeadS1SUYUe+KA=="
       }
     },
+    "npm:@tanstack/react-store": {
+      "type": "npm",
+      "name": "npm:@tanstack/react-store",
+      "data": {
+        "version": "0.11.1",
+        "packageName": "@tanstack/react-store",
+        "hash": "sha512-HaIGKI3YLmjBYIvy5DFDY23oNaYZIsTZfngey07Uh5iLVJgM3bIGCnZeOFOqzjFld9JHWcaHJnasD/bKoGKwJQ=="
+      }
+    },
+    "npm:@tanstack/react-table": {
+      "type": "npm",
+      "name": "npm:@tanstack/react-table",
+      "data": {
+        "version": "9.0.0",
+        "packageName": "@tanstack/react-table",
+        "hash": "sha512-Q/Z49MQcdMwge67U+LTjSEQJCnQE9/tNWK5IpiYex9JFDzfjNkLIi7yzGA4dfW4UpuMBrtqbSnSzn7oPr60T+w=="
+      }
+    },
+    "npm:@tanstack/store": {
+      "type": "npm",
+      "name": "npm:@tanstack/store",
+      "data": {
+        "version": "0.11.1",
+        "packageName": "@tanstack/store",
+        "hash": "sha512-mzTOBhypOuDJAy/D8n2MfUZ1HFkXnmSETviRyhqEC8LUE7/IZQExOTxMANj3KjTofYTkFNpBY67qaVrT41YccA=="
+      }
+    },
+    "npm:@tanstack/table-core": {
+      "type": "npm",
+      "name": "npm:@tanstack/table-core",
+      "data": {
+        "version": "9.0.0",
+        "packageName": "@tanstack/table-core",
+        "hash": "sha512-IyKCc4D7d/+I9euQntlVDQ7lnilmFRKpIROBeI5/866adFy+65xWvCFPz76NZ5j2lXe/RFDvFVV7bfETmwHEMA=="
+      }
+    },
     "npm:@tokenizer/inflate": {
       "type": "npm",
       "name": "npm:@tokenizer/inflate",
@@ -5053,6 +5107,15 @@
         "version": "3.1.3",
         "packageName": "anymatch",
         "hash": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw=="
+      }
+    },
+    "npm:apexcharts": {
+      "type": "npm",
+      "name": "npm:apexcharts",
+      "data": {
+        "version": "6.7.0",
+        "packageName": "apexcharts",
+        "hash": "sha512-1Z8AACzw2W2I/JOLh2jHVVHWYtOIf1Yr9/A99r1+YJwb31V2Wmi4fzfscWOJAAf47nW4qRWvLm+ZLEm0GeiqjQ=="
       }
     },
     "npm:app-root-path": {
@@ -6360,6 +6423,15 @@
         "hash": "sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA=="
       }
     },
+    "npm:date-fns": {
+      "type": "npm",
+      "name": "npm:date-fns",
+      "data": {
+        "version": "4.4.0",
+        "packageName": "date-fns",
+        "hash": "sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w=="
+      }
+    },
     "npm:dayjs": {
       "type": "npm",
       "name": "npm:dayjs",
@@ -6619,6 +6691,15 @@
         "version": "17.4.1",
         "packageName": "dotenv",
         "hash": "sha512-k8DaKGP6r1G30Lx8V4+pCsLzKr8vLmV2paqEj1Y55GdAgJuIqpRp5FfajGF8KtwMxCz9qJc6wUIJnm053d/WCw=="
+      }
+    },
+    "npm:dotenv@17.4.2": {
+      "type": "npm",
+      "name": "npm:dotenv@17.4.2",
+      "data": {
+        "version": "17.4.2",
+        "packageName": "dotenv",
+        "hash": "sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw=="
       }
     },
     "npm:dunder-proto": {
@@ -8338,6 +8419,15 @@
         "version": "4.15.9",
         "packageName": "jose",
         "hash": "sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA=="
+      }
+    },
+    "npm:jotai": {
+      "type": "npm",
+      "name": "npm:jotai",
+      "data": {
+        "version": "2.20.2",
+        "packageName": "jotai",
+        "hash": "sha512-aHB4CNb9qRcyf0mwSB6EO5bCGAjx8cTwFgOFCE2leOnTzqACbnSWG8XoWB3LxCT1Qoj03I1OWAHszDmN4uHb/w=="
       }
     },
     "npm:js-tokens": {
@@ -10689,6 +10779,15 @@
         "hash": "sha512-K5zQjDllxWkf7Z5xJdV0/B0WTNqx6vxG70zJE4N0kBs4LovmEYWJzQGxC9bS9RAKu3bgM40lrd5zoLJ12MQ5BA=="
       }
     },
+    "npm:react-apexcharts": {
+      "type": "npm",
+      "name": "npm:react-apexcharts",
+      "data": {
+        "version": "2.1.1",
+        "packageName": "react-apexcharts",
+        "hash": "sha512-aV25n+1ZdAzRG0KhODVC48K8WbhMKBAr3yWSeaaBqM1ySn22kSSKblsNCUvlwegsT+cdMLuOrK9xGZb+IK+OkQ=="
+      }
+    },
     "npm:react-dom": {
       "type": "npm",
       "name": "npm:react-dom",
@@ -11796,6 +11895,15 @@
         "hash": "sha512-0WqXzrsMTyb8yjZJHDqwmnwRJvhALK9LfRtRc6B4UTWe8AijYLZYZ9thuJTZc2VfQWINADW/j+LiJnfy2RoC1w=="
       }
     },
+    "npm:styled-components": {
+      "type": "npm",
+      "name": "npm:styled-components",
+      "data": {
+        "version": "6.5.0",
+        "packageName": "styled-components",
+        "hash": "sha512-WLnTRAIRJsmCQfPXoEDDd1YMML+ImxQ8YGVVg60FALxsn/rpWiQWSJCZDNfu/buAcBFnTUr8ev6CBR8rb7xLiQ=="
+      }
+    },
     "npm:styled-jsx": {
       "type": "npm",
       "name": "npm:styled-jsx",
@@ -11812,6 +11920,15 @@
         "version": "7.0.11",
         "packageName": "stylehacks",
         "hash": "sha512-iODNfhXVLqc5LADs+Y6Oh5wJuK5ZcHbVng8aiK3y9pjMQdc5hLrBW0eFU6FtnpNrE6PoEg/MmFTU4waotj5WNg=="
+      }
+    },
+    "npm:stylis": {
+      "type": "npm",
+      "name": "npm:stylis",
+      "data": {
+        "version": "4.3.6",
+        "packageName": "stylis",
+        "hash": "sha512-yQ3rwFWRfwNUY7H5vpU0wfdkNSnvnJinhF9830Swlaxl03zsOjCfmX0ugac+3LtK0lYSgwL/KXc8oYL3mG4YFQ=="
       }
     },
     "npm:supports-color@7.2.0": {
@@ -12791,6 +12908,11 @@
     "admin-ui": [
       {
         "source": "admin-ui",
+        "target": "npm:@tailwindcss/postcss",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
         "target": "npm:@types/node@22.20.1",
         "type": "static"
       },
@@ -12821,12 +12943,42 @@
       },
       {
         "source": "admin-ui",
+        "target": "npm:@hookform/resolvers",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
         "target": "npm:@tanstack/react-query",
         "type": "static"
       },
       {
         "source": "admin-ui",
+        "target": "npm:@tanstack/react-table",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:apexcharts",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
         "target": "npm:axios@1.19.0",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:date-fns",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:jotai",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:lucide-react",
         "type": "static"
       },
       {
@@ -12841,7 +12993,22 @@
       },
       {
         "source": "admin-ui",
+        "target": "npm:react-apexcharts",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:react-apexcharts",
+        "type": "dynamic"
+      },
+      {
+        "source": "admin-ui",
         "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:react-hook-form",
         "type": "static"
       },
       {
@@ -12856,7 +13023,17 @@
       },
       {
         "source": "admin-ui",
+        "target": "npm:styled-components",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
         "target": "npm:zustand",
+        "type": "static"
+      },
+      {
+        "source": "admin-ui",
+        "target": "npm:zod",
         "type": "static"
       }
     ],
@@ -13004,6 +13181,11 @@
       {
         "source": "backend",
         "target": "npm:cookie-parser",
+        "type": "static"
+      },
+      {
+        "source": "backend",
+        "target": "npm:dotenv@17.4.2",
         "type": "static"
       },
       {
@@ -13177,7 +13359,7 @@
     "@my-app/queue": [
       {
         "source": "@my-app/queue",
-        "target": "npm:ioredis@5.11.1",
+        "target": "npm:ioredis@5.10.0",
         "type": "static"
       },
       {
@@ -16325,6 +16507,13 @@
       {
         "source": "npm:@emnapi/wasi-threads@1.2.2",
         "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@emotion/is-prop-valid": [
+      {
+        "source": "npm:@emotion/is-prop-valid",
+        "target": "npm:@emotion/memoize",
         "type": "static"
       }
     ],
@@ -19963,6 +20152,52 @@
       {
         "source": "npm:@tanstack/react-query",
         "target": "npm:react",
+        "type": "static"
+      }
+    ],
+    "npm:@tanstack/react-store": [
+      {
+        "source": "npm:@tanstack/react-store",
+        "target": "npm:@tanstack/store",
+        "type": "static"
+      },
+      {
+        "source": "npm:@tanstack/react-store",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:@tanstack/react-store",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "npm:@tanstack/react-store",
+        "target": "npm:use-sync-external-store",
+        "type": "static"
+      }
+    ],
+    "npm:@tanstack/react-table": [
+      {
+        "source": "npm:@tanstack/react-table",
+        "target": "npm:@tanstack/react-store",
+        "type": "static"
+      },
+      {
+        "source": "npm:@tanstack/react-table",
+        "target": "npm:@tanstack/table-core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@tanstack/react-table",
+        "target": "npm:react",
+        "type": "static"
+      }
+    ],
+    "npm:@tanstack/table-core": [
+      {
+        "source": "npm:@tanstack/table-core",
+        "target": "npm:@tanstack/store",
         "type": "static"
       }
     ],
@@ -25045,6 +25280,28 @@
         "type": "static"
       }
     ],
+    "npm:jotai": [
+      {
+        "source": "npm:jotai",
+        "target": "npm:@babel/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:jotai",
+        "target": "npm:@babel/template",
+        "type": "static"
+      },
+      {
+        "source": "npm:jotai",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "npm:jotai",
+        "target": "npm:react",
+        "type": "static"
+      }
+    ],
     "npm:js-yaml@3.15.0": [
       {
         "source": "npm:js-yaml@3.15.0",
@@ -27586,6 +27843,23 @@
         "type": "static"
       }
     ],
+    "npm:react-apexcharts": [
+      {
+        "source": "npm:react-apexcharts",
+        "target": "npm:apexcharts",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-apexcharts",
+        "target": "npm:prop-types",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-apexcharts",
+        "target": "npm:react",
+        "type": "static"
+      }
+    ],
     "npm:react-dom": [
       {
         "source": "npm:react-dom",
@@ -28860,6 +29134,33 @@
       {
         "source": "npm:style-loader",
         "target": "npm:webpack@5.106.2",
+        "type": "static"
+      }
+    ],
+    "npm:styled-components": [
+      {
+        "source": "npm:styled-components",
+        "target": "npm:@emotion/is-prop-valid",
+        "type": "static"
+      },
+      {
+        "source": "npm:styled-components",
+        "target": "npm:csstype",
+        "type": "static"
+      },
+      {
+        "source": "npm:styled-components",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:styled-components",
+        "target": "npm:stylis",
+        "type": "static"
+      },
+      {
+        "source": "npm:styled-components",
+        "target": "npm:react-dom",
         "type": "static"
       }
     ],
@@ -30369,5 +30670,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1785985652700
+  "computedAt": 1786070826742
 }

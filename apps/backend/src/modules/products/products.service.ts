@@ -25,6 +25,20 @@ export class ProductsService {
     private readonly dataSource: DataSource,
   ) {}
 
+  private readonly productRelations = [
+    'images',
+    'videos',
+    'brand',
+    'category',
+    'category.parent',
+    'category.parent.parent',
+    'options',
+    'options.values',
+    'variants',
+    'variants.images',
+    'variants.videos',
+  ];
+
   // Get filtered products with pagination
   async getFilteredProducts(filters: {
     priceRange?: number[];
@@ -103,19 +117,23 @@ export class ProductsService {
   async getProductDetails(slug: string) {
     const product = await this.productRepository.findOne({
       where: { slug },
-      relations: [
-        'images',
-        'videos',
-        'brand',
-        'category',
-        'category.parent',
-        'category.parent.parent',
-        'options',
-        'options.values',
-        'variants',
-        'variants.images',
-        'variants.videos',
-      ],
+      relations: this.productRelations,
+    });
+
+    if (!product) {
+      throw new NotFoundException('Product not found');
+    }
+
+    return {
+      success: true,
+      product: this.enrichProduct(product),
+    };
+  }
+
+  async getProductDetailsById(id: string) {
+    const product = await this.productRepository.findOne({
+      where: { id },
+      relations: this.productRelations,
     });
 
     if (!product) {
@@ -292,7 +310,7 @@ export class ProductsService {
     }
     categoryPath = pathParts.length > 0 ? `/${pathParts.join('/')}/` : '';
 
-    return this.dataSource.transaction(async (manager) => {
+    const createdProductId = await this.dataSource.transaction(async (manager) => {
       // Create product
       const product = manager.create(Product, {
         title: dto.title,
@@ -427,8 +445,10 @@ export class ProductsService {
         await manager.save(variant);
       }
 
-      return this.getProductDetails(savedProduct.id);
+      return savedProduct.id;
     });
+
+    return this.getProductDetailsById(createdProductId);
   }
 
   // Update product
@@ -460,7 +480,7 @@ export class ProductsService {
       }
     }
 
-    return this.dataSource.transaction(async (manager) => {
+    await this.dataSource.transaction(async (manager) => {
       // Update product fields
       const updateData: Partial<Product> = {
         title: dto.title || product.title,
@@ -603,8 +623,10 @@ export class ProductsService {
         );
       }
 
-      return this.getProductDetails(id);
+      return id;
     });
+
+    return this.getProductDetailsById(id);
   }
 
   // Soft delete product
@@ -732,6 +754,9 @@ export class ProductsService {
         'options.values',
         'variants',
         'variants.images',
+        'variants.optionValues',
+        'variants.optionValues.optionValue',
+        'variants.optionValues.optionValue.option',
       ],
     });
 
@@ -746,7 +771,8 @@ export class ProductsService {
   async findAll(page: number = 1, limit: number = 10) {
     const skip = (page - 1) * limit;
     const [products, total] = await this.productRepository.findAndCount({
-      relations: ['images', 'brand', 'category'],
+      where: { isDeleted: false },
+      relations: ['images', 'brand', 'category', 'variants'],
       skip,
       take: limit,
       order: { createdAt: 'DESC' },

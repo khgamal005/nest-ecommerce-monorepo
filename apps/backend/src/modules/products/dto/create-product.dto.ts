@@ -3,6 +3,7 @@ import {
   IsBoolean,
   IsNotEmpty,
   IsNumber,
+  IsObject,
   IsOptional,
   IsString,
   IsUUID,
@@ -96,7 +97,7 @@ export class ProductVariantDto {
   images?: ProductImageDto[];
 
   @IsOptional()
-  @IsArray()
+  @IsObject()
   optionValues?: { [key: string]: string };
 }
 

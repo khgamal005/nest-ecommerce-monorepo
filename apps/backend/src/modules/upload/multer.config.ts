@@ -17,3 +17,17 @@ export const imageUploadOptions: MulterModuleOptions = {
     callback(null, true);
   },
 };
+
+export const MAX_VIDEO_FILE_SIZE = 50 * 1024 * 1024; // 50 MB
+
+export const videoUploadOptions: MulterModuleOptions = {
+  storage: memoryStorage(),
+  limits: { fileSize: MAX_VIDEO_FILE_SIZE },
+  fileFilter: (_req, file, callback) => {
+    if (!file.mimetype.startsWith('video/')) {
+      callback(new BadRequestException('Only video files are allowed'), false);
+      return;
+    }
+    callback(null, true);
+  },
+};

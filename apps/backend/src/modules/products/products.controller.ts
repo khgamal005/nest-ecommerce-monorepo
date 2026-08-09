@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -7,17 +8,31 @@ import {
   Patch,
   Post,
   Query,
+  Req,
+  UploadedFile,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { InjectRepository } from '@nestjs/typeorm';
+import { createHash, randomUUID } from 'crypto';
+import { extname } from 'path';
+import { Repository } from 'typeorm';
 import { ProductsService } from './products.service';
 import { CreateProductDto, UpdateProductDto } from './dto/create-product.dto';
+import { Image } from './entities/image.entity';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
+import { imageUploadOptions } from '../upload/multer.config';
+import { uploadToR2 } from '../upload/r2-storage';
 
 @Controller('products')
 export class ProductsController {
-  constructor(private readonly productsService: ProductsService) {}
+  constructor(
+    private readonly productsService: ProductsService,
+    @InjectRepository(Image) private readonly imageRepo: Repository<Image>,
+  ) {}
 
   // ============ PUBLIC ROUTES ============
 
@@ -50,7 +65,7 @@ export class ProductsController {
   // Get soft-deleted products (admin only)
   @Get('deleted')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async getDeletedProducts(
     @Query('page') page?: string,
     @Query('limit') limit?: string,
@@ -84,7 +99,7 @@ export class ProductsController {
   // Get all products (admin)
   @Get('admin/all')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async findAll(
     @Query('page') page?: string,
     @Query('limit') limit?: string,
@@ -98,7 +113,7 @@ export class ProductsController {
   // Get product by ID (admin)
   @Get('admin/:id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async findOne(@Param('id') id: string) {
     return this.productsService.findOne(id);
   }
@@ -106,7 +121,7 @@ export class ProductsController {
   // Create product
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async create(@Body() dto: CreateProductDto) {
     return this.productsService.create(dto);
   }
@@ -114,15 +129,58 @@ export class ProductsController {
   // Update product
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async update(@Param('id') id: string, @Body() dto: UpdateProductDto) {
     return this.productsService.update(id, dto);
+  }
+
+  // Upload a product image, deduplicating identical uploads by content hash
+  @Post('upload-image-with-hash')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  @UseInterceptors(FileInterceptor('image', imageUploadOptions))
+  async uploadImageWithHash(
+    @UploadedFile() file: Express.Multer.File,
+    @Req() req: { user?: { id: string } },
+  ) {
+    if (!file) {
+      throw new BadRequestException('No image file provided');
+    }
+
+    const imageHash = createHash('sha256').update(file.buffer).digest('hex');
+
+    const existing = await this.imageRepo.findOne({
+      where: { hash: imageHash },
+    });
+    if (existing) {
+      return {
+        reused: true,
+        fileId: existing.r2_key ?? '',
+        file_Url: existing.url,
+        imageHash,
+      };
+    }
+
+    const extension = extname(file.originalname) || '.webp';
+    const fileId = `uploads/admin/products/${randomUUID()}${extension}`;
+    const { url } = await uploadToR2(file.buffer, fileId, file.mimetype);
+
+    await this.imageRepo.save(
+      this.imageRepo.create({
+        url,
+        r2_key: fileId,
+        hash: imageHash,
+        userId: req.user?.id ?? null,
+      }),
+    );
+
+    return { reused: false, fileId, file_Url: url, imageHash };
   }
 
   // Soft delete product
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async remove(@Param('id') id: string) {
     return this.productsService.remove(id);
   }
@@ -130,7 +188,7 @@ export class ProductsController {
   // Restore soft-deleted product
   @Post(':id/restore')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   async restore(@Param('id') id: string) {
     return this.productsService.restore(id);
   }

@@ -1,44 +1,61 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Query,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
-import { RolesGuard } from '../../common/guards/roles.guard';
-import { Roles } from '../../common/decorators/roles.decorator';
 
 @Controller('payments')
 export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
-  @Get()
-  findAll() {
-    return this.paymentsService.findAll();
+  @UseGuards(JwtAuthGuard)
+  @Post('session')
+  createSession(@Req() req: any, @Body() body: any) {
+    return this.paymentsService.createPaymentSession(body, req.user?.id);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.paymentsService.findOne(id);
+  @UseGuards(JwtAuthGuard)
+  @Get('session/verify')
+  verifySession(@Req() req: any, @Query('sessionId') sessionId: string) {
+    return this.paymentsService.verifyPaymentSession(sessionId, req.user?.id);
   }
 
-  // Admin-ui only writes by default. Adjust per module -- e.g. cart/orders
-  // need customer-level write access from user-ui too (use JwtAuthGuard only
-  // for those routes instead of RolesGuard).
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
-  @Post()
-  create(@Body() dto: any) {
-    return this.paymentsService.create(dto);
+  @UseGuards(JwtAuthGuard)
+  @Post('kashier/create')
+  createKashier(@Req() req: any, @Body() body: any) {
+    return this.paymentsService.createKashierSession(body, req.user?.id);
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: any) {
-    return this.paymentsService.update(id, dto);
+  @UseGuards(JwtAuthGuard)
+  @Post('cod')
+  createCOD(@Req() req: any, @Body() body: any) {
+    return this.paymentsService.createCODOrder({
+      ...body,
+      userId: body.userId ?? req.user?.id,
+    });
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.paymentsService.remove(id);
+  // Public webhook — signature verified inside the service.
+  @Post('kashier/webhook-callback')
+  async kashierWebhook(@Req() req: any, @Res() res: any) {
+    const result = await this.paymentsService.kashierWebhookCreateOrder({
+      headers: req.headers,
+      body: req.body,
+    });
+    return res.status(result.statusCode).end();
+  }
+
+  // Public redirect after Kashier payment.
+  @Get('kashier/redirect-callback')
+  async kashierRedirect(@Query() query: any, @Res() res: any) {
+    const url = await this.paymentsService.kashierRedirectUser(query);
+    return res.redirect(url);
   }
 }

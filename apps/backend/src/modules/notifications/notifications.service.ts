@@ -19,6 +19,14 @@ export class NotificationsService {
     return { id, ...dto };
   }
 
+  async markAllRead() {
+    return { success: true, message: 'All notifications marked as read' };
+  }
+
+  async clearAll() {
+    return { success: true, message: 'All notifications cleared' };
+  }
+
   async remove(id: string) {
     return { id, deleted: true };
   }

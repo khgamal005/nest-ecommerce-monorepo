@@ -18,6 +18,7 @@ import HeaderBottom from './HeaderBottom';
 import MobileCategoryList from './MobileCategoryList';
 
 import { useUser } from '@/hooks/use-user';
+import { useSiteConfig, siteLogoUrl } from '@/hooks/useSiteConfig';
 import { Routes } from '@/constants/enums';
 import { useStore } from '@/store';
 import { useLayout } from '@/hooks/useLayout';
@@ -41,6 +42,8 @@ const Header = () => {
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const { user, sessionPending, logout, isLoggingOut } = useUser();
   const { categories } = useLayout();
+  const { logo } = useSiteConfig();
+  const logoUrl = siteLogoUrl(logo);
 
   const cart = useStore((state) => state.cart);
   const wishlist = useStore((state) => state.wishlist);
@@ -159,9 +162,18 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-1 lg:flex-1">
             <Link href="/" className="inline-flex items-center h-20">
-              <span className="text-2xl font-bold text-[#3489FF]">
-                متجرنا
-              </span>
+              {logoUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={logoUrl}
+                  alt="site logo"
+                  className="h-14 max-w-[180px] object-contain"
+                />
+              ) : (
+                <span className="text-2xl font-bold text-[#3489FF]">
+                  متجرنا
+                </span>
+              )}
             </Link>
           </div>
 

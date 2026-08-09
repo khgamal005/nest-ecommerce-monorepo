@@ -105,4 +105,14 @@ export class UsersService {
       order: { createdAt: 'DESC' },
     });
   }
+
+  async getAddressById(addressId: string): Promise<Address> {
+    const address = await this.addressesRepository.findOne({
+      where: { id: addressId },
+    });
+    if (!address) {
+      throw new NotFoundException('Address not found');
+    }
+    return address;
+  }
 }

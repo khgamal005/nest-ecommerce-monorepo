@@ -5,6 +5,8 @@ import { ProductsService } from './products.service';
 import { Product } from './entities/product.entity';
 import { ProductVariant } from './entities/product-variant.entity';
 import { ProductOption } from './entities/product-option.entity';
+import { ProductOptionValue } from './entities/product-option-value.entity';
+import { VariantOptionValue } from './entities/variant-option-value.entity';
 import { Image } from './entities/image.entity';
 import { ProductVideo } from './entities/product-video.entity';
 import { Category } from '../categories/entities/category.entity';
@@ -15,6 +17,8 @@ import { Category } from '../categories/entities/category.entity';
       Product,
       ProductVariant,
       ProductOption,
+      ProductOptionValue,
+      VariantOptionValue,
       Image,
       ProductVideo,
       Category,

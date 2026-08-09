@@ -26,6 +26,12 @@ export class CategoriesController {
     return this.categoriesService.getCategories();
   }
 
+  // Public: site logo + banners from SiteConfig (storefront)
+  @Get('site-config')
+  getSiteConfig() {
+    return this.categoriesService.getSiteConfig();
+  }
+
   // Public: all categories from Category model with hierarchy
   @Get('all')
   getAllCategoriesFromDB(@Query('level') level?: string) {
@@ -53,21 +59,21 @@ export class CategoriesController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Post()
   create(@Body() dto: CreateCategoryDto) {
     return this.categoriesService.create(dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Patch(':id')
   update(@Param('id') id: string, @Body() dto: UpdateCategoryDto) {
     return this.categoriesService.update(id, dto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'staff')
+  @Roles('admin')
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.categoriesService.remove(id);

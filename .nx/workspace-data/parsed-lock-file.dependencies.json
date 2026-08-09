@@ -2850,6 +2850,11 @@
     "type": "static"
   },
   {
+    "source": "npm:@emotion/is-prop-valid",
+    "target": "npm:@emotion/memoize",
+    "type": "static"
+  },
+  {
     "source": "npm:@eslint-community/eslint-utils",
     "target": "npm:eslint",
     "type": "static"
@@ -6232,6 +6237,46 @@
   {
     "source": "npm:@tanstack/react-query",
     "target": "npm:react",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-store",
+    "target": "npm:@tanstack/store",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-store",
+    "target": "npm:react",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-store",
+    "target": "npm:react-dom",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-store",
+    "target": "npm:use-sync-external-store",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-table",
+    "target": "npm:@tanstack/react-store",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-table",
+    "target": "npm:@tanstack/table-core",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/react-table",
+    "target": "npm:react",
+    "type": "static"
+  },
+  {
+    "source": "npm:@tanstack/table-core",
+    "target": "npm:@tanstack/store",
     "type": "static"
   },
   {
@@ -10805,6 +10850,26 @@
     "type": "static"
   },
   {
+    "source": "npm:jotai",
+    "target": "npm:@babel/core",
+    "type": "static"
+  },
+  {
+    "source": "npm:jotai",
+    "target": "npm:@babel/template",
+    "type": "static"
+  },
+  {
+    "source": "npm:jotai",
+    "target": "npm:@types/react",
+    "type": "static"
+  },
+  {
+    "source": "npm:jotai",
+    "target": "npm:react",
+    "type": "static"
+  },
+  {
     "source": "npm:js-yaml@3.15.0",
     "target": "npm:argparse@1.0.10",
     "type": "static"
@@ -13100,6 +13165,21 @@
     "type": "static"
   },
   {
+    "source": "npm:react-apexcharts",
+    "target": "npm:apexcharts",
+    "type": "static"
+  },
+  {
+    "source": "npm:react-apexcharts",
+    "target": "npm:prop-types",
+    "type": "static"
+  },
+  {
+    "source": "npm:react-apexcharts",
+    "target": "npm:react",
+    "type": "static"
+  },
+  {
     "source": "npm:react-dom",
     "target": "npm:react",
     "type": "static"
@@ -14262,6 +14342,31 @@
   {
     "source": "npm:style-loader",
     "target": "npm:webpack@5.106.2",
+    "type": "static"
+  },
+  {
+    "source": "npm:styled-components",
+    "target": "npm:@emotion/is-prop-valid",
+    "type": "static"
+  },
+  {
+    "source": "npm:styled-components",
+    "target": "npm:csstype",
+    "type": "static"
+  },
+  {
+    "source": "npm:styled-components",
+    "target": "npm:react",
+    "type": "static"
+  },
+  {
+    "source": "npm:styled-components",
+    "target": "npm:stylis",
+    "type": "static"
+  },
+  {
+    "source": "npm:styled-components",
+    "target": "npm:react-dom",
     "type": "static"
   },
   {

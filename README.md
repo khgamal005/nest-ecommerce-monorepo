@@ -26,9 +26,9 @@ ecommerce/
   domain (auth, products, orders, payments, ...) is its own self-contained module under
   `apps/backend/src/modules/*` (controller + service + dto), so any module CAN be
   extracted into its own microservice later without a rewrite -- but today it's one process.
-- **Auth**: single `auth` module issues JWTs with a `role` claim (`customer` | `admin` | `staff`).
+- **Auth**: single `auth` module issues JWTs with a `role` claim (`customer` | `admin`).
   - `user-ui` middleware only needs a valid session.
-  - `admin-ui` middleware + backend `RolesGuard` restrict access to `admin`/`staff`.
+  - `admin-ui` middleware + backend `RolesGuard` restrict access to `admin`.
 - **Shared contracts**: `libs/shared/types` should stay in sync with `apps/backend/src/modules/*/dto`.
   Consider generating this automatically from Swagger/OpenAPI once the API stabilizes.
 

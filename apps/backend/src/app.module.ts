@@ -1,4 +1,5 @@
-﻿import { Module } from '@nestjs/common';
+﻿import 'dotenv/config';
+import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -21,6 +22,11 @@ import { MailModule } from './modules/mail/mail.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { BrandsModule } from './modules/brands/brands.module';
 import { WorkersModule } from './modules/workers/workers.module';
+
+// Toggle BullMQ background workers (requires Redis >= 5). Set WORKERS_ENABLED=false
+// in .env to run the API without Redis (queues like emails/video/order-processing are off).
+const WORKERS_ENABLED = (process.env.WORKERS_ENABLED ?? 'true') !== 'false';
+const WORKERS_IMPORTS = WORKERS_ENABLED ? [WorkersModule] : [];
 
 @Module({
   imports: [
@@ -53,7 +59,7 @@ import { WorkersModule } from './modules/workers/workers.module';
     MailModule,
     AdminModule,
     BrandsModule,
-    WorkersModule,
+    ...WORKERS_IMPORTS,
   ],
 })
 export class AppModule {}
