@@ -20,6 +20,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@packages/utils/*": [
+        "./src/packages/utils/*"
       ]
     },
     "plugins": [

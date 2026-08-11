@@ -37,6 +37,9 @@ export class ProductsService {
     'variants',
     'variants.images',
     'variants.videos',
+    'variants.optionValues',
+    'variants.optionValues.optionValue',
+    'variants.optionValues.optionValue.option',
   ];
 
   // Get filtered products with pagination

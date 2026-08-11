@@ -27,6 +27,9 @@ export class Coupon {
   @Column({ type: 'varchar' })
   discount_code: string;
 
+  @Column({ type: 'varchar', nullable: true })
+  sellerId: string | null;
+
   @CreateDateColumn()
   createdAt: Date;
 

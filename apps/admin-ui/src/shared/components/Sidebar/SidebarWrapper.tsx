@@ -30,7 +30,7 @@ import useAdmin from '../../../hooks/useAdmin';
 const SidebarWrapper = () => {
   const { activeItem, setActive, closeSidebar, isMobile } = useSidebar();
   const pathname = usePathname();
-  const { admin, isLoading, logout, isLoggingOut } = useAdmin();
+  const { admin, sessionPending, logout, isLoggingOut } = useAdmin();
   const router = useRouter();
 
   useEffect(() => {
@@ -70,7 +70,11 @@ const SidebarWrapper = () => {
                 Admin Panel
               </h3>
               <h5 className="text-xs text-purple-200 whitespace-nowrap overflow-hidden text-ellipsis max-w-[160px] mt-1">
-                {admin?.email || 'Loading...'}
+                {sessionPending ? (
+                  <span className="inline-block w-24 h-3 rounded bg-purple-400/40 animate-pulse" />
+                ) : (
+                  admin?.email || 'Admin'
+                )}
               </h5>
             </Box>
           </Link>

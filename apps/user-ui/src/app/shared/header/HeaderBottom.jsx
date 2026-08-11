@@ -1,8 +1,8 @@
-import { Routes } from '@/constants/enums';
+import { Routes, RoutesExternal } from '@/constants/enums';
 import { AlignLeft, ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
-import { useLayout } from '@/hooks/useLayout';
+import useLayout from '@/hooks/useLayout';
 import CategoryMegaMenu from './CategoryMegaMenu';
 import MobileCategoryList from './MobileCategoryList';
 

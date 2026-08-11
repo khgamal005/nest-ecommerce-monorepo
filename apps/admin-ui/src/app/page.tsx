@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axiosInstance from '../utils/axiosInstance';
+import useAuthStore from '../store/authStore';
 import { Eye, EyeOff, Loader2, Shield } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -23,6 +24,9 @@ const Page = () => {
   const [serverError, setServerError] = useState<string | null>(null);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const router = useRouter();
+  const setAdmin = useAuthStore((s) => s.setAdmin);
+  const setClientSession = useAuthStore((s) => s.setClientSession);
+  const setLoggedOut = useAuthStore((s) => s.setLoggedOut);
 
   const loginMutation = useMutation({
     mutationFn: async (data: formInputs) => {
@@ -31,6 +35,9 @@ const Page = () => {
     },
     
     onSuccess: (data) => {
+      setLoggedOut(false);
+      if (data?.user) setAdmin(data.user);
+      setClientSession(true);
       toast.success(data.message);
       router.push('/dashboard');
       window.dispatchEvent(new Event('authChange'));

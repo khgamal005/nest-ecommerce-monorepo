@@ -23,9 +23,9 @@ const socials = [
 ];
 
 const serviceLinks = [
-  { title: 'تتبع الطلب', href: '/orders/track' },
+  { title: 'تتبع الطلب', href: '/profile/orders' },
   { title: 'الشحن والتوصيل', href: '/shipping' },
-  { title: 'سياسة الإرجاع', href: '/returns' },
+  { title: 'سياسة الإرجاع', href: '/return-policy' },
   { title: 'الدفع الآمن', href: '/payment' },
   { title: 'الأسئلة الشائعة', href: '/faq' },
 ];

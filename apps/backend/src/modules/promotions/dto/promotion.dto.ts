@@ -1,7 +1,9 @@
 import {
+  IsArray,
   IsIn,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   Matches,
   Min,
@@ -26,6 +28,10 @@ export class CreatePromotionDto {
   @Matches(/^[A-Za-z0-9]+$/)
   @MinLength(3)
   discount_code: string;
+
+  @IsOptional()
+  @IsString()
+  sellerId?: string | null;
 }
 
 export class UpdatePromotionDto {
@@ -45,4 +51,10 @@ export class UpdatePromotionDto {
   @Matches(/^[A-Za-z0-9]+$/)
   @MinLength(3)
   discount_code: string;
+}
+
+export class ActiveDiscountCodesDto {
+  @IsArray()
+  @IsString({ each: true })
+  sellerIds: string[];
 }

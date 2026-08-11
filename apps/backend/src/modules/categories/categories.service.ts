@@ -123,6 +123,11 @@ export class CategoriesService {
     const [products, total] = await Promise.all([
       this.productsRepository.find({
         where: categoryFilter,
+        relations: {
+          images: true,
+          brand: true,
+          variants: true,
+        },
         skip,
         take: limit,
         order: { createdAt: 'DESC' },
@@ -133,7 +138,16 @@ export class CategoriesService {
     return {
       success: true,
       category,
-      products,
+      products: products.map((p: any) => {
+        const defaultVariant =
+          p.variants?.find((v: any) => v.isActive) || p.variants?.[0];
+        return {
+          ...p,
+          regular_price: defaultVariant?.price || 0,
+          sale_price: defaultVariant?.salePrice || 0,
+          stock: defaultVariant?.stock || 0,
+        };
+      }),
       pagination: {
         total,
         page,

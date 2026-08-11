@@ -2,6 +2,7 @@ import './globals.css';
 import ReactQueryProvider from './providers/provider';
 import { ToasterClient } from './shared/component/toast/ToasterClient';
 import { Poppins, Roboto } from 'next/font/google';
+import { cookies, headers } from 'next/headers';
 
 export const metadata = {
   title: 'متجرنا | لوحة التحكم',
@@ -23,11 +24,30 @@ export const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const cookieStore = await cookies();
+  const token =
+    headersList.get('x-access-token') || cookieStore.get('token')?.value;
+  const hasToken = !!token;
+
+  let initialAdmin = null;
+  if (token) {
+    const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333';
+    const res = await fetch(`${API}/api/auth/me`, {
+      headers: { Cookie: `token=${token}` },
+      cache: 'no-store',
+    });
+    if (res.ok) {
+      const data = await res.json();
+      initialAdmin = data?.user ?? null;
+    }
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -35,7 +55,9 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ToasterClient />
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider initialAdmin={initialAdmin} hasToken={hasToken}>
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );

@@ -287,37 +287,58 @@ export class OrdersService {
       quantity: i.quantity,
     }));
 
-    await this.orderQueue.add(
-      'order-cancelled',
-      {
-        orderId,
-        userId,
-        items,
-        reason: reason || 'No reason provided',
-        cancelledBy: userRole,
-        type: 'CANCELED',
-        sessionId: `cancel-${orderId}`,
-      },
-      {
-        removeOnComplete: true,
-        attempts: 3,
-        backoff: { type: 'exponential', delay: 2000 },
-      },
+    await this.enqueueGuard(() =>
+      this.orderQueue.add(
+        'order-cancelled',
+        {
+          orderId,
+          userId,
+          items,
+          reason: reason || 'No reason provided',
+          cancelledBy: userRole,
+          type: 'CANCELED',
+          sessionId: `cancel-${orderId}`,
+        },
+        {
+          removeOnComplete: true,
+          attempts: 3,
+          backoff: { type: 'exponential', delay: 2000 },
+        },
+      ),
     );
 
     return { success: true, orderId };
   }
 
   async enqueuePostProcess(data: any) {
-    await this.orderQueue.add(
-      'post-process',
-      data,
-      {
-        removeOnComplete: true,
-        removeOnFail: 500,
-        attempts: 3,
-        backoff: { type: 'exponential', delay: 2000 },
-      },
+    await this.enqueueGuard(() =>
+      this.orderQueue.add(
+        'post-process',
+        data,
+        {
+          removeOnComplete: true,
+          removeOnFail: 500,
+          attempts: 3,
+          backoff: { type: 'exponential', delay: 2000 },
+        },
+      ),
     );
+  }
+
+  // BullMQ requires Redis >= 5. When WORKERS_ENABLED=false the queues are
+  // intentionally off, so skip enqueuing (and any Redis error) instead of
+  // breaking the primary order workflow.
+  private async enqueueGuard(operation: () => Promise<unknown>): Promise<void> {
+    if ((process.env.WORKERS_ENABLED ?? 'true') === 'false') {
+      return;
+    }
+    try {
+      await operation();
+    } catch (e: any) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[orders] queue enqueue skipped (Redis unavailable?): ${e?.message ?? e}`,
+      );
+    }
   }
 }

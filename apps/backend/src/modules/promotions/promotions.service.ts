@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, IsNull, Repository } from 'typeorm';
 import { Coupon } from './entities/coupon.entity';
 import { CreatePromotionDto, UpdatePromotionDto } from './dto/promotion.dto';
 
@@ -29,12 +29,26 @@ export class PromotionsService {
     return this.couponRepository.findOne({ where: { discount_code: code } });
   }
 
+  async findActiveBySellers(sellerIds: string[]): Promise<Coupon[]> {
+    if (!sellerIds || sellerIds.length === 0) {
+      return this.couponRepository.find({
+        where: { sellerId: IsNull() },
+        order: { createdAt: 'DESC' },
+      });
+    }
+    return this.couponRepository.find({
+      where: [{ sellerId: In(sellerIds) }, { sellerId: IsNull() }],
+      order: { createdAt: 'DESC' },
+    });
+  }
+
   async create(dto: CreatePromotionDto): Promise<Coupon> {
     const coupon = this.couponRepository.create({
       public_name: dto.public_name,
       discount_type: dto.discount_type,
       discount_value: dto.discount_value,
       discount_code: dto.discount_code,
+      sellerId: dto.sellerId ?? null,
     });
     return this.couponRepository.save(coupon);
   }

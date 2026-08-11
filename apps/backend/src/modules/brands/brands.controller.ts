@@ -70,7 +70,7 @@ export class BrandsController {
   ) {
     const parsedPage = parseInt(page || '1');
     const parsedLimit = parseInt(limit || '12');
-    return this.brandsService.findBySlug(slug, parsedPage, parsedLimit);
+    return { success: true, ...(await this.brandsService.findBySlug(slug, parsedPage, parsedLimit)) };
   }
 
   @Get(':id')

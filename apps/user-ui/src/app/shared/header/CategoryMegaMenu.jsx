@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 
 const CategoryMegaMenu = ({ categories }) => {
@@ -24,11 +24,11 @@ const CategoryMegaMenu = ({ categories }) => {
     setActiveLevel2(level2);
   };
 
-  const handleMegaMenuEnter = () => {
+  const handlePanelEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
-  const handleMegaMenuLeave = () => {
+  const handlePanelLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveCategory(null);
       setActiveLevel2(null);
@@ -56,25 +56,22 @@ const CategoryMegaMenu = ({ categories }) => {
               >
                 <span>{category.name}</span>
                 {category.children && category.children.length > 0 && (
-                  <ChevronRight
-                    size={16}
-                    className="text-gray-400 rotate-180"
-                  />
+                  <ChevronLeft size={16} className="text-gray-400" />
                 )}
               </Link>
 
-              {/* Level 2 & 3 Mega Menu Panel */}
+              {/* Next level cascade - opens to the LEFT of the current level */}
               {activeCategory?.id === category.id &&
                 category.children &&
                 category.children.length > 0 && (
                   <div
                     className="absolute right-full top-0 bg-white shadow-2xl rounded-l-lg border border-gray-200 mr-1 z-50"
-                    style={{ minWidth: '700px' }}
-                    onMouseEnter={handleMegaMenuEnter}
-                    onMouseLeave={handleMegaMenuLeave}
+                    style={{ minWidth: '680px' }}
+                    onMouseEnter={handlePanelEnter}
+                    onMouseLeave={handlePanelLeave}
                   >
                     <div className="flex">
-                      {/* Level 2 Categories - Right Column */}
+                      {/* Level 2 Categories - Right Column (next to level 1) */}
                       <div className="w-56 border-l border-gray-100 bg-gray-50 p-2">
                         <h3 className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                           {activeCategory.name}
@@ -86,19 +83,26 @@ const CategoryMegaMenu = ({ categories }) => {
                           >
                             <Link
                               href={`/category/${level2.slug}`}
-                              className={`block px-3 py-2 rounded-md text-sm transition-colors ${
+                              className={`block px-3 py-2 rounded-md text-sm transition-colors flex items-center justify-between ${
                                 activeLevel2?.id === level2.id
                                   ? 'bg-blue-100 text-blue-600 font-medium'
                                   : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                               }`}
                             >
-                              {level2.name}
+                              <span>{level2.name}</span>
+                              {level2.children &&
+                                level2.children.length > 0 && (
+                                  <ChevronLeft
+                                    size={14}
+                                    className="text-gray-400"
+                                  />
+                                )}
                             </Link>
                           </div>
                         ))}
                       </div>
 
-                      {/* Level 3 Categories - Right Column */}
+                      {/* Level 3 Categories - Left Column */}
                       <div className="flex-1 p-4 min-h-[280px] max-h-[400px] overflow-y-auto">
                         {activeLevel2 &&
                         activeLevel2.children &&
@@ -138,7 +142,7 @@ const CategoryMegaMenu = ({ categories }) => {
                         className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
                       >
                         عرض الكل في {activeCategory.name}
-                        <ChevronRight size={14} className="rotate-180" />
+                        <ChevronLeft size={14} />
                       </Link>
                     </div>
                   </div>

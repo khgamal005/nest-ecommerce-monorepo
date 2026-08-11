@@ -24,6 +24,7 @@ export interface User {
   isBanned: boolean;
   bannedAt: string | null;
   addresses?: Address[];
+  orders?: any[];
   createdAt: string;
   updatedAt: string;
 }

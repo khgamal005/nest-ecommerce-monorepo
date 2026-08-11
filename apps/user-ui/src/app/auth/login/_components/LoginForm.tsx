@@ -44,6 +44,7 @@ const LoginForm = () => {
       toast.success(json.message);
 
       useAuthStore.getState().setClientSession(true);
+      useAuthStore.getState().setLoggedOut(false);
       if (json.user) {
         useAuthStore.getState().setUser(json.user);
         queryClient.setQueryData(['user'], json.user);

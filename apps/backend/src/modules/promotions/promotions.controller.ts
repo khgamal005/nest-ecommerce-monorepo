@@ -3,7 +3,7 @@ import { PromotionsService } from './promotions.service';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
-import { CreatePromotionDto, UpdatePromotionDto } from './dto/promotion.dto';
+import { ActiveDiscountCodesDto, CreatePromotionDto, UpdatePromotionDto } from './dto/promotion.dto';
 
 @Controller('promotions')
 export class PromotionsController {
@@ -12,6 +12,14 @@ export class PromotionsController {
   @Get()
   findAll() {
     return this.promotionsService.findAll();
+  }
+
+  @Post('active-discount-codes')
+  async findActiveDiscountCodes(@Body() dto: ActiveDiscountCodesDto) {
+    const codes = await this.promotionsService.findActiveBySellers(
+      dto.sellerIds ?? [],
+    );
+    return { codes };
   }
 
   @Get('code/:code')

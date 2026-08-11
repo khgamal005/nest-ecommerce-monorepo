@@ -5,7 +5,7 @@ export const Routes = {
   Products: '/products',
   Brands: '/brands',
   Offers: '/offers',
-  Orders: '/orders',
+  Orders: '/profile/orders',
 } as const;
 
 export const RoutesExternal = {

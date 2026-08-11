@@ -1,7 +1,7 @@
 import { useAuthStore } from '@/store/authStore';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axiosInstance from '@/utils/axiosInstance';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { isProtected } from '@/utils/Protected';
 import { User } from '@/types/user';
 
@@ -25,7 +25,14 @@ const useUser = () => {
   const setLoggedOut = useAuthStore((state) => state.setLoggedOut);
   const loggingOutRef = useRef(false);
 
-  const shouldFetchUser = !loggedOut && (clientSession || !!storeUser);
+  // Re-hydrate the session on hard reloads. The backend stores the token in an
+  // httpOnly cookie (unreadable from JS) and may mirror it in localStorage, so
+  // probe /api/auth/me once on mount instead of relying on in-memory zustand
+  // state that resets on every page reload.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const shouldFetchUser = !loggedOut && (mounted || clientSession || !!storeUser);
 
   const {
     data: queryUser,
@@ -57,6 +64,15 @@ const useUser = () => {
       queryClient.setQueryData(['user'], queryUser);
     }
   }, [queryUser, setUser, setLoggedOut, queryClient]);
+
+  // A 401 from the mount probe means the stored session is gone/invalid. Mark
+  // it logged out so the disabled query doesn't keep hammering /api/auth/me on
+  // window focus.
+  useEffect(() => {
+    if ((error as any)?.response?.status === 401) {
+      setLoggedOut(true);
+    }
+  }, [error, setLoggedOut]);
 
   const cachedUser = queryClient.getQueryData<User>(['user']);
   const user = queryUser ?? storeUser ?? cachedUser ?? null;

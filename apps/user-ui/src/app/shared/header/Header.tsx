@@ -10,7 +10,6 @@ import {
   User,
   Menu,
   X,
-  ChevronDown,
   Loader2,
 } from 'lucide-react';
 
@@ -18,10 +17,9 @@ import HeaderBottom from './HeaderBottom';
 import MobileCategoryList from './MobileCategoryList';
 
 import { useUser } from '@/hooks/use-user';
-import { useSiteConfig, siteLogoUrl } from '@/hooks/useSiteConfig';
 import { Routes } from '@/constants/enums';
 import { useStore } from '@/store';
-import { useLayout } from '@/hooks/useLayout';
+import useLayout from '@/hooks/useLayout';
 
 const links = [
   { title: 'الرئيسية', href: Routes.Home },
@@ -39,11 +37,8 @@ const Header = () => {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const { user, sessionPending, logout, isLoggingOut } = useUser();
   const { categories } = useLayout();
-  const { logo } = useSiteConfig();
-  const logoUrl = siteLogoUrl(logo);
 
   const cart = useStore((state) => state.cart);
   const wishlist = useStore((state) => state.wishlist);
@@ -72,7 +67,6 @@ const Header = () => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setShowResults(false);
       }
-      setUserMenuOpen(false);
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -97,7 +91,7 @@ const Header = () => {
       debounceTimerRef.current = setTimeout(async () => {
         try {
           const res = await fetch(
-            `${API_URL}/product/api/search-products?q=${encodeURIComponent(
+            `${API_URL}/api/products/search?q=${encodeURIComponent(
               value.trim(),
             )}`,
           );
@@ -162,18 +156,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-1 lg:flex-1">
             <Link href="/" className="inline-flex items-center h-20">
-              {logoUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={logoUrl}
-                  alt="site logo"
-                  className="h-14 max-w-[180px] object-contain"
-                />
-              ) : (
-                <span className="text-2xl font-bold text-[#3489FF]">
-                  متجرنا
-                </span>
-              )}
+              <img
+                src="/images/main-logo.png"
+                alt="site logo"
+                className="h-14 max-w-[180px] object-contain"
+              />
             </Link>
           </div>
 
@@ -234,37 +221,13 @@ const Header = () => {
               {sessionPending ? (
                 <div className="w-24 h-4 bg-gray-200 animate-pulse rounded" />
               ) : user ? (
-                <div className="relative">
-                  <button
-                    onClick={() => setUserMenuOpen((v) => !v)}
-                    className="flex items-center gap-1 cursor-pointer p-1 hover:bg-gray-100 rounded"
-                  >
-                    <User className="w-5 h-5" />
-                    <span className="text-sm font-medium">{user.name}</span>
-                    <ChevronDown className="w-3 h-3" />
-                  </button>
-                  {userMenuOpen && (
-                    <div className="absolute left-0 top-full mt-1 w-48 bg-white shadow-lg rounded-md border border-gray-200 z-50 py-1">
-                      <div className="px-4 py-2 text-gray-500 text-sm">
-                        أهلاً، {user.name}
-                      </div>
-                      <Link
-                        href="/profile"
-                        onClick={() => setUserMenuOpen(false)}
-                        className="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-800"
-                      >
-                        الملف الشخصي
-                      </Link>
-                      <button
-                        onClick={handleLogout}
-                        disabled={isLoggingOut}
-                        className="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-600 text-sm"
-                      >
-                        {isLoggingOut ? 'جاري تسجيل الخروج...' : 'تسجيل الخروج'}
-                      </button>
-                    </div>
-                  )}
-                </div>
+                <Link
+                  href="/profile"
+                  className="flex items-center gap-1 cursor-pointer p-1 hover:bg-gray-100 rounded"
+                >
+                  <User className="w-5 h-5" />
+                  <span className="text-sm font-medium">{user.name}</span>
+                </Link>
               ) : (
                 <Link
                   href="/auth/login"

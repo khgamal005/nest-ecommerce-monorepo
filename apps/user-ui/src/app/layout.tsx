@@ -1,4 +1,5 @@
 import './globals.css';
+import { Toaster } from 'react-hot-toast';
 import Providers from './providers';
 import HeaderClient from './shared/header/HeaderClient';
 import Footer from './shared/footer/Footer';
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <HeaderClient />
           <main className="min-h-screen flex flex-col">{children}</main>
           <Footer />
+          <Toaster position="top-center" reverseOrder={false} />
         </Providers>
       </body>
     </html>

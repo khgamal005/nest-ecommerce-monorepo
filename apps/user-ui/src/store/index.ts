@@ -1,59 +1,235 @@
-'use client';
-
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import {sendUserEvent } from '../actions/sendUserEvent';
+import { CartProduct, CleanLocationInfo } from '../types/Product';
 
-export interface CartItem {
-  id: string;
-  title: string;
-  slug?: string;
-  price?: number;
-  image?: string;
-  quantity?: number;
+// --------------------------
+// TYPES
+// --------------------------
+
+
+interface TrackingInfo {
+  addedAt: Date;
+  deviceInfo: string;
+  location:CleanLocationInfo ;
+  user: any;
 }
 
-export interface WishlistItem {
-  id: string;
-  title: string;
-  slug?: string;
-  price?: number;
-  image?: string;
+
+
+
+
+interface StoreState {
+  cart: CartProduct[];
+  wishlist: CartProduct[];
+
+  addToCart: (
+    product: CartProduct,
+    user: any,
+    location: CleanLocationInfo,
+    deviceInfo: string
+  ) => void;
+  removeFromCart: (
+    id: string,
+    variantId: string | undefined,
+    user: any,
+    location: CleanLocationInfo,
+    deviceInfo: string
+  ) => void;
+  decreaseQuantity: (
+    id: string,
+    variantId: string | undefined,
+    user: any,
+    location: CleanLocationInfo,
+    deviceInfo: string
+  ) => void;
+  clearCart: (user?: any) => void;
+
+  addToWishlist: (
+    product: CartProduct,
+    user: any,
+    location: CleanLocationInfo,
+    deviceInfo: string
+  ) => void;
+  removeFromWishlist: (
+    id: string,
+    user: any,
+    location: CleanLocationInfo,
+    deviceInfo: string
+  ) => void;
+  clearWishlist: () => void;
 }
 
-interface RootStore {
-  cart: CartItem[];
-  wishlist: WishlistItem[];
-  setCart: (cart: CartItem[]) => void;
-  setWishlist: (wishlist: WishlistItem[]) => void;
-  addToCart: (item: CartItem) => void;
-  toggleWishlist: (item: WishlistItem) => void;
-}
+// --------------------------
+// STORE
+// --------------------------
+export const useStore = create<StoreState>()(
+  persist(
+    (set, get) => ({
+      cart: [],
+      wishlist: [],
 
-export const useStore = create<RootStore>((set) => ({
-  cart: [],
-  wishlist: [],
-  setCart: (cart) => set({ cart }),
-  setWishlist: (wishlist) => set({ wishlist }),
-  addToCart: (item) =>
-    set((state) => {
-      const exists = state.cart.find((c) => c.id === item.id);
-      if (exists) {
-        return {
-          cart: state.cart.map((c) =>
-            c.id === item.id
-              ? { ...c, quantity: (c.quantity ?? 1) + 1 }
-              : c,
-          ),
-        };
-      }
-      return { cart: [...state.cart, { ...item, quantity: 1 }] };
-    }),
-  toggleWishlist: (item) =>
-    set((state) => {
-      const exists = state.wishlist.some((w) => w.id === item.id);
+      // --------------------------
+      // CART
+      // --------------------------
+
+addToCart: (
+  product: CartProduct,
+  user,
+  location: CleanLocationInfo,
+  deviceInfo: string
+) =>
+  
+  set((state) => {
+    // Find existing cart item by productId AND variantId
+    const exists = state.cart.find((p) => 
+      p.productId === product.productId && p.variantId === product.variantId
+    );
+
+    const trackingInfo: TrackingInfo = {
+      addedAt: new Date(),
+      deviceInfo,
+      location,
+      user,
+    };
+
+    // Kafka event
+    if (location && deviceInfo) {
+     sendUserEvent({
+        userId: user?.id || 'guest',
+        productId: product.productId,
+        action: 'add_to_cart',
+        shopId: product.shopId || '',
+        city: location.city,
+        device: deviceInfo,
+      });
+    }
+
+    if (exists) {
       return {
-        wishlist: exists
-          ? state.wishlist.filter((w) => w.id !== item.id)
-          : [...state.wishlist, item],
+        cart: state.cart.map((p) =>
+          p.productId === product.productId && p.variantId === product.variantId
+            ? { ...p, quantity: p.quantity + 1 }
+            : p
+        ),
       };
+    }
+
+    return {
+      cart: [
+        ...state.cart,
+        {
+          ...product,
+          trackingInfo,
+        },
+      ],
+    };
+  }),
+
+
+      decreaseQuantity: (id, variantId, user, location, deviceInfo) =>
+        set((state) => ({
+          cart: state.cart
+            .map((product) => {
+              if (product.productId !== id || product.variantId !== variantId) return product;
+
+              const newQuantity = product.quantity - 1;
+
+              if (newQuantity <= 0) return null;
+
+              return {
+                ...product,
+                quantity: newQuantity,
+                trackingInfo: {
+                  ...product,
+                  user,
+                  location,
+                  deviceInfo,
+                },
+              };
+            })
+            .filter(Boolean) as CartProduct[],
+        })),
+
+      removeFromCart: (id, variantId, user, location, deviceInfo) =>
+        set((state) => {
+          const removed = state.cart.find((p) => p.productId === id && p.variantId === variantId);
+
+          if (removed && location && deviceInfo) {
+           sendUserEvent({
+              userId: user?.id || 'guest',
+              productId: removed.productId,
+              action: 'remove_from_cart',
+              shopId: removed.shopId || '',
+              city: location.city,
+              device: deviceInfo,
+            });
+          }
+
+          return {
+            cart: state.cart.filter((p) => !(p.productId === id && p.variantId === variantId)),
+          };
+        }),
+
+      clearCart: () => {
+        set({ cart: [] });
+      },
+
+      // --------------------------
+      // WISHLIST
+      // --------------------------
+      addToWishlist: (product, user, location, deviceInfo) =>
+        set((state) => {
+          if (state.wishlist.some((p) => p.productId === product.productId)) {
+            return { wishlist: state.wishlist };
+          }
+
+          const trackingInfo: TrackingInfo = {
+            addedAt: new Date(),
+            deviceInfo,
+            location,
+            user,
+          };
+
+          // Kafka: add to wishlist
+          if (location && deviceInfo) {
+           sendUserEvent({
+              userId: user?.id || 'guest',
+              productId: product.productId,
+              action: 'add_to_wishlist',
+              shopId: product.shopId || '',
+              city: location.city,
+              device: deviceInfo,
+            });
+          }
+
+          return {
+            wishlist: [...state.wishlist, { ...product, trackingInfo }],
+          };
+        }),
+
+      removeFromWishlist: (id, user, location, deviceInfo) =>
+        set((state) => {
+          const removedProduct = state.wishlist.find((p) => p.productId === id);
+
+          if (removedProduct && location && deviceInfo) {
+           sendUserEvent({
+              userId: user?.id || 'guest',
+              productId: removedProduct.productId,
+              action: 'remove_from_wishlist',
+              shopId: removedProduct.shopId || '',
+              city: location.city,
+              device: deviceInfo,
+            });
+          }
+
+          return {
+            wishlist: state.wishlist.filter((p) => p.productId !== id),
+          };
+        }),
+
+      clearWishlist: () => set({ wishlist: [] }),
     }),
-}));
+    { name: 'user-storage' }
+  )
+);

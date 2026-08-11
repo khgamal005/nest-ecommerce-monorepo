@@ -53,15 +53,17 @@ export class RefundService {
       }),
     );
 
-    await this.refundQueue.add('REFUND_REQUESTED', {
-      data: {
-        id: refund.id,
-        userId,
-        orderId,
-        amount: Number(amount),
-        reason,
-      },
-    });
+    await this.enqueueGuard(() =>
+      this.refundQueue.add('REFUND_REQUESTED', {
+        data: {
+          id: refund.id,
+          userId,
+          orderId,
+          amount: Number(amount),
+          reason,
+        },
+      }),
+    );
 
     return refund;
   }
@@ -76,16 +78,18 @@ export class RefundService {
     refund.reviewedAt = new Date();
     await this.refunds.save(refund);
 
-    await this.refundQueue.add('REFUND_APPROVED', {
-      data: {
-        id: refund.id,
-        userId: refund.userId,
-        orderId: refund.orderId,
-        amount: refund.amount,
-        reason: refund.reason,
-        adminNotes,
-      },
-    });
+    await this.enqueueGuard(() =>
+      this.refundQueue.add('REFUND_APPROVED', {
+        data: {
+          id: refund.id,
+          userId: refund.userId,
+          orderId: refund.orderId,
+          amount: refund.amount,
+          reason: refund.reason,
+          adminNotes,
+        },
+      }),
+    );
 
     return refund;
   }
@@ -103,16 +107,18 @@ export class RefundService {
     refund.reviewedAt = new Date();
     await this.refunds.save(refund);
 
-    await this.refundQueue.add('REFUND_REJECTED', {
-      data: {
-        id: refund.id,
-        userId: refund.userId,
-        orderId: refund.orderId,
-        amount: refund.amount,
-        reason: refund.reason,
-        adminNotes,
-      },
-    });
+    await this.enqueueGuard(() =>
+      this.refundQueue.add('REFUND_REJECTED', {
+        data: {
+          id: refund.id,
+          userId: refund.userId,
+          orderId: refund.orderId,
+          amount: refund.amount,
+          reason: refund.reason,
+          adminNotes,
+        },
+      }),
+    );
 
     return refund;
   }
@@ -132,18 +138,37 @@ export class RefundService {
       paymentStatus: PaymentStatus.REFUNDED,
     });
 
-    await this.refundQueue.add('REFUND_COMPLETED', {
-      data: {
-        id: refund.id,
-        userId: refund.userId,
-        orderId: refund.orderId,
-        amount: refund.amount,
-        reason: refund.reason,
-        adminNotes,
-      },
-    });
+    await this.enqueueGuard(() =>
+      this.refundQueue.add('REFUND_COMPLETED', {
+        data: {
+          id: refund.id,
+          userId: refund.userId,
+          orderId: refund.orderId,
+          amount: refund.amount,
+          reason: refund.reason,
+          adminNotes,
+        },
+      }),
+    );
 
     return refund;
+  }
+
+  // BullMQ requires Redis >= 5. When WORKERS_ENABLED=false the queues are
+  // intentionally off, so skip enqueuing (and any Redis error) instead of
+  // breaking the primary refund workflow.
+  private async enqueueGuard(operation: () => Promise<unknown>): Promise<void> {
+    if ((process.env.WORKERS_ENABLED ?? 'true') === 'false') {
+      return;
+    }
+    try {
+      await operation();
+    } catch (e: any) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[refunds] queue enqueue skipped (Redis unavailable?): ${e?.message ?? e}`,
+      );
+    }
   }
 
   async getAllRefunds(options: {
