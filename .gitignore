@@ -4,6 +4,7 @@ dist/
 out/
 .env
 .env.local
+.env.dev
 .env.*.local
 *.log
 npm-debug.log*
